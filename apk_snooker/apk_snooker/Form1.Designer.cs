@@ -34,13 +34,14 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.wynpart2 = new System.Windows.Forms.Label();
             this.wynpart1 = new System.Windows.Forms.Label();
             this.wyncal = new System.Windows.Forms.GroupBox();
             this.wyncal2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.wyncal1 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.wskaznik2 = new System.Windows.Forms.PictureBox();
             this.wskaznik1 = new System.Windows.Forms.PictureBox();
             this.czerwona = new System.Windows.Forms.Button();
             this.zolta = new System.Windows.Forms.Button();
@@ -49,11 +50,16 @@
             this.rozowa = new System.Windows.Forms.Button();
             this.zielona = new System.Windows.Forms.Button();
             this.czarna = new System.Windows.Forms.Button();
-            this.label4 = new System.Windows.Forms.Label();
+            this.bileView = new System.Windows.Forms.GroupBox();
+            this.newGame = new System.Windows.Forms.GroupBox();
+            this.NowaGra = new System.Windows.Forms.Button();
+            this.pudlo = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.wyncal.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wskaznik2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.wskaznik1)).BeginInit();
+            this.bileView.SuspendLayout();
+            this.newGame.SuspendLayout();
             this.SuspendLayout();
             // 
             // gracz1
@@ -99,7 +105,7 @@
             this.groupBox1.Controls.Add(this.wynpart2);
             this.groupBox1.Controls.Add(this.wynpart1);
             this.groupBox1.Controls.Add(this.wyncal);
-            this.groupBox1.Controls.Add(this.pictureBox1);
+            this.groupBox1.Controls.Add(this.wskaznik2);
             this.groupBox1.Controls.Add(this.wskaznik1);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label1);
@@ -110,6 +116,16 @@
             this.groupBox1.Size = new System.Drawing.Size(586, 94);
             this.groupBox1.TabIndex = 4;
             this.groupBox1.TabStop = false;
+            // 
+            // label4
+            // 
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label4.Location = new System.Drawing.Point(257, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(72, 27);
+            this.label4.TabIndex = 9;
+            this.label4.Text = "Wynik:";
+            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // wynpart2
             // 
@@ -173,14 +189,14 @@
             this.wyncal1.TabIndex = 0;
             this.wyncal1.Text = "0";
             // 
-            // pictureBox1
+            // wskaznik2
             // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(374, 32);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(29, 29);
-            this.pictureBox1.TabIndex = 5;
-            this.pictureBox1.TabStop = false;
+            this.wskaznik2.Image = ((System.Drawing.Image)(resources.GetObject("wskaznik2.Image")));
+            this.wskaznik2.Location = new System.Drawing.Point(374, 32);
+            this.wskaznik2.Name = "wskaznik2";
+            this.wskaznik2.Size = new System.Drawing.Size(29, 29);
+            this.wskaznik2.TabIndex = 5;
+            this.wskaznik2.TabStop = false;
             // 
             // wskaznik1
             // 
@@ -195,7 +211,7 @@
             // 
             this.czerwona.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("czerwona.BackgroundImage")));
             this.czerwona.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.czerwona.Location = new System.Drawing.Point(71, 128);
+            this.czerwona.Location = new System.Drawing.Point(18, 15);
             this.czerwona.Name = "czerwona";
             this.czerwona.Size = new System.Drawing.Size(120, 120);
             this.czerwona.TabIndex = 5;
@@ -205,7 +221,7 @@
             // 
             this.zolta.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("zolta.BackgroundImage")));
             this.zolta.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.zolta.Location = new System.Drawing.Point(218, 128);
+            this.zolta.Location = new System.Drawing.Point(165, 15);
             this.zolta.Name = "zolta";
             this.zolta.Size = new System.Drawing.Size(120, 120);
             this.zolta.TabIndex = 6;
@@ -215,7 +231,7 @@
             // 
             this.brazowa.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("brazowa.BackgroundImage")));
             this.brazowa.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.brazowa.Location = new System.Drawing.Point(71, 275);
+            this.brazowa.Location = new System.Drawing.Point(18, 162);
             this.brazowa.Name = "brazowa";
             this.brazowa.Size = new System.Drawing.Size(120, 120);
             this.brazowa.TabIndex = 7;
@@ -225,7 +241,7 @@
             // 
             this.niebieska.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("niebieska.BackgroundImage")));
             this.niebieska.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.niebieska.Location = new System.Drawing.Point(218, 275);
+            this.niebieska.Location = new System.Drawing.Point(165, 162);
             this.niebieska.Name = "niebieska";
             this.niebieska.Size = new System.Drawing.Size(120, 120);
             this.niebieska.TabIndex = 8;
@@ -235,7 +251,7 @@
             // 
             this.rozowa.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("rozowa.BackgroundImage")));
             this.rozowa.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.rozowa.Location = new System.Drawing.Point(363, 275);
+            this.rozowa.Location = new System.Drawing.Point(310, 162);
             this.rozowa.Name = "rozowa";
             this.rozowa.Size = new System.Drawing.Size(120, 120);
             this.rozowa.TabIndex = 9;
@@ -245,7 +261,7 @@
             // 
             this.zielona.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("zielona.BackgroundImage")));
             this.zielona.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.zielona.Location = new System.Drawing.Point(363, 128);
+            this.zielona.Location = new System.Drawing.Point(310, 15);
             this.zielona.Name = "zielona";
             this.zielona.Size = new System.Drawing.Size(120, 120);
             this.zielona.TabIndex = 10;
@@ -255,43 +271,80 @@
             // 
             this.czarna.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("czarna.BackgroundImage")));
             this.czarna.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.czarna.Location = new System.Drawing.Point(71, 416);
+            this.czarna.Location = new System.Drawing.Point(18, 303);
             this.czarna.Name = "czarna";
             this.czarna.Size = new System.Drawing.Size(120, 120);
             this.czarna.TabIndex = 11;
             this.czarna.UseVisualStyleBackColor = true;
             // 
-            // label4
+            // bileView
             // 
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label4.Location = new System.Drawing.Point(257, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(72, 27);
-            this.label4.TabIndex = 9;
-            this.label4.Text = "Wynik:";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.bileView.Controls.Add(this.pudlo);
+            this.bileView.Controls.Add(this.czarna);
+            this.bileView.Controls.Add(this.zielona);
+            this.bileView.Controls.Add(this.rozowa);
+            this.bileView.Controls.Add(this.niebieska);
+            this.bileView.Controls.Add(this.brazowa);
+            this.bileView.Controls.Add(this.zolta);
+            this.bileView.Controls.Add(this.czerwona);
+            this.bileView.Location = new System.Drawing.Point(53, 113);
+            this.bileView.Name = "bileView";
+            this.bileView.Size = new System.Drawing.Size(478, 451);
+            this.bileView.TabIndex = 12;
+            this.bileView.TabStop = false;
+            // 
+            // newGame
+            // 
+            this.newGame.Controls.Add(this.NowaGra);
+            this.newGame.Location = new System.Drawing.Point(41, 180);
+            this.newGame.Name = "newGame";
+            this.newGame.Size = new System.Drawing.Size(500, 264);
+            this.newGame.TabIndex = 13;
+            this.newGame.TabStop = false;
+            // 
+            // NowaGra
+            // 
+            this.NowaGra.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.NowaGra.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.NowaGra.Location = new System.Drawing.Point(119, 75);
+            this.NowaGra.Name = "NowaGra";
+            this.NowaGra.Size = new System.Drawing.Size(280, 112);
+            this.NowaGra.TabIndex = 0;
+            this.NowaGra.Text = "Nowa Gra";
+            this.NowaGra.UseVisualStyleBackColor = true;
+            this.NowaGra.Click += new System.EventHandler(this.NowaGra_Click);
+            // 
+            // pudlo
+            // 
+            this.pudlo.BackColor = System.Drawing.Color.White;
+            this.pudlo.Font = new System.Drawing.Font("Arial Narrow", 36F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.pudlo.ForeColor = System.Drawing.Color.SaddleBrown;
+            this.pudlo.Location = new System.Drawing.Point(165, 304);
+            this.pudlo.Name = "pudlo";
+            this.pudlo.Size = new System.Drawing.Size(263, 119);
+            this.pudlo.TabIndex = 12;
+            this.pudlo.Text = "Pudło";
+            this.pudlo.UseVisualStyleBackColor = false;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(586, 568);
-            this.Controls.Add(this.czarna);
-            this.Controls.Add(this.zielona);
-            this.Controls.Add(this.rozowa);
-            this.Controls.Add(this.niebieska);
-            this.Controls.Add(this.brazowa);
-            this.Controls.Add(this.zolta);
-            this.Controls.Add(this.czerwona);
+            this.Controls.Add(this.bileView);
+            this.Controls.Add(this.newGame);
             this.Controls.Add(this.groupBox1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
             this.Text = "Snookcount";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.wyncal.ResumeLayout(false);
             this.wyncal.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wskaznik2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.wskaznik1)).EndInit();
+            this.bileView.ResumeLayout(false);
+            this.newGame.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -303,7 +356,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox wskaznik2;
         private System.Windows.Forms.PictureBox wskaznik1;
         private System.Windows.Forms.Button czerwona;
         private System.Windows.Forms.Button zolta;
@@ -319,6 +372,10 @@
         private System.Windows.Forms.Button zielona;
         private System.Windows.Forms.Button czarna;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.GroupBox bileView;
+        private System.Windows.Forms.GroupBox newGame;
+        private System.Windows.Forms.Button NowaGra;
+        private System.Windows.Forms.Button pudlo;
     }
 }
 
