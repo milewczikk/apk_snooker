@@ -67,6 +67,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -80,6 +81,48 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bila brązowa cb.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bila brązowa.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bila czarna cb.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bila czarna.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bila czerwona cb.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bila czerwona.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bila niebieska cb.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bila niebieska.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bila różowa cb.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bila różowa.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bila zielona cb.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bila zielona.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bila żółta cb.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bila żółta.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

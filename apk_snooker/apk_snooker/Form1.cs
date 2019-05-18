@@ -18,29 +18,53 @@ namespace apk_snooker
             InitializeComponent();
             aktualnaGra = new Gra();
             this.BackColor = Color.FromArgb(62, 148, 0);
-            pudlo.BackColor = Color.FromArgb(62, 148, 0);
+            pudlo.BackColor = Color.FromArgb(119, 215, 100);
+            this.FormBorderStyle = FormBorderStyle.FixedSingle;
             nowaGra();
         }
         private void nowaGra()
         {
             bileView.Visible = false;
-            czerwona.Visible = true;
-            zolta.Visible = false;
-            zielona.Visible = false;
-            brazowa.Visible = false;
-            niebieska.Visible = false;
-            rozowa.Visible = false;
-            czarna.Visible = false;
+            zolta.BackgroundImage = Properties.Resources.bila_żółta_cb;
+            zielona.BackgroundImage = Properties.Resources.bila_zielona_cb;
+            brazowa.BackgroundImage = Properties.Resources.bila_brązowa_cb;
+            niebieska.BackgroundImage = Properties.Resources.bila_niebieska_cb;
+            rozowa.BackgroundImage = Properties.Resources.bila_różowa_cb;
+            czarna.BackgroundImage = Properties.Resources.bila_czarna_cb;
         }
         private void wbijczerwona()
         {
-            czerwona.Visible = true;
-            zolta.Visible = false;
-            zielona.Visible = false;
-            brazowa.Visible = false;
-            niebieska.Visible = false;
-            rozowa.Visible = false;
-            czarna.Visible = false;
+            czerwona.BackgroundImage = Properties.Resources.bila_czerwona;
+            czerwona.Enabled = true;
+            zolta.BackgroundImage = Properties.Resources.bila_żółta_cb;
+            zolta.Enabled = false;
+            zielona.BackgroundImage = Properties.Resources.bila_zielona_cb;
+            zielona.Enabled = false;
+            brazowa.BackgroundImage = Properties.Resources.bila_brązowa_cb;
+            brazowa.Enabled = false;
+            niebieska.BackgroundImage = Properties.Resources.bila_niebieska_cb;
+            niebieska.Enabled = false;
+            rozowa.BackgroundImage = Properties.Resources.bila_różowa_cb;
+            rozowa.Enabled = false;
+            czarna.BackgroundImage = Properties.Resources.bila_czarna_cb;
+            czarna.Enabled = false;
+        }
+        private void wbijkolor()
+        {
+            czerwona.BackgroundImage = Properties.Resources.bila_czerwona_cb;
+            czerwona.Enabled = false;
+            zolta.BackgroundImage = Properties.Resources.bila_żółta;
+            zolta.Enabled = true;
+            zielona.BackgroundImage = Properties.Resources.bila_zielona;
+            zielona.Enabled = true;
+            brazowa.BackgroundImage = Properties.Resources.bila_brązowa;
+            brazowa.Enabled = true;
+            niebieska.BackgroundImage = Properties.Resources.bila_niebieska;
+            niebieska.Enabled = true;
+            rozowa.BackgroundImage = Properties.Resources.bila_różowa;
+            rozowa.Enabled = true;
+            czarna.BackgroundImage = Properties.Resources.bila_czarna;
+            czarna.Enabled = true;
         }
         public void CzyKoniecGry()
         {
@@ -86,8 +110,14 @@ namespace apk_snooker
                 wskaznik1.Visible = true;
                 wskaznik2.Visible = false;
             }
-            czerwona.Visible = true;
-            wbijczerwona();
+            if (aktualnaGra.Bcz > 0)
+            {
+                wbijczerwona();
+            }
+            else
+            {
+                wbijkolor();
+            }
         }
 
         private void czerwona_Click(object sender, EventArgs e)
@@ -101,13 +131,7 @@ namespace apk_snooker
             {
                 wynpart2.Text = aktualnaGra.PunktyGracza2.ToString();
             }
-            czerwona.Visible = false;
-            zolta.Visible = true;
-            zielona.Visible = true;
-            brazowa.Visible = true;
-            niebieska.Visible = true;
-            rozowa.Visible = true;
-            czarna.Visible = true;
+            wbijkolor();
         }
 
         private void zolta_Click(object sender, EventArgs e)
@@ -121,8 +145,16 @@ namespace apk_snooker
             {
                 wynpart2.Text = aktualnaGra.PunktyGracza2.ToString();
             }
-            czerwona.Enabled = true;
-            wbijczerwona();
+            if (aktualnaGra.Bzo > 0)
+            {
+                wbijczerwona();
+                czerwona.Enabled = true;
+            }
+            else if (aktualnaGra.Bzo <= 0)
+            {
+                zolta.BackgroundImage = Properties.Resources.bila_żółta_cb;
+                zolta.Enabled = false;
+            }
         }
         private void zielona_Click(object sender, EventArgs e)
         {
@@ -135,8 +167,16 @@ namespace apk_snooker
             {
                 wynpart2.Text = aktualnaGra.PunktyGracza2.ToString();
             }
-            czerwona.Enabled = true;
-            wbijczerwona();
+            if (aktualnaGra.Bzi > 0)
+            {
+                wbijczerwona();
+                czerwona.Enabled = true;
+            }
+            else if (aktualnaGra.Bzi <= 0)
+            {
+                zielona.BackgroundImage = Properties.Resources.bila_zielona_cb;
+                zielona.Enabled = false;
+            }
         }
 
         private void brazowa_Click(object sender, EventArgs e)
@@ -150,8 +190,16 @@ namespace apk_snooker
             {
                 wynpart2.Text = aktualnaGra.PunktyGracza2.ToString();
             }
-            czerwona.Enabled = true;
-            wbijczerwona();
+            if (aktualnaGra.Bbr > 0)
+            {
+                wbijczerwona();
+                czerwona.Enabled = true;
+            }
+            else if (aktualnaGra.Bbr <= 0)
+            {
+                brazowa.BackgroundImage = Properties.Resources.bila_brązowa_cb;
+                brazowa.Enabled = false;
+            }
         }
 
         private void niebieska_Click(object sender, EventArgs e)
@@ -165,8 +213,16 @@ namespace apk_snooker
             {
                 wynpart2.Text = aktualnaGra.PunktyGracza2.ToString();
             }
-            czerwona.Enabled = true;
-            wbijczerwona();
+            if (aktualnaGra.Bni > 0)
+            {
+                wbijczerwona();
+                czerwona.Enabled = true;
+            }
+            else if (aktualnaGra.Bni <= 0)
+            {
+                niebieska.BackgroundImage = Properties.Resources.bila_niebieska_cb;
+                niebieska.Enabled = false;
+            }
         }
 
         private void rozowa_Click(object sender, EventArgs e)
@@ -180,8 +236,16 @@ namespace apk_snooker
             {
                 wynpart2.Text = aktualnaGra.PunktyGracza2.ToString();
             }
-            czerwona.Enabled = true;
-            wbijczerwona();
+            if (aktualnaGra.Bro > 0)
+            {
+                wbijczerwona();
+                czerwona.Enabled = true;
+            }
+            else if (aktualnaGra.Bro <= 0)
+            {
+                rozowa.BackgroundImage = Properties.Resources.bila_różowa_cb;
+                rozowa.Enabled = false;
+            }
         }
         private void czarna_Click(object sender, EventArgs e)
         {
@@ -194,8 +258,16 @@ namespace apk_snooker
             {
                 wynpart2.Text = aktualnaGra.PunktyGracza2.ToString();
             }
-            czerwona.Enabled = true;
-            wbijczerwona();
+            if (aktualnaGra.Bcz > 0)
+            {
+                wbijczerwona();
+                czerwona.Enabled = true;
+            }
+            else if (aktualnaGra.Bni <= 0)
+            {
+                czarna.BackgroundImage = Properties.Resources.bila_czarna_cb;
+                czarna.Enabled = false;
+            }
         }
     }
 }

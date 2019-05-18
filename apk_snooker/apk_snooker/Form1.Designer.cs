@@ -65,7 +65,7 @@
             // gracz1
             // 
             this.gracz1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.gracz1.Location = new System.Drawing.Point(12, 35);
+            this.gracz1.Location = new System.Drawing.Point(6, 35);
             this.gracz1.Name = "gracz1";
             this.gracz1.Size = new System.Drawing.Size(165, 26);
             this.gracz1.TabIndex = 0;
@@ -73,7 +73,7 @@
             // gracz2
             // 
             this.gracz2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.gracz2.Location = new System.Drawing.Point(409, 35);
+            this.gracz2.Location = new System.Drawing.Point(415, 35);
             this.gracz2.Name = "gracz2";
             this.gracz2.Size = new System.Drawing.Size(165, 26);
             this.gracz2.TabIndex = 1;
@@ -120,9 +120,9 @@
             // label4
             // 
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label4.Location = new System.Drawing.Point(257, 0);
+            this.label4.Location = new System.Drawing.Point(253, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(72, 27);
+            this.label4.Size = new System.Drawing.Size(69, 27);
             this.label4.TabIndex = 9;
             this.label4.Text = "Wynik:";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -131,7 +131,7 @@
             // 
             this.wynpart2.AutoSize = true;
             this.wynpart2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.wynpart2.Location = new System.Drawing.Point(332, 35);
+            this.wynpart2.Location = new System.Drawing.Point(328, 35);
             this.wynpart2.Name = "wynpart2";
             this.wynpart2.Size = new System.Drawing.Size(18, 20);
             this.wynpart2.TabIndex = 8;
@@ -140,7 +140,7 @@
             // wynpart1
             // 
             this.wynpart1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.wynpart1.Location = new System.Drawing.Point(209, 35);
+            this.wynpart1.Location = new System.Drawing.Point(205, 35);
             this.wynpart1.Name = "wynpart1";
             this.wynpart1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.wynpart1.Size = new System.Drawing.Size(42, 20);
@@ -153,7 +153,7 @@
             this.wyncal.Controls.Add(this.wyncal2);
             this.wyncal.Controls.Add(this.label3);
             this.wyncal.Controls.Add(this.wyncal1);
-            this.wyncal.Location = new System.Drawing.Point(257, 32);
+            this.wyncal.Location = new System.Drawing.Point(253, 32);
             this.wyncal.Name = "wyncal";
             this.wyncal.Size = new System.Drawing.Size(69, 29);
             this.wyncal.TabIndex = 6;
@@ -192,7 +192,7 @@
             // wskaznik2
             // 
             this.wskaznik2.Image = ((System.Drawing.Image)(resources.GetObject("wskaznik2.Image")));
-            this.wskaznik2.Location = new System.Drawing.Point(374, 32);
+            this.wskaznik2.Location = new System.Drawing.Point(380, 32);
             this.wskaznik2.Name = "wskaznik2";
             this.wskaznik2.Size = new System.Drawing.Size(29, 29);
             this.wskaznik2.TabIndex = 5;
@@ -202,7 +202,7 @@
             // wskaznik1
             // 
             this.wskaznik1.Image = ((System.Drawing.Image)(resources.GetObject("wskaznik1.Image")));
-            this.wskaznik1.Location = new System.Drawing.Point(183, 32);
+            this.wskaznik1.Location = new System.Drawing.Point(177, 32);
             this.wskaznik1.Name = "wskaznik1";
             this.wskaznik1.Size = new System.Drawing.Size(29, 29);
             this.wskaznik1.TabIndex = 4;
@@ -211,11 +211,11 @@
             // 
             // czerwona
             // 
-            this.czerwona.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("czerwona.BackgroundImage")));
+            this.czerwona.BackgroundImage = global::apk_snooker.Properties.Resources.bila_czerwona;
             this.czerwona.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.czerwona.Location = new System.Drawing.Point(193, 54);
+            this.czerwona.Location = new System.Drawing.Point(82, 19);
             this.czerwona.Name = "czerwona";
-            this.czerwona.Size = new System.Drawing.Size(194, 195);
+            this.czerwona.Size = new System.Drawing.Size(120, 120);
             this.czerwona.TabIndex = 5;
             this.czerwona.UseVisualStyleBackColor = true;
             this.czerwona.Click += new System.EventHandler(this.czerwona_Click);
@@ -224,7 +224,8 @@
             // 
             this.zolta.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("zolta.BackgroundImage")));
             this.zolta.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.zolta.Location = new System.Drawing.Point(82, 19);
+            this.zolta.Enabled = false;
+            this.zolta.Location = new System.Drawing.Point(226, 19);
             this.zolta.Name = "zolta";
             this.zolta.Size = new System.Drawing.Size(120, 120);
             this.zolta.TabIndex = 6;
@@ -235,7 +236,8 @@
             // 
             this.brazowa.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("brazowa.BackgroundImage")));
             this.brazowa.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.brazowa.Location = new System.Drawing.Point(374, 19);
+            this.brazowa.Enabled = false;
+            this.brazowa.Location = new System.Drawing.Point(82, 166);
             this.brazowa.Name = "brazowa";
             this.brazowa.Size = new System.Drawing.Size(120, 120);
             this.brazowa.TabIndex = 7;
@@ -246,7 +248,8 @@
             // 
             this.niebieska.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("niebieska.BackgroundImage")));
             this.niebieska.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.niebieska.Location = new System.Drawing.Point(85, 167);
+            this.niebieska.Enabled = false;
+            this.niebieska.Location = new System.Drawing.Point(229, 166);
             this.niebieska.Name = "niebieska";
             this.niebieska.Size = new System.Drawing.Size(120, 120);
             this.niebieska.TabIndex = 8;
@@ -257,7 +260,8 @@
             // 
             this.rozowa.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("rozowa.BackgroundImage")));
             this.rozowa.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.rozowa.Location = new System.Drawing.Point(230, 167);
+            this.rozowa.Enabled = false;
+            this.rozowa.Location = new System.Drawing.Point(374, 166);
             this.rozowa.Name = "rozowa";
             this.rozowa.Size = new System.Drawing.Size(120, 120);
             this.rozowa.TabIndex = 9;
@@ -268,7 +272,8 @@
             // 
             this.zielona.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("zielona.BackgroundImage")));
             this.zielona.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.zielona.Location = new System.Drawing.Point(230, 19);
+            this.zielona.Enabled = false;
+            this.zielona.Location = new System.Drawing.Point(374, 19);
             this.zielona.Name = "zielona";
             this.zielona.Size = new System.Drawing.Size(120, 120);
             this.zielona.TabIndex = 10;
@@ -279,7 +284,8 @@
             // 
             this.czarna.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("czarna.BackgroundImage")));
             this.czarna.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.czarna.Location = new System.Drawing.Point(374, 167);
+            this.czarna.Enabled = false;
+            this.czarna.Location = new System.Drawing.Point(82, 311);
             this.czarna.Name = "czarna";
             this.czarna.Size = new System.Drawing.Size(120, 120);
             this.czarna.TabIndex = 11;
@@ -309,7 +315,7 @@
             this.pudlo.BackColor = System.Drawing.Color.White;
             this.pudlo.Font = new System.Drawing.Font("Arial Narrow", 36F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.pudlo.ForeColor = System.Drawing.Color.Black;
-            this.pudlo.Location = new System.Drawing.Point(160, 311);
+            this.pudlo.Location = new System.Drawing.Point(230, 311);
             this.pudlo.Name = "pudlo";
             this.pudlo.Size = new System.Drawing.Size(263, 119);
             this.pudlo.TabIndex = 12;

@@ -62,8 +62,6 @@ namespace apk_snooker
             AktualnyGracz1 = this.rozpoczynaGracz;
             this.rozpoczynaGracz = rozpoczynaGracz;
             Koniec = false;
-            
-            Random rnd = new Random();
         }
         public void pudlo()
         {
@@ -88,7 +86,6 @@ namespace apk_snooker
                 bce -= 1;
                 punktyGracza2 += 1;
             }
-            
         }
         public void wbitaZolta()
         {
@@ -112,15 +109,16 @@ namespace apk_snooker
                 }
                 else if (bce == 0 && bzo == 1)
                 {
-                    punktyGracza1 += 2;
+                    punktyGracza2 += 2;
                     bzo -= 1;
                 }
             }
-            else if (AktualnyGracz == 1 && bzi == 1)
+            
+            else if (AktualnyGracz == 1 && bzo == 0)
             {
                 if (bce == 0)
                 {
-                    punktyGracza1 += 0;
+                    punktyGracza1 += 2;
                     bzo -= 1;
                 }
                 else
@@ -132,14 +130,15 @@ namespace apk_snooker
             {
                 if (bce == 0)
                 {
-                    punktyGracza1 += 2;
-                    bzi -= 1;
+                    punktyGracza2 += 2;
+                    bzo -= 1;
                 }
                 else
                 {
                     bzo -= 1;
                 }
             }
+            
         }
         public void wbitaZielona()
         {
@@ -163,11 +162,11 @@ namespace apk_snooker
                 }
                 else if (bce == 0 && bzi == 1)
                 {
-                    punktyGracza1 += 3;
+                    punktyGracza2 += 3;
                     bzi -= 1;
                 }
             }
-            else if (AktualnyGracz == 1 && bzi == 1)
+            else if (AktualnyGracz == 1 && bzi == 0)
             {
                 if (bce == 0)
                 {
@@ -183,7 +182,7 @@ namespace apk_snooker
             {
                 if (bce == 0)
                 {
-                    punktyGracza1 += 3;
+                    punktyGracza2 += 3;
                     bzi -= 1;
                 }
                 else
@@ -214,7 +213,7 @@ namespace apk_snooker
                 }
                 else if (bce == 0 && bbr == 1)
                 {
-                    punktyGracza1 += 4;
+                    punktyGracza2 += 4;
                     bbr -= 1;
                 }
             }
@@ -234,7 +233,7 @@ namespace apk_snooker
             {
                 if (bce == 0)
                 {
-                    punktyGracza1 += 4;
+                    punktyGracza2 += 4;
                     bbr -= 1;
                 }
                 else
@@ -265,7 +264,7 @@ namespace apk_snooker
                 }
                 else if (bce == 0 && bni == 1)
                 {
-                    punktyGracza1 += 5;
+                    punktyGracza2 += 5;
                     bni -= 1;
                 }
             }
@@ -285,7 +284,7 @@ namespace apk_snooker
             {
                 if (bce == 0)
                 {
-                    punktyGracza1 += 5;
+                    punktyGracza2 += 5;
                     bni -= 1;
                 }
                 else
@@ -316,7 +315,7 @@ namespace apk_snooker
                 }
                 else if (bce == 0 && bro == 1)
                 {
-                    punktyGracza1 += 6;
+                    punktyGracza2 += 6;
                     bro -= 1;
                 }
             }
@@ -336,7 +335,7 @@ namespace apk_snooker
             {
                 if (bce == 0)
                 {
-                    punktyGracza1 += 6;
+                    punktyGracza2 += 6;
                     bro -= 1;
                 }
                 else
@@ -367,7 +366,7 @@ namespace apk_snooker
                 }
                 else if (bce == 0 && bcz == 1)
                 {
-                    punktyGracza1 += 7;
+                    punktyGracza2 += 7;
                     bcz -= 1;
                 }
             }
@@ -387,7 +386,7 @@ namespace apk_snooker
             {
                 if (bce == 0)
                 {
-                    punktyGracza1 += 7;
+                    punktyGracza2 += 7;
                     bcz -= 1;
                 }
                 else
