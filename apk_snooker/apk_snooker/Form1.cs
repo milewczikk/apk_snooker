@@ -48,6 +48,7 @@ namespace apk_snooker
             rozowa.Enabled = false;
             czarna.BackgroundImage = Properties.Resources.bila_czarna_cb;
             czarna.Enabled = false;
+            liczby();
         }
         private void wbijkolor()
         {
@@ -65,20 +66,31 @@ namespace apk_snooker
             rozowa.Enabled = true;
             czarna.BackgroundImage = Properties.Resources.bila_czarna;
             czarna.Enabled = true;
+            liczby();
         }
-        public void CzyKoniecGry()
+        public void CzyKoniecBreak()
         {
-            if (aktualnaGra.Koniec)
+            if (aktualnaGra.Koniecbreak)
             {
+                if (aktualnaGra.AktualnyGracz == 2)
+                {
+                    MessageBox.Show("Break wygrywa " + aktualnaGra.Gracz1.Pseudonim);
+                }
                 if (aktualnaGra.AktualnyGracz == 1)
                 {
-                    MessageBox.Show("Mecz wygrywa" + aktualnaGra.Gracz1.Pseudonim);
-                }
-                else
-                {
-                    MessageBox.Show("Mecz wygrywa" + aktualnaGra.Gracz2.Pseudonim);
+                    MessageBox.Show("Break wygrywa " + aktualnaGra.Gracz2.Pseudonim);
                 }
             }
+        }
+        private void liczby()
+        {
+            label6.Text = aktualnaGra.Bce.ToString();
+            label7.Text = aktualnaGra.Bzo.ToString();
+            label9.Text = aktualnaGra.Bzi.ToString();
+            label11.Text = aktualnaGra.Bbr.ToString();
+            label13.Text = aktualnaGra.Bni.ToString();
+            label15.Text = aktualnaGra.Bro.ToString();
+            label17.Text = aktualnaGra.Bcz.ToString();
         }
         private void NowaGra_Click(object sender, EventArgs e)
         {
@@ -90,34 +102,46 @@ namespace apk_snooker
                 gracz1.Enabled = false;
                 gracz2.Enabled = false;
                 wskaznik1.Visible = true;
+                if (aktualnaGra.RozpoczynaGracz == 1)
+                {
+                    aktualnaGra.nowaGra(gracz1.Text, gracz2.Text, 1);
+                }
+                else
+                {
+                    aktualnaGra.nowaGra(gracz1.Text, gracz2.Text, 2);
+                }
             }
             else
             {
                 MessageBox.Show("Pola z nazwami graczy muszą być uzupełnione!");
             }
-            
+            liczby();
         }
         private void pudlo_Click(object sender, EventArgs e)
         {
             aktualnaGra.pudlo();
-            if (aktualnaGra.AktualnyGracz == 2)
+            if (!aktualnaGra.Koniecbreak)
             {
-                wskaznik1.Visible = false;
-                wskaznik2.Visible = true;
+                if (aktualnaGra.AktualnyGracz == 2)
+                {
+                    wskaznik1.Visible = false;
+                    wskaznik2.Visible = true;
+                }
+                else
+                {
+                    wskaznik1.Visible = true;
+                    wskaznik2.Visible = false;
+                }
+                if (aktualnaGra.Bcz > 0)
+                {
+                    wbijczerwona();
+                }
+                else
+                {
+                    wbijkolor();
+                }
             }
-            else
-            {
-                wskaznik1.Visible = true;
-                wskaznik2.Visible = false;
-            }
-            if (aktualnaGra.Bcz > 0)
-            {
-                wbijczerwona();
-            }
-            else
-            {
-                wbijkolor();
-            }
+            CzyKoniecBreak();
         }
 
         private void czerwona_Click(object sender, EventArgs e)
@@ -155,6 +179,7 @@ namespace apk_snooker
                 zolta.BackgroundImage = Properties.Resources.bila_żółta_cb;
                 zolta.Enabled = false;
             }
+            CzyKoniecBreak();
         }
         private void zielona_Click(object sender, EventArgs e)
         {
@@ -177,6 +202,7 @@ namespace apk_snooker
                 zielona.BackgroundImage = Properties.Resources.bila_zielona_cb;
                 zielona.Enabled = false;
             }
+            CzyKoniecBreak();
         }
 
         private void brazowa_Click(object sender, EventArgs e)
@@ -200,6 +226,7 @@ namespace apk_snooker
                 brazowa.BackgroundImage = Properties.Resources.bila_brązowa_cb;
                 brazowa.Enabled = false;
             }
+            CzyKoniecBreak();
         }
 
         private void niebieska_Click(object sender, EventArgs e)
@@ -223,6 +250,7 @@ namespace apk_snooker
                 niebieska.BackgroundImage = Properties.Resources.bila_niebieska_cb;
                 niebieska.Enabled = false;
             }
+            CzyKoniecBreak();
         }
 
         private void rozowa_Click(object sender, EventArgs e)
@@ -246,6 +274,7 @@ namespace apk_snooker
                 rozowa.BackgroundImage = Properties.Resources.bila_różowa_cb;
                 rozowa.Enabled = false;
             }
+            CzyKoniecBreak();
         }
         private void czarna_Click(object sender, EventArgs e)
         {
@@ -268,6 +297,13 @@ namespace apk_snooker
                 czarna.BackgroundImage = Properties.Resources.bila_czarna_cb;
                 czarna.Enabled = false;
             }
+            CzyKoniecBreak();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            CzyKoniecBreak();
+            liczby();
         }
     }
 }

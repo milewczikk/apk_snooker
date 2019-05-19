@@ -23,7 +23,8 @@ namespace apk_snooker
         private int bni = 1; //bila niebieska
         private int bro = 1; //bila różowa
         private int bcz = 1; //bila czarna
-        Boolean koniec;
+        Boolean koniecbreak;
+        Boolean koniecmecz;
         public Gra()
         {
             AktualnyGracz1 = 1;
@@ -43,7 +44,8 @@ namespace apk_snooker
         public int WynikGracza2 { get => wynikGracza2; set => wynikGracza2 = value; }
         public int AktualnyGracz { get => aktualnyGracz; set => aktualnyGracz = value; }
         public int RozpoczynaGracz { get => rozpoczynaGracz; set => rozpoczynaGracz = value; }
-        public bool Koniec { get => koniec; set => koniec = value; }
+        public bool Koniecbreak { get => koniecbreak; set => koniecbreak = value; }
+        public bool Koniecmecz { get => koniecmecz; set => koniecmecz = value; }
         public int AktualnyGracz1 { get => aktualnyGracz; set => aktualnyGracz = value; }
         public int PunktyGracza1 { get => punktyGracza1; set => punktyGracza1 = value; }
         public int PunktyGracza2 { get => punktyGracza2; set => punktyGracza2 = value; }
@@ -61,17 +63,20 @@ namespace apk_snooker
             gracz2 = new Gracz(pseudonim2);
             AktualnyGracz1 = this.rozpoczynaGracz;
             this.rozpoczynaGracz = rozpoczynaGracz;
-            Koniec = false;
+            Koniecbreak = false;
+            Koniecmecz = false;
         }
         public void pudlo()
         {
             if (AktualnyGracz == 1)
             {
                 AktualnyGracz = 2;
+                koniecbreak = CzyKtosWygrywaBreak();
             }
             else if (AktualnyGracz == 2)
             {
                 AktualnyGracz = 1;
+                koniecbreak = CzyKtosWygrywaBreak();
             }
         }
         public void wbitaCzerwona()
@@ -395,12 +400,16 @@ namespace apk_snooker
                 }
             }
         }
-        public Boolean CzyKtosWygrywa()
+        public Boolean CzyKtosWygrywaBreak()
         {
-            if (bce == 0 && bzo == 0 && bzi == 0 && bbr == 0 && bni == 0 && bro == 0 && bcz == 0)
+            if (bce <= 0 && bzo <= 0 && bzi <= 0 && bbr <= 0 && bni <= 0 && bro <= 0 && bcz <= 0)
             {
                 return true;
             }
+            return true;
+        }
+        public Boolean CzyKtosWygrywaMecz()
+        {
             return true;
         }
     }
