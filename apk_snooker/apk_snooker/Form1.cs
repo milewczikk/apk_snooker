@@ -70,16 +70,20 @@ namespace apk_snooker
         }
         public void CzyKoniecBreak()
         {
-            if (aktualnaGra.Koniecbreak)
+            if (aktualnaGra.Koniecframe)
             {
                 if (aktualnaGra.AktualnyGracz == 2)
                 {
-                    MessageBox.Show("Break wygrywa " + aktualnaGra.Gracz1.Pseudonim);
+                    MessageBox.Show("Frame wygrywa " + aktualnaGra.Gracz2.Pseudonim);
+                    aktualnaGra.Frame2 += 1;
                 }
                 if (aktualnaGra.AktualnyGracz == 1)
                 {
-                    MessageBox.Show("Break wygrywa " + aktualnaGra.Gracz2.Pseudonim);
+                    MessageBox.Show("Frame wygrywa " + aktualnaGra.Gracz1.Pseudonim);
+                    aktualnaGra.Frame1 += 1;
                 }
+                wyncal1.Text = aktualnaGra.Frame1.ToString();
+                wyncal2.Text = aktualnaGra.Frame2.ToString();
             }
         }
         private void liczby()
@@ -117,10 +121,23 @@ namespace apk_snooker
             }
             liczby();
         }
+        private void Ostatnie27()
+        {
+            czerwona.Enabled = false;
+            czerwona.BackgroundImage = Properties.Resources.bila_czerwona_cb;
+            zolta.Enabled = true;
+            zolta.BackgroundImage = Properties.Resources.bila_żółta;
+            zielona.Enabled = false;
+            brazowa.Enabled = false;
+            niebieska.Enabled = false;
+            rozowa.Enabled = false;
+            czarna.Enabled = false;
+
+        }
         private void pudlo_Click(object sender, EventArgs e)
         {
             aktualnaGra.pudlo();
-            if (!aktualnaGra.Koniecbreak)
+            if (!aktualnaGra.Koniecframe)
             {
                 if (aktualnaGra.AktualnyGracz == 2)
                 {
@@ -155,6 +172,7 @@ namespace apk_snooker
             {
                 wynpart2.Text = aktualnaGra.PunktyGracza2.ToString();
             }
+
             wbijkolor();
         }
 
@@ -169,17 +187,31 @@ namespace apk_snooker
             {
                 wynpart2.Text = aktualnaGra.PunktyGracza2.ToString();
             }
-            if (aktualnaGra.Bzo > 0)
+            if (aktualnaGra.Bzo >= 7)
             {
                 wbijczerwona();
                 czerwona.Enabled = true;
             }
-            else if (aktualnaGra.Bzo <= 0)
+            if (aktualnaGra.Bzo == 6)
+            {
+                Ostatnie27();
+            }
+            else if (aktualnaGra.Bzo < 6)
             {
                 zolta.BackgroundImage = Properties.Resources.bila_żółta_cb;
                 zolta.Enabled = false;
             }
-            CzyKoniecBreak();
+            if (aktualnaGra.Bzi == 5)
+            {
+                zolta.Enabled = false;
+                zolta.BackgroundImage = Properties.Resources.bila_żółta_cb;
+                zielona.Enabled = true;
+                zielona.BackgroundImage = Properties.Resources.bila_zielona;
+                brazowa.Enabled = false;
+                niebieska.Enabled = false;
+                rozowa.Enabled = false;
+                czarna.Enabled = false;
+            }
         }
         private void zielona_Click(object sender, EventArgs e)
         {
@@ -192,17 +224,31 @@ namespace apk_snooker
             {
                 wynpart2.Text = aktualnaGra.PunktyGracza2.ToString();
             }
-            if (aktualnaGra.Bzi > 0)
+            if (aktualnaGra.Bzi > 5)
             {
                 wbijczerwona();
                 czerwona.Enabled = true;
             }
-            else if (aktualnaGra.Bzi <= 0)
+            else if (aktualnaGra.Bzi < 5)
             {
                 zielona.BackgroundImage = Properties.Resources.bila_zielona_cb;
                 zielona.Enabled = false;
             }
-            CzyKoniecBreak();
+            if (aktualnaGra.Bzo == 6)
+            {
+                Ostatnie27();
+            }
+            if (aktualnaGra.Bbr == 4)
+            {
+                zolta.Enabled = false;
+                zielona.Enabled = false;
+                zielona.BackgroundImage = Properties.Resources.bila_zielona_cb;
+                brazowa.Enabled = true;
+                brazowa.BackgroundImage = Properties.Resources.bila_brązowa;
+                niebieska.Enabled = false;
+                rozowa.Enabled = false;
+                czarna.Enabled = false;
+            }
         }
 
         private void brazowa_Click(object sender, EventArgs e)
@@ -216,17 +262,31 @@ namespace apk_snooker
             {
                 wynpart2.Text = aktualnaGra.PunktyGracza2.ToString();
             }
-            if (aktualnaGra.Bbr > 0)
+            if (aktualnaGra.Bbr > 4)
             {
                 wbijczerwona();
                 czerwona.Enabled = true;
             }
-            else if (aktualnaGra.Bbr <= 0)
+            else if (aktualnaGra.Bbr < 4)
             {
                 brazowa.BackgroundImage = Properties.Resources.bila_brązowa_cb;
                 brazowa.Enabled = false;
             }
-            CzyKoniecBreak();
+            if (aktualnaGra.Bzo == 6)
+            {
+                Ostatnie27();
+            }
+            if (aktualnaGra.Bni == 3)
+            {
+                zolta.Enabled = false;
+                zielona.Enabled = false;
+                brazowa.Enabled = false;
+                brazowa.BackgroundImage = Properties.Resources.bila_brązowa_cb;
+                niebieska.Enabled = true;
+                niebieska.BackgroundImage = Properties.Resources.bila_niebieska;
+                rozowa.Enabled = false;
+                czarna.Enabled = false;
+            }
         }
 
         private void niebieska_Click(object sender, EventArgs e)
@@ -240,17 +300,31 @@ namespace apk_snooker
             {
                 wynpart2.Text = aktualnaGra.PunktyGracza2.ToString();
             }
-            if (aktualnaGra.Bni > 0)
+            if (aktualnaGra.Bni > 3)
             {
                 wbijczerwona();
                 czerwona.Enabled = true;
             }
-            else if (aktualnaGra.Bni <= 0)
+            else if (aktualnaGra.Bni < 3)
             {
                 niebieska.BackgroundImage = Properties.Resources.bila_niebieska_cb;
                 niebieska.Enabled = false;
             }
-            CzyKoniecBreak();
+            if (aktualnaGra.Bzo == 6)
+            {
+                Ostatnie27();
+            }
+            if (aktualnaGra.Bro == 2)
+            {
+                zolta.Enabled = false;
+                zielona.Enabled = false;
+                brazowa.Enabled = false;
+                niebieska.Enabled = false;
+                niebieska.BackgroundImage = Properties.Resources.bila_niebieska_cb;
+                rozowa.Enabled = true;
+                rozowa.BackgroundImage = Properties.Resources.bila_różowa;
+                czarna.Enabled = false;
+            }
         }
 
         private void rozowa_Click(object sender, EventArgs e)
@@ -264,17 +338,31 @@ namespace apk_snooker
             {
                 wynpart2.Text = aktualnaGra.PunktyGracza2.ToString();
             }
-            if (aktualnaGra.Bro > 0)
+            if (aktualnaGra.Bro > 2)
             {
                 wbijczerwona();
                 czerwona.Enabled = true;
             }
-            else if (aktualnaGra.Bro <= 0)
+            else if (aktualnaGra.Bro < 2)
             {
                 rozowa.BackgroundImage = Properties.Resources.bila_różowa_cb;
                 rozowa.Enabled = false;
             }
-            CzyKoniecBreak();
+            if (aktualnaGra.Bzo == 6)
+            {
+                Ostatnie27();
+            }
+            if (aktualnaGra.Bcz == 1)
+            {
+                zolta.Enabled = false;
+                zielona.Enabled = false;
+                brazowa.Enabled = false;
+                niebieska.Enabled = false;
+                rozowa.Enabled = false;
+                rozowa.BackgroundImage = Properties.Resources.bila_różowa_cb;
+                czarna.Enabled = true;
+                czarna.BackgroundImage = Properties.Resources.bila_czarna;
+            }
         }
         private void czarna_Click(object sender, EventArgs e)
         {
@@ -287,15 +375,19 @@ namespace apk_snooker
             {
                 wynpart2.Text = aktualnaGra.PunktyGracza2.ToString();
             }
-            if (aktualnaGra.Bcz > 0)
+            if (aktualnaGra.Bcz > 1)
             {
                 wbijczerwona();
                 czerwona.Enabled = true;
             }
-            else if (aktualnaGra.Bni <= 0)
+            else if (aktualnaGra.Bcz < 1)
             {
                 czarna.BackgroundImage = Properties.Resources.bila_czarna_cb;
                 czarna.Enabled = false;
+            }
+            if (aktualnaGra.Bzo == 6)
+            {
+                Ostatnie27();
             }
             CzyKoniecBreak();
         }

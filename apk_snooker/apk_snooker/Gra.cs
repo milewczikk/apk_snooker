@@ -17,13 +17,17 @@ namespace apk_snooker
         private int aktualnyGracz;
         private int rozpoczynaGracz;
         private int bce = 15; //bile czerwone
-        private int bzo = 1; //bila żółta
-        private int bzi = 1; //bila zielona
-        private int bbr = 1; //bila brązowa
-        private int bni = 1; //bila niebieska
-        private int bro = 1; //bila różowa
-        private int bcz = 1; //bila czarna
-        Boolean koniecbreak;
+        private int bzo = 7; //bila żółta
+        private int bzi = 7; //bila zielona
+        private int bbr = 7; //bila brązowa
+        private int bni = 7; //bila niebieska
+        private int bro = 7; //bila różowa
+        private int bcz = 7; //bila czarna
+        private int break1 = 0;
+        private int break2 = 0;
+        private int frame1 = 0;
+        private int frame2 = 0;
+        Boolean koniecframe;
         Boolean koniecmecz;
         public Gra()
         {
@@ -44,7 +48,7 @@ namespace apk_snooker
         public int WynikGracza2 { get => wynikGracza2; set => wynikGracza2 = value; }
         public int AktualnyGracz { get => aktualnyGracz; set => aktualnyGracz = value; }
         public int RozpoczynaGracz { get => rozpoczynaGracz; set => rozpoczynaGracz = value; }
-        public bool Koniecbreak { get => koniecbreak; set => koniecbreak = value; }
+        public bool Koniecframe { get => koniecframe; set => koniecframe = value; }
         public bool Koniecmecz { get => koniecmecz; set => koniecmecz = value; }
         public int AktualnyGracz1 { get => aktualnyGracz; set => aktualnyGracz = value; }
         public int PunktyGracza1 { get => punktyGracza1; set => punktyGracza1 = value; }
@@ -56,6 +60,10 @@ namespace apk_snooker
         public int Bni { get => bni; set => bni = value; }
         public int Bro { get => bro; set => bro = value; }
         public int Bcz { get => bcz; set => bcz = value; }
+        public int Break1 { get => break1; set => break1 = value; }
+        public int Break2 { get => break2; set => break2 = value; }
+        public int Frame1 { get => frame1; set => frame1 = value; }
+        public int Frame2 { get => frame2; set => frame2 = value; }
 
         public void nowaGra(String pseudonim1, String pseudonim2, int rozpoczynaGracz)
         {
@@ -63,7 +71,7 @@ namespace apk_snooker
             gracz2 = new Gracz(pseudonim2);
             AktualnyGracz1 = this.rozpoczynaGracz;
             this.rozpoczynaGracz = rozpoczynaGracz;
-            Koniecbreak = false;
+            Koniecframe = false;
             Koniecmecz = false;
         }
         public void pudlo()
@@ -71,13 +79,12 @@ namespace apk_snooker
             if (AktualnyGracz == 1)
             {
                 AktualnyGracz = 2;
-                koniecbreak = CzyKtosWygrywaBreak();
             }
             else if (AktualnyGracz == 2)
             {
                 AktualnyGracz = 1;
-                koniecbreak = CzyKtosWygrywaBreak();
             }
+            koniecframe = CzyKtosWygrywaFrame();
         }
         public void wbitaCzerwona()
         {
@@ -91,322 +98,238 @@ namespace apk_snooker
                 bce -= 1;
                 punktyGracza2 += 1;
             }
+            koniecframe = CzyKtosWygrywaFrame();
         }
         public void wbitaZolta()
         {
-            if (AktualnyGracz == 1 && bzo == 1)
+            if (AktualnyGracz == 1 && bzo >= 6)
             {
                 if (bce > 0)
                 {
                     punktyGracza1 += 2;
                 }
-                else if (bce == 0 && bzo == 1)
+                else if (bce == 0)
                 {
                     punktyGracza1 += 2;
                     bzo -= 1;
+                    bzi -= 1;
+                    bbr -= 1;
+                    bni -= 1;
+                    bro -= 1;
+                    bcz -= 1;
                 }
             }
-            else if (AktualnyGracz == 2 && bzo == 1)
+            if (AktualnyGracz == 2 && bzo >= 6)
             {
                 if (bce > 0)
                 {
-                    punktyGracza2 += 4;
+                    punktyGracza2 += 2;
                 }
-                else if (bce == 0 && bzo == 1)
+                else if (bce == 0)
                 {
                     punktyGracza2 += 2;
                     bzo -= 1;
+                    bzi -= 1;
+                    bbr -= 1;
+                    bni -= 1;
+                    bro -= 1;
+                    bcz -= 1;
                 }
             }
-            
-            else if (AktualnyGracz == 1 && bzo == 0)
-            {
-                if (bce == 0)
-                {
-                    punktyGracza1 += 2;
-                    bzo -= 1;
-                }
-                else
-                {
-                    bzo -= 1;
-                }
-            }
-            else if (AktualnyGracz == 2 && bzo == 0)
-            {
-                if (bce == 0)
-                {
-                    punktyGracza2 += 2;
-                    bzo -= 1;
-                }
-                else
-                {
-                    bzo -= 1;
-                }
-            }
-            
         }
         public void wbitaZielona()
         {
-            if (AktualnyGracz == 1 && bzi == 1)
+            if (AktualnyGracz == 1 && bzi >= 5)
             {
                 if (bce > 0)
                 {
                     punktyGracza1 += 3;
                 }
-                else if (bce == 0 && bzi == 1)
+                else if (bce == 0)
                 {
                     punktyGracza1 += 3;
+                    bzo -= 1;
                     bzi -= 1;
+                    bbr -= 1;
+                    bni -= 1;
+                    bro -= 1;
+                    bcz -= 1;
                 }
             }
-            else if (AktualnyGracz == 2 && bzi == 1)
+            if (AktualnyGracz == 2 && bzi >= 5)
             {
                 if (bce > 0)
                 {
                     punktyGracza2 += 3;
                 }
-                else if (bce == 0 && bzi == 1)
+                else if (bce == 0)
                 {
                     punktyGracza2 += 3;
+                    bzo -= 1;
                     bzi -= 1;
-                }
-            }
-            else if (AktualnyGracz == 1 && bzi == 0)
-            {
-                if (bce == 0)
-                {
-                    punktyGracza1 += 3;
-                    bzi -= 1;
-                }
-                else
-                {
-                    bzi -= 1;
-                }
-            }
-            else if (AktualnyGracz == 2 && bzi == 0)
-            {
-                if (bce == 0)
-                {
-                    punktyGracza2 += 3;
-                    bzi -= 1;
-                }
-                else
-                {
-                    bzi -= 1;
+                    bbr -= 1;
+                    bni -= 1;
+                    bro -= 1;
+                    bcz -= 1;
                 }
             }
         }
         public void wbitaBrazowa()
         {
-            if (AktualnyGracz == 1 && bbr == 1)
+            if (AktualnyGracz == 1 && bzi >= 4)
             {
                 if (bce > 0)
                 {
                     punktyGracza1 += 4;
                 }
-                else if (bce == 0 && bbr == 1)
+                else if (bce == 0)
                 {
                     punktyGracza1 += 4;
+                    bzo -= 1;
+                    bzi -= 1;
                     bbr -= 1;
+                    bni -= 1;
+                    bro -= 1;
+                    bcz -= 1;
                 }
             }
-            else if (AktualnyGracz == 2 && bbr == 1)
+            if (AktualnyGracz == 2 && bzi >= 4)
             {
                 if (bce > 0)
                 {
                     punktyGracza2 += 4;
                 }
-                else if (bce == 0 && bbr == 1)
+                else if (bce == 0)
                 {
                     punktyGracza2 += 4;
+                    bzo -= 1;
+                    bzi -= 1;
                     bbr -= 1;
-                }
-            }
-            else if (AktualnyGracz == 1 && bbr == 0)
-            {
-                if (bce == 0)
-                {
-                    punktyGracza1 += 4;
-                    bbr -= 1;
-                }
-                else
-                {
-                    bbr -= 1;
-                }
-            }
-            else if (AktualnyGracz == 2 && bbr == 0)
-            {
-                if (bce == 0)
-                {
-                    punktyGracza2 += 4;
-                    bbr -= 1;
-                }
-                else
-                {
-                    bbr -= 1;
+                    bni -= 1;
+                    bro -= 1;
+                    bcz -= 1;
                 }
             }
         }
         public void wbitaNiebieska()
         {
-            if (AktualnyGracz == 1 && bni == 1)
+            if (AktualnyGracz == 1 && bzi >= 3)
             {
                 if (bce > 0)
                 {
                     punktyGracza1 += 5;
                 }
-                else if (bce == 0 && bni == 1)
+                else if (bce == 0)
                 {
                     punktyGracza1 += 5;
+                    bzo -= 1;
+                    bzi -= 1;
+                    bbr -= 1;
                     bni -= 1;
+                    bro -= 1;
+                    bcz -= 1;
                 }
             }
-            else if (AktualnyGracz == 2 && bni == 1)
+            if (AktualnyGracz == 2 && bzi >= 3)
             {
                 if (bce > 0)
                 {
                     punktyGracza2 += 5;
                 }
-                else if (bce == 0 && bni == 1)
+                else if (bce == 0)
                 {
                     punktyGracza2 += 5;
+                    bzo -= 1;
+                    bzi -= 1;
+                    bbr -= 1;
                     bni -= 1;
-                }
-            }
-            else if (AktualnyGracz == 1 && bni == 0)
-            {
-                if (bce == 0)
-                {
-                    punktyGracza1 += 5;
-                    bni -= 1;
-                }
-                else
-                {
-                    bni -= 1;
-                }
-            }
-            else if (AktualnyGracz == 2 && bni == 0)
-            {
-                if (bce == 0)
-                {
-                    punktyGracza2 += 5;
-                    bni -= 1;
-                }
-                else
-                {
-                    bni -= 1;
+                    bro -= 1;
+                    bcz -= 1;
                 }
             }
         }
         public void wbitaRozowa()
         {
-            if (AktualnyGracz == 1 && bro == 1)
+            if (AktualnyGracz == 1 && bzi >= 2)
             {
                 if (bce > 0)
                 {
                     punktyGracza1 += 6;
                 }
-                else if (bce == 0 && bro == 1)
+                else if (bce == 0)
                 {
                     punktyGracza1 += 6;
+                    bzo -= 1;
+                    bzi -= 1;
+                    bbr -= 1;
+                    bni -= 1;
                     bro -= 1;
+                    bcz -= 1;
                 }
             }
-            else if (AktualnyGracz == 2 && bro == 1)
+            if (AktualnyGracz == 2 && bzi >= 2)
             {
                 if (bce > 0)
                 {
                     punktyGracza2 += 6;
                 }
-                else if (bce == 0 && bro == 1)
+                else if (bce == 0)
                 {
                     punktyGracza2 += 6;
+                    bzo -= 1;
+                    bzi -= 1;
+                    bbr -= 1;
+                    bni -= 1;
                     bro -= 1;
-                }
-            }
-            else if (AktualnyGracz == 1 && bro == 0)
-            {
-                if (bce == 0)
-                {
-                    punktyGracza1 += 6;
-                    bro -= 1;
-                }
-                else
-                {
-                    bro -= 1;
-                }
-            }
-            else if (AktualnyGracz == 2 && bro == 0)
-            {
-                if (bce == 0)
-                {
-                    punktyGracza2 += 6;
-                    bro -= 1;
-                }
-                else
-                {
-                    bro -= 1;
+                    bcz -= 1;
                 }
             }
         }
         public void wbitaCzarna()
         {
-            if (AktualnyGracz == 1 && bcz == 1)
+            if (AktualnyGracz == 1 && bzi >= 1)
             {
-                if (bce>0)
+                if (bce > 0)
                 {
                     punktyGracza1 += 7;
                 }
-                else if (bce==0 && bcz == 1)
+                else if (bce == 0)
                 {
                     punktyGracza1 += 7;
+                    bzo -= 1;
+                    bzi -= 1;
+                    bbr -= 1;
+                    bni -= 1;
+                    bro -= 1;
                     bcz -= 1;
                 }
             }
-            else if (AktualnyGracz == 2 && bcz == 1)
+            if (AktualnyGracz == 2 && bzi >= 1)
             {
                 if (bce > 0)
                 {
                     punktyGracza2 += 7;
                 }
-                else if (bce == 0 && bcz == 1)
+                else if (bce == 0)
                 {
                     punktyGracza2 += 7;
+                    bzo -= 1;
+                    bzi -= 1;
+                    bbr -= 1;
+                    bni -= 1;
+                    bro -= 1;
                     bcz -= 1;
                 }
             }
-            else if (AktualnyGracz == 1 && bcz == 0)
-            {
-                if (bce == 0)
-                {
-                    punktyGracza1 += 7;
-                    bcz -= 1;
-                }
-                else
-                {
-                    bcz -= 1;
-                }
-            }
-            else if (AktualnyGracz == 2 && bcz == 0)
-            {
-                if (bce == 0)
-                {
-                    punktyGracza2 += 7;
-                    bcz -= 1;
-                }
-                else
-                {
-                    bcz -= 1;
-                }
-            }
+            koniecframe = CzyKtosWygrywaFrame();
         }
-        public Boolean CzyKtosWygrywaBreak()
+        public Boolean CzyKtosWygrywaFrame()
         {
             if (bce <= 0 && bzo <= 0 && bzi <= 0 && bbr <= 0 && bni <= 0 && bro <= 0 && bcz <= 0)
             {
                 return true;
             }
-            return true;
+            return false;
         }
         public Boolean CzyKtosWygrywaMecz()
         {
