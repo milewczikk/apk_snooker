@@ -84,7 +84,17 @@ namespace apk_snooker
             {
                 AktualnyGracz = 1;
             }
-            koniecframe = CzyKtosWygrywaFrame();
+        }
+        public void Rozpoczyna()
+        {
+            if (RozpoczynaGracz == 1)
+            {
+                RozpoczynaGracz = 2;
+            }
+            else if (RozpoczynaGracz == 2)
+            {
+                RozpoczynaGracz = 1;
+            }
         }
         public void wbitaCzerwona()
         {
@@ -322,6 +332,7 @@ namespace apk_snooker
                 }
             }
             koniecframe = CzyKtosWygrywaFrame();
+            Koniecmecz = CzyKtosWygrywaMecz();
         }
         public Boolean CzyKtosWygrywaFrame()
         {
@@ -333,7 +344,11 @@ namespace apk_snooker
         }
         public Boolean CzyKtosWygrywaMecz()
         {
-            return true;
+            if (bce <= 0 && bzo <= 0 && bzi <= 0 && bbr <= 0 && bni <= 0 && bro <= 0 && bcz <= 0)
+            {
+                return true;
+            }
+            return false;
         }
     }
 }

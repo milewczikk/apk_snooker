@@ -51,6 +51,8 @@
             this.zielona = new System.Windows.Forms.Button();
             this.czarna = new System.Windows.Forms.Button();
             this.bileView = new System.Windows.Forms.GroupBox();
+            this.PozostaleGB = new System.Windows.Forms.GroupBox();
+            this.Reszta2 = new System.Windows.Forms.Button();
             this.label17 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
@@ -69,12 +71,17 @@
             this.pudlo = new System.Windows.Forms.Button();
             this.newGame = new System.Windows.Forms.GroupBox();
             this.NowaGra = new System.Windows.Forms.Button();
+            this.PanelKonc = new System.Windows.Forms.GroupBox();
+            this.koniecgry = new System.Windows.Forms.Button();
+            this.cd = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.wyncal.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.wskaznik2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.wskaznik1)).BeginInit();
             this.bileView.SuspendLayout();
+            this.PozostaleGB.SuspendLayout();
             this.newGame.SuspendLayout();
+            this.PanelKonc.SuspendLayout();
             this.SuspendLayout();
             // 
             // gracz1
@@ -310,6 +317,7 @@
             // bileView
             // 
             this.bileView.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.bileView.Controls.Add(this.PozostaleGB);
             this.bileView.Controls.Add(this.label17);
             this.bileView.Controls.Add(this.label18);
             this.bileView.Controls.Add(this.label15);
@@ -336,9 +344,32 @@
             this.bileView.Location = new System.Drawing.Point(0, 89);
             this.bileView.Margin = new System.Windows.Forms.Padding(0);
             this.bileView.Name = "bileView";
-            this.bileView.Size = new System.Drawing.Size(586, 483);
+            this.bileView.Size = new System.Drawing.Size(586, 480);
             this.bileView.TabIndex = 12;
             this.bileView.TabStop = false;
+            // 
+            // PozostaleGB
+            // 
+            this.PozostaleGB.Controls.Add(this.Reszta2);
+            this.PozostaleGB.Location = new System.Drawing.Point(0, 73);
+            this.PozostaleGB.Name = "PozostaleGB";
+            this.PozostaleGB.Size = new System.Drawing.Size(586, 407);
+            this.PozostaleGB.TabIndex = 15;
+            this.PozostaleGB.TabStop = false;
+            this.PozostaleGB.Visible = false;
+            // 
+            // Reszta2
+            // 
+            this.Reszta2.BackColor = System.Drawing.Color.LimeGreen;
+            this.Reszta2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.Reszta2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.Reszta2.Location = new System.Drawing.Point(0, 0);
+            this.Reszta2.Name = "Reszta2";
+            this.Reszta2.Size = new System.Drawing.Size(586, 30);
+            this.Reszta2.TabIndex = 14;
+            this.Reszta2.Text = "WIĘCEJ";
+            this.Reszta2.UseVisualStyleBackColor = false;
+            this.Reszta2.Click += new System.EventHandler(this.Reszta2_Click);
             // 
             // label17
             // 
@@ -475,9 +506,9 @@
             this.Reszta.Name = "Reszta";
             this.Reszta.Size = new System.Drawing.Size(586, 30);
             this.Reszta.TabIndex = 13;
-            this.Reszta.Text = "POZOSTAŁE";
+            this.Reszta.Text = "WIĘCEJ";
             this.Reszta.UseVisualStyleBackColor = false;
-            this.Reszta.Click += new System.EventHandler(this.button1_Click);
+            this.Reszta.Click += new System.EventHandler(this.Reszta_Click);
             // 
             // pudlo
             // 
@@ -497,7 +528,7 @@
             this.newGame.Controls.Add(this.NowaGra);
             this.newGame.Location = new System.Drawing.Point(0, 89);
             this.newGame.Name = "newGame";
-            this.newGame.Size = new System.Drawing.Size(586, 486);
+            this.newGame.Size = new System.Drawing.Size(586, 480);
             this.newGame.TabIndex = 13;
             this.newGame.TabStop = false;
             // 
@@ -513,13 +544,52 @@
             this.NowaGra.UseVisualStyleBackColor = true;
             this.NowaGra.Click += new System.EventHandler(this.NowaGra_Click);
             // 
+            // PanelKonc
+            // 
+            this.PanelKonc.Controls.Add(this.koniecgry);
+            this.PanelKonc.Controls.Add(this.cd);
+            this.PanelKonc.Location = new System.Drawing.Point(0, 89);
+            this.PanelKonc.Name = "PanelKonc";
+            this.PanelKonc.Size = new System.Drawing.Size(586, 480);
+            this.PanelKonc.TabIndex = 14;
+            this.PanelKonc.TabStop = false;
+            // 
+            // koniecgry
+            // 
+            this.koniecgry.BackColor = System.Drawing.Color.Lime;
+            this.koniecgry.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.koniecgry.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.koniecgry.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.koniecgry.Location = new System.Drawing.Point(153, 237);
+            this.koniecgry.Name = "koniecgry";
+            this.koniecgry.Size = new System.Drawing.Size(280, 112);
+            this.koniecgry.TabIndex = 2;
+            this.koniecgry.Text = "Koniec gry";
+            this.koniecgry.UseVisualStyleBackColor = false;
+            this.koniecgry.Click += new System.EventHandler(this.koniecgry_Click);
+            // 
+            // cd
+            // 
+            this.cd.BackColor = System.Drawing.Color.Lime;
+            this.cd.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.cd.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.cd.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.cd.Location = new System.Drawing.Point(153, 73);
+            this.cd.Name = "cd";
+            this.cd.Size = new System.Drawing.Size(280, 112);
+            this.cd.TabIndex = 1;
+            this.cd.Text = "Kontynuuj";
+            this.cd.UseVisualStyleBackColor = false;
+            this.cd.Click += new System.EventHandler(this.cd_Click_1);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(586, 568);
-            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.bileView);
+            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.PanelKonc);
             this.Controls.Add(this.newGame);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
@@ -532,7 +602,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.wskaznik1)).EndInit();
             this.bileView.ResumeLayout(false);
             this.bileView.PerformLayout();
+            this.PozostaleGB.ResumeLayout(false);
             this.newGame.ResumeLayout(false);
+            this.PanelKonc.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -579,6 +651,11 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.GroupBox PanelKonc;
+        private System.Windows.Forms.Button koniecgry;
+        private System.Windows.Forms.Button cd;
+        private System.Windows.Forms.GroupBox PozostaleGB;
+        private System.Windows.Forms.Button Reszta2;
     }
 }
 
