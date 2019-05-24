@@ -73,6 +73,26 @@ namespace apk_snooker.Properties {
         /// <summary>
         ///   Wyszukuje zlokalizowany zasób typu System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap bila_brązowa_90x90 {
+            get {
+                object obj = ResourceManager.GetObject("bila brązowa 90x90", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Wyszukuje zlokalizowany zasób typu System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap bila_brązowa_90x901 {
+            get {
+                object obj = ResourceManager.GetObject("bila brązowa 90x901", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Wyszukuje zlokalizowany zasób typu System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap bila_brązowa_cb {
             get {
                 object obj = ResourceManager.GetObject("bila brązowa cb", resourceCulture);
@@ -86,6 +106,26 @@ namespace apk_snooker.Properties {
         internal static System.Drawing.Bitmap bila_czarna {
             get {
                 object obj = ResourceManager.GetObject("bila czarna", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Wyszukuje zlokalizowany zasób typu System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap bila_czarna_90x90 {
+            get {
+                object obj = ResourceManager.GetObject("bila czarna 90x90", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Wyszukuje zlokalizowany zasób typu System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap bila_czarna_90x901 {
+            get {
+                object obj = ResourceManager.GetObject("bila czarna 90x901", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -113,6 +153,26 @@ namespace apk_snooker.Properties {
         /// <summary>
         ///   Wyszukuje zlokalizowany zasób typu System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap bila_czerwona_90x90 {
+            get {
+                object obj = ResourceManager.GetObject("bila czerwona 90x90", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Wyszukuje zlokalizowany zasób typu System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap bila_czerwona_90x901 {
+            get {
+                object obj = ResourceManager.GetObject("bila czerwona 90x901", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Wyszukuje zlokalizowany zasób typu System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap bila_czerwona_cb {
             get {
                 object obj = ResourceManager.GetObject("bila czerwona cb", resourceCulture);
@@ -126,6 +186,26 @@ namespace apk_snooker.Properties {
         internal static System.Drawing.Bitmap bila_niebieska {
             get {
                 object obj = ResourceManager.GetObject("bila niebieska", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Wyszukuje zlokalizowany zasób typu System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap bila_niebieska_90x90 {
+            get {
+                object obj = ResourceManager.GetObject("bila niebieska 90x90", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Wyszukuje zlokalizowany zasób typu System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap bila_niebieska_90x901 {
+            get {
+                object obj = ResourceManager.GetObject("bila niebieska 90x901", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -153,6 +233,26 @@ namespace apk_snooker.Properties {
         /// <summary>
         ///   Wyszukuje zlokalizowany zasób typu System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap bila_różowa_90x90 {
+            get {
+                object obj = ResourceManager.GetObject("bila różowa 90x90", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Wyszukuje zlokalizowany zasób typu System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap bila_różowa_90x901 {
+            get {
+                object obj = ResourceManager.GetObject("bila różowa 90x901", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Wyszukuje zlokalizowany zasób typu System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap bila_różowa_cb {
             get {
                 object obj = ResourceManager.GetObject("bila różowa cb", resourceCulture);
@@ -173,6 +273,26 @@ namespace apk_snooker.Properties {
         /// <summary>
         ///   Wyszukuje zlokalizowany zasób typu System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap bila_zielona_90x90 {
+            get {
+                object obj = ResourceManager.GetObject("bila zielona 90x90", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Wyszukuje zlokalizowany zasób typu System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap bila_zielona_90x901 {
+            get {
+                object obj = ResourceManager.GetObject("bila zielona 90x901", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Wyszukuje zlokalizowany zasób typu System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap bila_zielona_cb {
             get {
                 object obj = ResourceManager.GetObject("bila zielona cb", resourceCulture);
@@ -186,6 +306,26 @@ namespace apk_snooker.Properties {
         internal static System.Drawing.Bitmap bila_żółta {
             get {
                 object obj = ResourceManager.GetObject("bila żółta", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Wyszukuje zlokalizowany zasób typu System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap bila_żółta_90x90 {
+            get {
+                object obj = ResourceManager.GetObject("bila żółta 90x90", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Wyszukuje zlokalizowany zasób typu System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap bila_żółta_90x901 {
+            get {
+                object obj = ResourceManager.GetObject("bila żółta 90x901", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

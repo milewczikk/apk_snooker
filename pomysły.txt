@@ -1,0 +1,6 @@
+po wbiciu czerwonej faul 1 i 2 zmieniaja sie na false;
+
+przy wbijaniu koloru, "wiele czerwonych" pokazuje komunikat "nie moze byæ wiele czerwonych podczas wbijania koloru";
+
+Przy faulu,3 przyciski (pud³o, mix, wolna bila);
+

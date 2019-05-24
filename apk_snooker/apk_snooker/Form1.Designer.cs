@@ -43,32 +43,50 @@
             this.wyncal1 = new System.Windows.Forms.Label();
             this.wskaznik2 = new System.Windows.Forms.PictureBox();
             this.wskaznik1 = new System.Windows.Forms.PictureBox();
-            this.czerwona = new System.Windows.Forms.Button();
-            this.zolta = new System.Windows.Forms.Button();
-            this.brazowa = new System.Windows.Forms.Button();
-            this.niebieska = new System.Windows.Forms.Button();
-            this.rozowa = new System.Windows.Forms.Button();
-            this.zielona = new System.Windows.Forms.Button();
-            this.czarna = new System.Windows.Forms.Button();
             this.bileView = new System.Windows.Forms.GroupBox();
             this.PozostaleGB = new System.Windows.Forms.GroupBox();
+            this.PoddMecz = new System.Windows.Forms.Button();
+            this.PoddFrame = new System.Windows.Forms.Button();
             this.Reszta2 = new System.Windows.Forms.Button();
-            this.label17 = new System.Windows.Forms.Label();
-            this.label18 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
+            this.WieleCzerwonychGB = new System.Windows.Forms.GroupBox();
+            this.WCAkceptuj = new System.Windows.Forms.Button();
+            this.WCAnuluj = new System.Windows.Forms.Button();
+            this.listBox1 = new System.Windows.Forms.ListBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
+            this.WolnaBilaGB = new System.Windows.Forms.GroupBox();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.CzarnaWB = new System.Windows.Forms.Button();
+            this.RozowaWB = new System.Windows.Forms.Button();
+            this.NiebieskaWB = new System.Windows.Forms.Button();
+            this.BrazowaWB = new System.Windows.Forms.Button();
+            this.ZielonaWB = new System.Windows.Forms.Button();
+            this.ZoltaWB = new System.Windows.Forms.Button();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.CzerwonaWB = new System.Windows.Forms.Button();
+            this.FaulBile = new System.Windows.Forms.GroupBox();
+            this.FaulZa7 = new System.Windows.Forms.GroupBox();
+            this.button7 = new System.Windows.Forms.Button();
+            this.FaulZa6 = new System.Windows.Forms.GroupBox();
+            this.button6 = new System.Windows.Forms.Button();
+            this.FaulZa5 = new System.Windows.Forms.GroupBox();
+            this.button5 = new System.Windows.Forms.Button();
+            this.FaulZa4 = new System.Windows.Forms.GroupBox();
+            this.button4 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.WieleCzerwButton = new System.Windows.Forms.Button();
+            this.WolnBilaButton = new System.Windows.Forms.Button();
+            this.FaulButton = new System.Windows.Forms.Button();
             this.Reszta = new System.Windows.Forms.Button();
+            this.czerwona = new System.Windows.Forms.Button();
             this.pudlo = new System.Windows.Forms.Button();
+            this.czarna = new System.Windows.Forms.Button();
+            this.zielona = new System.Windows.Forms.Button();
+            this.rozowa = new System.Windows.Forms.Button();
+            this.niebieska = new System.Windows.Forms.Button();
+            this.brazowa = new System.Windows.Forms.Button();
+            this.zolta = new System.Windows.Forms.Button();
             this.newGame = new System.Windows.Forms.GroupBox();
             this.NowaGra = new System.Windows.Forms.Button();
             this.PanelKonc = new System.Windows.Forms.GroupBox();
@@ -80,6 +98,15 @@
             ((System.ComponentModel.ISupportInitialize)(this.wskaznik1)).BeginInit();
             this.bileView.SuspendLayout();
             this.PozostaleGB.SuspendLayout();
+            this.WieleCzerwonychGB.SuspendLayout();
+            this.WolnaBilaGB.SuspendLayout();
+            this.groupBox3.SuspendLayout();
+            this.groupBox2.SuspendLayout();
+            this.FaulBile.SuspendLayout();
+            this.FaulZa7.SuspendLayout();
+            this.FaulZa6.SuspendLayout();
+            this.FaulZa5.SuspendLayout();
+            this.FaulZa4.SuspendLayout();
             this.newGame.SuspendLayout();
             this.PanelKonc.SuspendLayout();
             this.SuspendLayout();
@@ -231,107 +258,10 @@
             this.wskaznik1.TabStop = false;
             this.wskaznik1.Visible = false;
             // 
-            // czerwona
-            // 
-            this.czerwona.BackgroundImage = global::apk_snooker.Properties.Resources.bila_czerwona;
-            this.czerwona.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.czerwona.Location = new System.Drawing.Point(82, 19);
-            this.czerwona.Name = "czerwona";
-            this.czerwona.Size = new System.Drawing.Size(120, 120);
-            this.czerwona.TabIndex = 5;
-            this.czerwona.UseVisualStyleBackColor = true;
-            this.czerwona.Click += new System.EventHandler(this.czerwona_Click);
-            // 
-            // zolta
-            // 
-            this.zolta.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("zolta.BackgroundImage")));
-            this.zolta.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.zolta.Enabled = false;
-            this.zolta.Location = new System.Drawing.Point(226, 19);
-            this.zolta.Name = "zolta";
-            this.zolta.Size = new System.Drawing.Size(120, 120);
-            this.zolta.TabIndex = 6;
-            this.zolta.UseVisualStyleBackColor = true;
-            this.zolta.Click += new System.EventHandler(this.zolta_Click);
-            // 
-            // brazowa
-            // 
-            this.brazowa.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("brazowa.BackgroundImage")));
-            this.brazowa.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.brazowa.Enabled = false;
-            this.brazowa.Location = new System.Drawing.Point(82, 166);
-            this.brazowa.Name = "brazowa";
-            this.brazowa.Size = new System.Drawing.Size(120, 120);
-            this.brazowa.TabIndex = 7;
-            this.brazowa.UseVisualStyleBackColor = true;
-            this.brazowa.Click += new System.EventHandler(this.brazowa_Click);
-            // 
-            // niebieska
-            // 
-            this.niebieska.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("niebieska.BackgroundImage")));
-            this.niebieska.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.niebieska.Enabled = false;
-            this.niebieska.Location = new System.Drawing.Point(229, 166);
-            this.niebieska.Name = "niebieska";
-            this.niebieska.Size = new System.Drawing.Size(120, 120);
-            this.niebieska.TabIndex = 8;
-            this.niebieska.UseVisualStyleBackColor = true;
-            this.niebieska.Click += new System.EventHandler(this.niebieska_Click);
-            // 
-            // rozowa
-            // 
-            this.rozowa.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("rozowa.BackgroundImage")));
-            this.rozowa.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.rozowa.Enabled = false;
-            this.rozowa.Location = new System.Drawing.Point(374, 166);
-            this.rozowa.Name = "rozowa";
-            this.rozowa.Size = new System.Drawing.Size(120, 120);
-            this.rozowa.TabIndex = 9;
-            this.rozowa.UseVisualStyleBackColor = true;
-            this.rozowa.Click += new System.EventHandler(this.rozowa_Click);
-            // 
-            // zielona
-            // 
-            this.zielona.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("zielona.BackgroundImage")));
-            this.zielona.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.zielona.Enabled = false;
-            this.zielona.Location = new System.Drawing.Point(374, 19);
-            this.zielona.Name = "zielona";
-            this.zielona.Size = new System.Drawing.Size(120, 120);
-            this.zielona.TabIndex = 10;
-            this.zielona.UseVisualStyleBackColor = true;
-            this.zielona.Click += new System.EventHandler(this.zielona_Click);
-            // 
-            // czarna
-            // 
-            this.czarna.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("czarna.BackgroundImage")));
-            this.czarna.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.czarna.Enabled = false;
-            this.czarna.Location = new System.Drawing.Point(82, 311);
-            this.czarna.Name = "czarna";
-            this.czarna.Size = new System.Drawing.Size(120, 120);
-            this.czarna.TabIndex = 11;
-            this.czarna.UseVisualStyleBackColor = true;
-            this.czarna.Click += new System.EventHandler(this.czarna_Click);
-            // 
             // bileView
             // 
             this.bileView.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.bileView.Controls.Add(this.PozostaleGB);
-            this.bileView.Controls.Add(this.label17);
-            this.bileView.Controls.Add(this.label18);
-            this.bileView.Controls.Add(this.label15);
-            this.bileView.Controls.Add(this.label16);
-            this.bileView.Controls.Add(this.label13);
-            this.bileView.Controls.Add(this.label14);
-            this.bileView.Controls.Add(this.label11);
-            this.bileView.Controls.Add(this.label12);
-            this.bileView.Controls.Add(this.label9);
-            this.bileView.Controls.Add(this.label10);
-            this.bileView.Controls.Add(this.label7);
-            this.bileView.Controls.Add(this.label8);
-            this.bileView.Controls.Add(this.label6);
-            this.bileView.Controls.Add(this.label5);
             this.bileView.Controls.Add(this.Reszta);
             this.bileView.Controls.Add(this.czerwona);
             this.bileView.Controls.Add(this.pudlo);
@@ -350,13 +280,47 @@
             // 
             // PozostaleGB
             // 
+            this.PozostaleGB.Controls.Add(this.PoddMecz);
+            this.PozostaleGB.Controls.Add(this.PoddFrame);
             this.PozostaleGB.Controls.Add(this.Reszta2);
+            this.PozostaleGB.Controls.Add(this.WieleCzerwonychGB);
+            this.PozostaleGB.Controls.Add(this.WolnaBilaGB);
+            this.PozostaleGB.Controls.Add(this.FaulBile);
+            this.PozostaleGB.Controls.Add(this.WieleCzerwButton);
+            this.PozostaleGB.Controls.Add(this.WolnBilaButton);
+            this.PozostaleGB.Controls.Add(this.FaulButton);
             this.PozostaleGB.Location = new System.Drawing.Point(0, 73);
             this.PozostaleGB.Name = "PozostaleGB";
             this.PozostaleGB.Size = new System.Drawing.Size(586, 407);
             this.PozostaleGB.TabIndex = 15;
             this.PozostaleGB.TabStop = false;
             this.PozostaleGB.Visible = false;
+            // 
+            // PoddMecz
+            // 
+            this.PoddMecz.BackColor = System.Drawing.Color.OliveDrab;
+            this.PoddMecz.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.PoddMecz.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.PoddMecz.Location = new System.Drawing.Point(293, 363);
+            this.PoddMecz.Name = "PoddMecz";
+            this.PoddMecz.Size = new System.Drawing.Size(293, 43);
+            this.PoddMecz.TabIndex = 20;
+            this.PoddMecz.Text = "Poddaj Mecz";
+            this.PoddMecz.UseVisualStyleBackColor = false;
+            this.PoddMecz.Click += new System.EventHandler(this.PoddMecz_Click);
+            // 
+            // PoddFrame
+            // 
+            this.PoddFrame.BackColor = System.Drawing.Color.OliveDrab;
+            this.PoddFrame.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.PoddFrame.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.PoddFrame.Location = new System.Drawing.Point(0, 363);
+            this.PoddFrame.Name = "PoddFrame";
+            this.PoddFrame.Size = new System.Drawing.Size(293, 43);
+            this.PoddFrame.TabIndex = 19;
+            this.PoddFrame.Text = "Poddaj Frame";
+            this.PoddFrame.UseVisualStyleBackColor = false;
+            this.PoddFrame.Click += new System.EventHandler(this.PoddFrame_Click);
             // 
             // Reszta2
             // 
@@ -371,131 +335,356 @@
             this.Reszta2.UseVisualStyleBackColor = false;
             this.Reszta2.Click += new System.EventHandler(this.Reszta2_Click);
             // 
-            // label17
+            // WieleCzerwonychGB
             // 
-            this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(519, 156);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(41, 13);
-            this.label17.TabIndex = 27;
-            this.label17.Text = "label17";
+            this.WieleCzerwonychGB.Controls.Add(this.WCAkceptuj);
+            this.WieleCzerwonychGB.Controls.Add(this.WCAnuluj);
+            this.WieleCzerwonychGB.Controls.Add(this.listBox1);
+            this.WieleCzerwonychGB.Controls.Add(this.label6);
+            this.WieleCzerwonychGB.Location = new System.Drawing.Point(0, 19);
+            this.WieleCzerwonychGB.Name = "WieleCzerwonychGB";
+            this.WieleCzerwonychGB.Size = new System.Drawing.Size(586, 352);
+            this.WieleCzerwonychGB.TabIndex = 22;
+            this.WieleCzerwonychGB.TabStop = false;
+            this.WieleCzerwonychGB.Visible = false;
             // 
-            // label18
+            // WCAkceptuj
             // 
-            this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(519, 134);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(43, 13);
-            this.label18.TabIndex = 26;
-            this.label18.Text = "Czarna:";
+            this.WCAkceptuj.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.WCAkceptuj.Location = new System.Drawing.Point(244, 277);
+            this.WCAkceptuj.Name = "WCAkceptuj";
+            this.WCAkceptuj.Size = new System.Drawing.Size(165, 55);
+            this.WCAkceptuj.TabIndex = 3;
+            this.WCAkceptuj.Text = "Akceptuj";
+            this.WCAkceptuj.UseVisualStyleBackColor = true;
+            this.WCAkceptuj.Click += new System.EventHandler(this.WCAkceptuj_Click);
             // 
-            // label15
+            // WCAnuluj
             // 
-            this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(519, 101);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(41, 13);
-            this.label15.TabIndex = 25;
-            this.label15.Text = "label15";
+            this.WCAnuluj.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.WCAnuluj.Location = new System.Drawing.Point(40, 277);
+            this.WCAnuluj.Name = "WCAnuluj";
+            this.WCAnuluj.Size = new System.Drawing.Size(165, 55);
+            this.WCAnuluj.TabIndex = 2;
+            this.WCAnuluj.Text = "Anuluj";
+            this.WCAnuluj.UseVisualStyleBackColor = true;
+            this.WCAnuluj.Click += new System.EventHandler(this.WCAnuluj_Click);
             // 
-            // label16
+            // listBox1
             // 
-            this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(519, 79);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(49, 13);
-            this.label16.TabIndex = 24;
-            this.label16.Text = "Różowa:";
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(519, 48);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(41, 13);
-            this.label13.TabIndex = 23;
-            this.label13.Text = "label13";
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(519, 26);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(57, 13);
-            this.label14.TabIndex = 22;
-            this.label14.Text = "Niebieska:";
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(13, 203);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(41, 13);
-            this.label11.TabIndex = 21;
-            this.label11.Text = "label11";
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(13, 181);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(51, 13);
-            this.label12.TabIndex = 20;
-            this.label12.Text = "Brązowa:";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(13, 148);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(35, 13);
-            this.label9.TabIndex = 19;
-            this.label9.Text = "label9";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(13, 126);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(45, 13);
-            this.label10.TabIndex = 18;
-            this.label10.Text = "Zielona:";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(13, 95);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(35, 13);
-            this.label7.TabIndex = 17;
-            this.label7.Text = "label7";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(13, 73);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(36, 13);
-            this.label8.TabIndex = 16;
-            this.label8.Text = "Żółta:";
+            this.listBox1.BackColor = System.Drawing.Color.LimeGreen;
+            this.listBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.listBox1.FormattingEnabled = true;
+            this.listBox1.ItemHeight = 18;
+            this.listBox1.Location = new System.Drawing.Point(39, 112);
+            this.listBox1.Name = "listBox1";
+            this.listBox1.Size = new System.Drawing.Size(243, 130);
+            this.listBox1.TabIndex = 1;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(13, 48);
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label6.Location = new System.Drawing.Point(6, 62);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(35, 13);
-            this.label6.TabIndex = 15;
-            this.label6.Text = "label6";
+            this.label6.Size = new System.Drawing.Size(554, 24);
+            this.label6.TabIndex = 0;
+            this.label6.Text = "Wybierz, ile czerwonych bil zostało wbitych w jednym uderzeniu:";
             // 
-            // label5
+            // WolnaBilaGB
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(13, 26);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(57, 13);
-            this.label5.TabIndex = 14;
-            this.label5.Text = "Czerwona:";
+            this.WolnaBilaGB.Controls.Add(this.groupBox3);
+            this.WolnaBilaGB.Controls.Add(this.groupBox2);
+            this.WolnaBilaGB.Location = new System.Drawing.Point(0, 19);
+            this.WolnaBilaGB.Name = "WolnaBilaGB";
+            this.WolnaBilaGB.Size = new System.Drawing.Size(586, 352);
+            this.WolnaBilaGB.TabIndex = 21;
+            this.WolnaBilaGB.TabStop = false;
+            this.WolnaBilaGB.Visible = false;
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.CzarnaWB);
+            this.groupBox3.Controls.Add(this.RozowaWB);
+            this.groupBox3.Controls.Add(this.NiebieskaWB);
+            this.groupBox3.Controls.Add(this.BrazowaWB);
+            this.groupBox3.Controls.Add(this.ZielonaWB);
+            this.groupBox3.Controls.Add(this.ZoltaWB);
+            this.groupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.groupBox3.Location = new System.Drawing.Point(6, 180);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(574, 138);
+            this.groupBox3.TabIndex = 1;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Bila, która będzie zagrana zamiast niej:";
+            // 
+            // CzarnaWB
+            // 
+            this.CzarnaWB.BackgroundImage = global::apk_snooker.Properties.Resources.bila_czarna_90x901;
+            this.CzarnaWB.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.CzarnaWB.Location = new System.Drawing.Point(478, 30);
+            this.CzarnaWB.Name = "CzarnaWB";
+            this.CzarnaWB.Size = new System.Drawing.Size(90, 90);
+            this.CzarnaWB.TabIndex = 5;
+            this.CzarnaWB.UseVisualStyleBackColor = true;
+            this.CzarnaWB.Click += new System.EventHandler(this.CzarnaWB_Click);
+            // 
+            // RozowaWB
+            // 
+            this.RozowaWB.BackgroundImage = global::apk_snooker.Properties.Resources.bila_różowa_90x901;
+            this.RozowaWB.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.RozowaWB.Location = new System.Drawing.Point(385, 30);
+            this.RozowaWB.Name = "RozowaWB";
+            this.RozowaWB.Size = new System.Drawing.Size(90, 90);
+            this.RozowaWB.TabIndex = 4;
+            this.RozowaWB.UseVisualStyleBackColor = true;
+            this.RozowaWB.Click += new System.EventHandler(this.RozowaWB_Click);
+            // 
+            // NiebieskaWB
+            // 
+            this.NiebieskaWB.BackgroundImage = global::apk_snooker.Properties.Resources.bila_niebieska_90x901;
+            this.NiebieskaWB.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.NiebieskaWB.Location = new System.Drawing.Point(291, 30);
+            this.NiebieskaWB.Name = "NiebieskaWB";
+            this.NiebieskaWB.Size = new System.Drawing.Size(90, 90);
+            this.NiebieskaWB.TabIndex = 3;
+            this.NiebieskaWB.UseVisualStyleBackColor = true;
+            this.NiebieskaWB.Click += new System.EventHandler(this.NiebieskaWB_Click);
+            // 
+            // BrazowaWB
+            // 
+            this.BrazowaWB.BackgroundImage = global::apk_snooker.Properties.Resources.bila_brązowa_90x901;
+            this.BrazowaWB.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.BrazowaWB.Location = new System.Drawing.Point(199, 30);
+            this.BrazowaWB.Name = "BrazowaWB";
+            this.BrazowaWB.Size = new System.Drawing.Size(90, 90);
+            this.BrazowaWB.TabIndex = 2;
+            this.BrazowaWB.UseVisualStyleBackColor = true;
+            this.BrazowaWB.Click += new System.EventHandler(this.BrazowaWB_Click);
+            // 
+            // ZielonaWB
+            // 
+            this.ZielonaWB.BackgroundImage = global::apk_snooker.Properties.Resources.bila_zielona_90x901;
+            this.ZielonaWB.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.ZielonaWB.Location = new System.Drawing.Point(103, 30);
+            this.ZielonaWB.Name = "ZielonaWB";
+            this.ZielonaWB.Size = new System.Drawing.Size(90, 90);
+            this.ZielonaWB.TabIndex = 1;
+            this.ZielonaWB.UseVisualStyleBackColor = true;
+            this.ZielonaWB.Click += new System.EventHandler(this.ZielonaWB_Click);
+            // 
+            // ZoltaWB
+            // 
+            this.ZoltaWB.BackgroundImage = global::apk_snooker.Properties.Resources.bila_żółta_90x901;
+            this.ZoltaWB.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.ZoltaWB.Location = new System.Drawing.Point(7, 30);
+            this.ZoltaWB.Name = "ZoltaWB";
+            this.ZoltaWB.Size = new System.Drawing.Size(90, 90);
+            this.ZoltaWB.TabIndex = 0;
+            this.ZoltaWB.UseVisualStyleBackColor = true;
+            this.ZoltaWB.Click += new System.EventHandler(this.ZoltaWB_Click);
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.CzerwonaWB);
+            this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.groupBox2.Location = new System.Drawing.Point(6, 24);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(574, 138);
+            this.groupBox2.TabIndex = 0;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Bila, która powinna być zagrana:";
+            // 
+            // CzerwonaWB
+            // 
+            this.CzerwonaWB.BackgroundImage = global::apk_snooker.Properties.Resources.bila_czerwona_90x901;
+            this.CzerwonaWB.Enabled = false;
+            this.CzerwonaWB.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.CzerwonaWB.Location = new System.Drawing.Point(233, 33);
+            this.CzerwonaWB.Name = "CzerwonaWB";
+            this.CzerwonaWB.Size = new System.Drawing.Size(90, 90);
+            this.CzerwonaWB.TabIndex = 1;
+            this.CzerwonaWB.UseVisualStyleBackColor = true;
+            // 
+            // FaulBile
+            // 
+            this.FaulBile.Controls.Add(this.FaulZa7);
+            this.FaulBile.Controls.Add(this.FaulZa6);
+            this.FaulBile.Controls.Add(this.FaulZa5);
+            this.FaulBile.Controls.Add(this.FaulZa4);
+            this.FaulBile.Location = new System.Drawing.Point(0, 19);
+            this.FaulBile.Name = "FaulBile";
+            this.FaulBile.Size = new System.Drawing.Size(586, 352);
+            this.FaulBile.TabIndex = 18;
+            this.FaulBile.TabStop = false;
+            this.FaulBile.Visible = false;
+            // 
+            // FaulZa7
+            // 
+            this.FaulZa7.Controls.Add(this.button7);
+            this.FaulZa7.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.FaulZa7.Location = new System.Drawing.Point(398, 180);
+            this.FaulZa7.Name = "FaulZa7";
+            this.FaulZa7.Size = new System.Drawing.Size(182, 158);
+            this.FaulZa7.TabIndex = 3;
+            this.FaulZa7.TabStop = false;
+            this.FaulZa7.Text = "Faul za 7 punktów";
+            this.FaulZa7.MouseCaptureChanged += new System.EventHandler(this.FaulZa7_MouseCaptureChanged);
+            // 
+            // button7
+            // 
+            this.button7.BackgroundImage = global::apk_snooker.Properties.Resources.bila_czarna;
+            this.button7.Enabled = false;
+            this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button7.Location = new System.Drawing.Point(31, 23);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(120, 120);
+            this.button7.TabIndex = 6;
+            this.button7.UseVisualStyleBackColor = true;
+            // 
+            // FaulZa6
+            // 
+            this.FaulZa6.Controls.Add(this.button6);
+            this.FaulZa6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.FaulZa6.Location = new System.Drawing.Point(205, 180);
+            this.FaulZa6.Name = "FaulZa6";
+            this.FaulZa6.Size = new System.Drawing.Size(182, 159);
+            this.FaulZa6.TabIndex = 2;
+            this.FaulZa6.TabStop = false;
+            this.FaulZa6.Text = "Faul za 6 punktów";
+            this.FaulZa6.MouseCaptureChanged += new System.EventHandler(this.FaulZa6_MouseCaptureChanged);
+            // 
+            // button6
+            // 
+            this.button6.BackgroundImage = global::apk_snooker.Properties.Resources.bila_różowa;
+            this.button6.Enabled = false;
+            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button6.Location = new System.Drawing.Point(34, 23);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(120, 120);
+            this.button6.TabIndex = 5;
+            this.button6.UseVisualStyleBackColor = true;
+            // 
+            // FaulZa5
+            // 
+            this.FaulZa5.Controls.Add(this.button5);
+            this.FaulZa5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.FaulZa5.Location = new System.Drawing.Point(6, 180);
+            this.FaulZa5.Name = "FaulZa5";
+            this.FaulZa5.Size = new System.Drawing.Size(182, 158);
+            this.FaulZa5.TabIndex = 1;
+            this.FaulZa5.TabStop = false;
+            this.FaulZa5.Text = "Faul za 5 punktów";
+            this.FaulZa5.MouseCaptureChanged += new System.EventHandler(this.FaulZa5_MouseCaptureChanged);
+            // 
+            // button5
+            // 
+            this.button5.BackgroundImage = global::apk_snooker.Properties.Resources.bila_niebieska;
+            this.button5.Enabled = false;
+            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button5.Location = new System.Drawing.Point(33, 23);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(120, 120);
+            this.button5.TabIndex = 4;
+            this.button5.UseVisualStyleBackColor = true;
+            // 
+            // FaulZa4
+            // 
+            this.FaulZa4.Controls.Add(this.button4);
+            this.FaulZa4.Controls.Add(this.button3);
+            this.FaulZa4.Controls.Add(this.button2);
+            this.FaulZa4.Controls.Add(this.button1);
+            this.FaulZa4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.FaulZa4.Location = new System.Drawing.Point(39, 19);
+            this.FaulZa4.Name = "FaulZa4";
+            this.FaulZa4.Size = new System.Drawing.Size(510, 155);
+            this.FaulZa4.TabIndex = 0;
+            this.FaulZa4.TabStop = false;
+            this.FaulZa4.Text = "Faul za 4 punkty";
+            this.FaulZa4.MouseCaptureChanged += new System.EventHandler(this.FaulZa4_MouseCaptureChanged);
+            // 
+            // button4
+            // 
+            this.button4.BackgroundImage = global::apk_snooker.Properties.Resources.bila_brązowa;
+            this.button4.Enabled = false;
+            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button4.Location = new System.Drawing.Point(384, 23);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(120, 120);
+            this.button4.TabIndex = 3;
+            this.button4.UseVisualStyleBackColor = true;
+            // 
+            // button3
+            // 
+            this.button3.BackgroundImage = global::apk_snooker.Properties.Resources.bila_zielona;
+            this.button3.Enabled = false;
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button3.Location = new System.Drawing.Point(258, 23);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(120, 120);
+            this.button3.TabIndex = 2;
+            this.button3.UseVisualStyleBackColor = true;
+            // 
+            // button2
+            // 
+            this.button2.BackgroundImage = global::apk_snooker.Properties.Resources.bila_żółta;
+            this.button2.Enabled = false;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button2.Location = new System.Drawing.Point(132, 23);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(120, 120);
+            this.button2.TabIndex = 1;
+            this.button2.UseVisualStyleBackColor = true;
+            // 
+            // button1
+            // 
+            this.button1.BackgroundImage = global::apk_snooker.Properties.Resources.bila_czerwona;
+            this.button1.Enabled = false;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button1.Location = new System.Drawing.Point(6, 23);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(120, 120);
+            this.button1.TabIndex = 0;
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // WieleCzerwButton
+            // 
+            this.WieleCzerwButton.BackColor = System.Drawing.Color.YellowGreen;
+            this.WieleCzerwButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.WieleCzerwButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.WieleCzerwButton.Location = new System.Drawing.Point(209, 199);
+            this.WieleCzerwButton.Name = "WieleCzerwButton";
+            this.WieleCzerwButton.Size = new System.Drawing.Size(159, 120);
+            this.WieleCzerwButton.TabIndex = 17;
+            this.WieleCzerwButton.Text = "Wiele czerwonych";
+            this.WieleCzerwButton.UseVisualStyleBackColor = false;
+            this.WieleCzerwButton.Click += new System.EventHandler(this.WieleCzerwButton_Click);
+            // 
+            // WolnBilaButton
+            // 
+            this.WolnBilaButton.BackColor = System.Drawing.Color.YellowGreen;
+            this.WolnBilaButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.WolnBilaButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.WolnBilaButton.Location = new System.Drawing.Point(355, 53);
+            this.WolnBilaButton.Name = "WolnBilaButton";
+            this.WolnBilaButton.Size = new System.Drawing.Size(159, 120);
+            this.WolnBilaButton.TabIndex = 16;
+            this.WolnBilaButton.Text = "Wbicie wolnej bili";
+            this.WolnBilaButton.UseVisualStyleBackColor = false;
+            this.WolnBilaButton.Click += new System.EventHandler(this.WolnBilaButton_Click);
+            // 
+            // FaulButton
+            // 
+            this.FaulButton.BackColor = System.Drawing.Color.YellowGreen;
+            this.FaulButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.FaulButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.FaulButton.Location = new System.Drawing.Point(64, 51);
+            this.FaulButton.Name = "FaulButton";
+            this.FaulButton.Size = new System.Drawing.Size(159, 120);
+            this.FaulButton.TabIndex = 15;
+            this.FaulButton.Text = "Faul";
+            this.FaulButton.UseVisualStyleBackColor = false;
+            this.FaulButton.Click += new System.EventHandler(this.FaulButton_Click);
             // 
             // Reszta
             // 
@@ -510,6 +699,17 @@
             this.Reszta.UseVisualStyleBackColor = false;
             this.Reszta.Click += new System.EventHandler(this.Reszta_Click);
             // 
+            // czerwona
+            // 
+            this.czerwona.BackgroundImage = global::apk_snooker.Properties.Resources.bila_czerwona;
+            this.czerwona.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.czerwona.Location = new System.Drawing.Point(82, 19);
+            this.czerwona.Name = "czerwona";
+            this.czerwona.Size = new System.Drawing.Size(120, 120);
+            this.czerwona.TabIndex = 5;
+            this.czerwona.UseVisualStyleBackColor = true;
+            this.czerwona.Click += new System.EventHandler(this.czerwona_Click);
+            // 
             // pudlo
             // 
             this.pudlo.BackColor = System.Drawing.Color.White;
@@ -522,6 +722,78 @@
             this.pudlo.Text = "Pudło";
             this.pudlo.UseVisualStyleBackColor = false;
             this.pudlo.Click += new System.EventHandler(this.pudlo_Click);
+            // 
+            // czarna
+            // 
+            this.czarna.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("czarna.BackgroundImage")));
+            this.czarna.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.czarna.Enabled = false;
+            this.czarna.Location = new System.Drawing.Point(82, 311);
+            this.czarna.Name = "czarna";
+            this.czarna.Size = new System.Drawing.Size(120, 120);
+            this.czarna.TabIndex = 11;
+            this.czarna.UseVisualStyleBackColor = true;
+            this.czarna.Click += new System.EventHandler(this.czarna_Click);
+            // 
+            // zielona
+            // 
+            this.zielona.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("zielona.BackgroundImage")));
+            this.zielona.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.zielona.Enabled = false;
+            this.zielona.Location = new System.Drawing.Point(374, 19);
+            this.zielona.Name = "zielona";
+            this.zielona.Size = new System.Drawing.Size(120, 120);
+            this.zielona.TabIndex = 10;
+            this.zielona.UseVisualStyleBackColor = true;
+            this.zielona.Click += new System.EventHandler(this.zielona_Click);
+            // 
+            // rozowa
+            // 
+            this.rozowa.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("rozowa.BackgroundImage")));
+            this.rozowa.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.rozowa.Enabled = false;
+            this.rozowa.Location = new System.Drawing.Point(374, 166);
+            this.rozowa.Name = "rozowa";
+            this.rozowa.Size = new System.Drawing.Size(120, 120);
+            this.rozowa.TabIndex = 9;
+            this.rozowa.UseVisualStyleBackColor = true;
+            this.rozowa.Click += new System.EventHandler(this.rozowa_Click);
+            // 
+            // niebieska
+            // 
+            this.niebieska.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("niebieska.BackgroundImage")));
+            this.niebieska.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.niebieska.Enabled = false;
+            this.niebieska.Location = new System.Drawing.Point(229, 166);
+            this.niebieska.Name = "niebieska";
+            this.niebieska.Size = new System.Drawing.Size(120, 120);
+            this.niebieska.TabIndex = 8;
+            this.niebieska.UseVisualStyleBackColor = true;
+            this.niebieska.Click += new System.EventHandler(this.niebieska_Click);
+            // 
+            // brazowa
+            // 
+            this.brazowa.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("brazowa.BackgroundImage")));
+            this.brazowa.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.brazowa.Enabled = false;
+            this.brazowa.Location = new System.Drawing.Point(82, 166);
+            this.brazowa.Name = "brazowa";
+            this.brazowa.Size = new System.Drawing.Size(120, 120);
+            this.brazowa.TabIndex = 7;
+            this.brazowa.UseVisualStyleBackColor = true;
+            this.brazowa.Click += new System.EventHandler(this.brazowa_Click);
+            // 
+            // zolta
+            // 
+            this.zolta.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("zolta.BackgroundImage")));
+            this.zolta.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.zolta.Enabled = false;
+            this.zolta.Location = new System.Drawing.Point(226, 19);
+            this.zolta.Name = "zolta";
+            this.zolta.Size = new System.Drawing.Size(120, 120);
+            this.zolta.TabIndex = 6;
+            this.zolta.UseVisualStyleBackColor = true;
+            this.zolta.Click += new System.EventHandler(this.zolta_Click);
             // 
             // newGame
             // 
@@ -587,8 +859,8 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(586, 568);
-            this.Controls.Add(this.bileView);
             this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.bileView);
             this.Controls.Add(this.PanelKonc);
             this.Controls.Add(this.newGame);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -601,8 +873,17 @@
             ((System.ComponentModel.ISupportInitialize)(this.wskaznik2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.wskaznik1)).EndInit();
             this.bileView.ResumeLayout(false);
-            this.bileView.PerformLayout();
             this.PozostaleGB.ResumeLayout(false);
+            this.WieleCzerwonychGB.ResumeLayout(false);
+            this.WieleCzerwonychGB.PerformLayout();
+            this.WolnaBilaGB.ResumeLayout(false);
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox2.ResumeLayout(false);
+            this.FaulBile.ResumeLayout(false);
+            this.FaulZa7.ResumeLayout(false);
+            this.FaulZa6.ResumeLayout(false);
+            this.FaulZa5.ResumeLayout(false);
+            this.FaulZa4.ResumeLayout(false);
             this.newGame.ResumeLayout(false);
             this.PanelKonc.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -637,25 +918,43 @@
         private System.Windows.Forms.Button NowaGra;
         private System.Windows.Forms.Button pudlo;
         private System.Windows.Forms.Button Reszta;
-        private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.GroupBox PanelKonc;
         private System.Windows.Forms.Button koniecgry;
         private System.Windows.Forms.Button cd;
         private System.Windows.Forms.GroupBox PozostaleGB;
         private System.Windows.Forms.Button Reszta2;
+        private System.Windows.Forms.Button PoddMecz;
+        private System.Windows.Forms.Button PoddFrame;
+        private System.Windows.Forms.GroupBox FaulBile;
+        private System.Windows.Forms.Button WieleCzerwButton;
+        private System.Windows.Forms.Button WolnBilaButton;
+        private System.Windows.Forms.Button FaulButton;
+        private System.Windows.Forms.GroupBox FaulZa7;
+        private System.Windows.Forms.GroupBox FaulZa6;
+        private System.Windows.Forms.GroupBox FaulZa5;
+        private System.Windows.Forms.GroupBox FaulZa4;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button button7;
+        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.GroupBox WolnaBilaGB;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.Button CzarnaWB;
+        private System.Windows.Forms.Button RozowaWB;
+        private System.Windows.Forms.Button NiebieskaWB;
+        private System.Windows.Forms.Button BrazowaWB;
+        private System.Windows.Forms.Button ZielonaWB;
+        private System.Windows.Forms.Button ZoltaWB;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.Button CzerwonaWB;
+        private System.Windows.Forms.GroupBox WieleCzerwonychGB;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.Button WCAkceptuj;
+        private System.Windows.Forms.Button WCAnuluj;
     }
 }
 

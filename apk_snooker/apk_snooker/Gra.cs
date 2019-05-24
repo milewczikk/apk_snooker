@@ -16,6 +16,7 @@ namespace apk_snooker
         private int punktyGracza2;
         private int aktualnyGracz;
         private int rozpoczynaGracz;
+        private int poddajframe;
         private int bce = 15; //bile czerwone
         private int bzo = 7; //bila żółta
         private int bzi = 7; //bila zielona
@@ -27,6 +28,8 @@ namespace apk_snooker
         private int break2 = 0;
         private int frame1 = 0;
         private int frame2 = 0;
+        Boolean faul1;
+        Boolean faul2;
         Boolean koniecframe;
         Boolean koniecmecz;
         public Gra()
@@ -39,7 +42,6 @@ namespace apk_snooker
             wynikGracza2 = 0;
             punktyGracza1 = 0;
             punktyGracza2 = 0;
-            
         }
 
         public Gracz Gracz1 { get => gracz1; set => gracz1 = value; }
@@ -53,6 +55,7 @@ namespace apk_snooker
         public int AktualnyGracz1 { get => aktualnyGracz; set => aktualnyGracz = value; }
         public int PunktyGracza1 { get => punktyGracza1; set => punktyGracza1 = value; }
         public int PunktyGracza2 { get => punktyGracza2; set => punktyGracza2 = value; }
+        public int Poddajframe { get => poddajframe; set => poddajframe = value; }
         public int Bce { get => bce; set => bce = value; }
         public int Bzo { get => bzo; set => bzo = value; }
         public int Bzi { get => bzi; set => bzi = value; }
@@ -64,6 +67,8 @@ namespace apk_snooker
         public int Break2 { get => break2; set => break2 = value; }
         public int Frame1 { get => frame1; set => frame1 = value; }
         public int Frame2 { get => frame2; set => frame2 = value; }
+        public bool Faul1 { get => faul1; set => faul1 = value; }
+        public bool Faul2 { get => faul2; set => faul2 = value; }
 
         public void nowaGra(String pseudonim1, String pseudonim2, int rozpoczynaGracz)
         {
@@ -73,6 +78,8 @@ namespace apk_snooker
             this.rozpoczynaGracz = rozpoczynaGracz;
             Koniecframe = false;
             Koniecmecz = false;
+            faul1 = false;
+            faul2 = false;
         }
         public void pudlo()
         {
@@ -95,6 +102,25 @@ namespace apk_snooker
             {
                 RozpoczynaGracz = 1;
             }
+        }
+        public void PoddajFrame()
+        {
+            if(aktualnyGracz == 1)
+            {
+                AktualnyGracz = 2;
+            }
+            else
+            {
+                aktualnyGracz = 1;
+            }
+            bce = 0;
+            bzo = 0;
+            bzi = 0;
+            bbr = 0;
+            bni = 0;
+            bro = 0;
+            bcz = 0;
+            koniecframe = CzyKtosWygrywaFrame();
         }
         public void wbitaCzerwona()
         {
@@ -186,7 +212,7 @@ namespace apk_snooker
         }
         public void wbitaBrazowa()
         {
-            if (AktualnyGracz == 1 && bzi >= 4)
+            if (AktualnyGracz == 1 && bbr >= 4)
             {
                 if (bce > 0)
                 {
@@ -203,7 +229,7 @@ namespace apk_snooker
                     bcz -= 1;
                 }
             }
-            if (AktualnyGracz == 2 && bzi >= 4)
+            if (AktualnyGracz == 2 && bbr >= 4)
             {
                 if (bce > 0)
                 {
@@ -223,7 +249,7 @@ namespace apk_snooker
         }
         public void wbitaNiebieska()
         {
-            if (AktualnyGracz == 1 && bzi >= 3)
+            if (AktualnyGracz == 1 && bni >= 3)
             {
                 if (bce > 0)
                 {
@@ -240,7 +266,7 @@ namespace apk_snooker
                     bcz -= 1;
                 }
             }
-            if (AktualnyGracz == 2 && bzi >= 3)
+            if (AktualnyGracz == 2 && bni >= 3)
             {
                 if (bce > 0)
                 {
@@ -260,7 +286,7 @@ namespace apk_snooker
         }
         public void wbitaRozowa()
         {
-            if (AktualnyGracz == 1 && bzi >= 2)
+            if (AktualnyGracz == 1 && bro >= 2)
             {
                 if (bce > 0)
                 {
@@ -277,7 +303,7 @@ namespace apk_snooker
                     bcz -= 1;
                 }
             }
-            if (AktualnyGracz == 2 && bzi >= 2)
+            if (AktualnyGracz == 2 && bro >= 2)
             {
                 if (bce > 0)
                 {
@@ -297,7 +323,7 @@ namespace apk_snooker
         }
         public void wbitaCzarna()
         {
-            if (AktualnyGracz == 1 && bzi >= 1)
+            if (AktualnyGracz == 1 && bcz >= 1)
             {
                 if (bce > 0)
                 {
@@ -314,7 +340,7 @@ namespace apk_snooker
                     bcz -= 1;
                 }
             }
-            if (AktualnyGracz == 2 && bzi >= 1)
+            if (AktualnyGracz == 2 && bcz >= 1)
             {
                 if (bce > 0)
                 {
@@ -334,6 +360,63 @@ namespace apk_snooker
             koniecframe = CzyKtosWygrywaFrame();
             Koniecmecz = CzyKtosWygrywaMecz();
         }
+        public void Faulza4()
+        {
+            if (aktualnyGracz == 1)
+            {
+                punktyGracza2 += 4;
+                Faul1 = CzyKtosSfaulowal();
+            }
+            else
+            {
+                punktyGracza1 += 4;
+                Faul2 = CzyKtosSfaulowal();
+            }
+        }
+        public void Faulza5()
+        {
+            if (aktualnyGracz == 1)
+            {
+                punktyGracza2 += 5;
+                Faul1 = CzyKtosSfaulowal();
+            }
+            else
+            {
+                punktyGracza1 += 5;
+                Faul2 = CzyKtosSfaulowal();
+            }
+        }
+        public void Faulza6()
+        {
+            if (aktualnyGracz == 1)
+            {
+                punktyGracza2 += 6;
+                Faul1 = CzyKtosSfaulowal();
+            }
+            else
+            {
+                punktyGracza1 += 6;
+                Faul2 = CzyKtosSfaulowal();
+            }
+        }
+        public void Faulza7()
+        {
+            if (aktualnyGracz == 1)
+            {
+                punktyGracza2 += 7;
+                faul1 = CzyKtosSfaulowal();
+            }
+            else
+            {
+                punktyGracza1 += 7;
+                faul2 = CzyKtosSfaulowal();
+            }
+            
+        }
+        public Boolean CzyKtosSfaulowal()
+        {
+            return true;
+        }
         public Boolean CzyKtosWygrywaFrame()
         {
             if (bce <= 0 && bzo <= 0 && bzi <= 0 && bbr <= 0 && bni <= 0 && bro <= 0 && bcz <= 0)
@@ -344,11 +427,7 @@ namespace apk_snooker
         }
         public Boolean CzyKtosWygrywaMecz()
         {
-            if (bce <= 0 && bzo <= 0 && bzi <= 0 && bbr <= 0 && bni <= 0 && bro <= 0 && bcz <= 0)
-            {
-                return true;
-            }
-            return false;
+            return true;
         }
     }
 }

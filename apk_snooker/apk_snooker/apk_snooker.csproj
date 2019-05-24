@@ -54,7 +54,6 @@
     </Compile>
     <Compile Include="Gra.cs" />
     <Compile Include="Gracz.cs" />
-    <Compile Include="Ostatnie27.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
@@ -124,6 +123,27 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\bila żółta.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bila brązowa 90x90.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bila czarna 90x90.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bila różowa 90x90.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bila niebieska 90x90.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bila zielona 90x90.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bila żółta 90x90.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bila czerwona 90x90.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
