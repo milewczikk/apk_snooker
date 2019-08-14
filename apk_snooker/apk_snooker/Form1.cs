@@ -78,6 +78,9 @@ namespace apk_snooker
             FaulBile.Visible = false;
             WolnaBilaGB.Visible = false;
             WieleCzerwonychGB.Visible = false;
+            FaulButton.Visible = true;
+            WieleCzerwButton.Visible = true;
+            WolnBilaButton.Visible = true;
             if (poprzedniaczerwona == true)
             {
                 czerwona.Enabled = true;
@@ -220,21 +223,21 @@ namespace apk_snooker
         }
         private void CzyKoniecFrame()
         {
-            if (aktualnaGra.Koniecframe)
+            if (aktualnaGra.CzyKtosWygrywaFrame())
             {
                 if (aktualnaGra.AktualnyGracz == 2)
                 {
                     MessageBox.Show("Frame wygrywa " + aktualnaGra.Gracz2.Pseudonim);
-                    aktualnaGra.Frame2 += 1;
+                    aktualnaGra.WynikGracza2 += 1;
                 }
                 if (aktualnaGra.AktualnyGracz == 1)
                 {
                     MessageBox.Show("Frame wygrywa " + aktualnaGra.Gracz1.Pseudonim);
-                    aktualnaGra.Frame1 += 1;
+                    aktualnaGra.WynikGracza1 += 1;
                 }
                 PanelKoncowy();
-                wyncal1.Text = aktualnaGra.Frame1.ToString();
-                wyncal2.Text = aktualnaGra.Frame2.ToString();
+                wyncal1.Text = aktualnaGra.WynikGracza1.ToString();
+                wyncal2.Text = aktualnaGra.WynikGracza2.ToString();
             }
         }
         private void WolnaBila()
@@ -259,6 +262,9 @@ namespace apk_snooker
         private void listaczerwonych()
         {
             WieleCzerwonychGB.Visible = true;
+            FaulButton.Visible = false;
+            WieleCzerwButton.Visible = false;
+            WolnBilaButton.Visible = false;
             listBox1.BeginUpdate();
             for (int x = 1; x <= aktualnaGra.Bce; x++)
             {
@@ -584,7 +590,7 @@ namespace apk_snooker
         private void pudlo_Click(object sender, EventArgs e)
         {
             aktualnaGra.pudlo();
-            if (!aktualnaGra.Koniecframe)
+            if (!aktualnaGra.CzyKtosWygrywaFrame())
             {
                 if (aktualnaGra.AktualnyGracz == 2)
                 {
@@ -832,19 +838,22 @@ namespace apk_snooker
                 MessageBox.Show("Grę wygrywa " + aktualnaGra.Gracz1.Pseudonim);
                 Application.Exit();
             }
-            if (aktualnaGra.WynikGracza2 > aktualnaGra.WynikGracza1)
+            if (aktualnaGra.WynikGracza1 < aktualnaGra.WynikGracza2)
             {
                 MessageBox.Show("Grę wygrywa " + aktualnaGra.Gracz2.Pseudonim);
                 Application.Exit();
             }
             else
             {
-                MessageBox.Show("Regulamin snookera nie zezwala remisów");
+                MessageBox.Show("Regulamin snookera nie zezwala na remis");
             }
         }
         private void Reszta_Click(object sender, EventArgs e)
         {
             PozostaleGB.Visible = true;
+            FaulBile.Visible = false;
+            WolnaBilaGB.Visible = false;
+            WieleCzerwonychGB.Visible = false;
             if (czerwona.Enabled == true)
             {
                 poprzedniaczerwona = true;
@@ -889,6 +898,9 @@ namespace apk_snooker
         private void FaulButton_Click(object sender, EventArgs e)
         {
             FaulBile.Visible = true;
+            FaulButton.Visible = false;
+            WieleCzerwButton.Visible = false;
+            WolnBilaButton.Visible = false;
         }
         private void FaulZa4_MouseCaptureChanged(object sender, EventArgs e)
         {
@@ -923,10 +935,16 @@ namespace apk_snooker
             if (aktualnaGra.AktualnyGracz == 1 && aktualnaGra.Faul2 == true)
             {
                 WolnaBilaGB.Visible = true;
+                FaulButton.Visible = false;
+                WieleCzerwButton.Visible = false;
+                WolnBilaButton.Visible = false;
             }
             else if (aktualnaGra.AktualnyGracz == 2 && aktualnaGra.Faul1 == true)
             {
                 WolnaBilaGB.Visible = true;
+                FaulButton.Visible = false;
+                WieleCzerwButton.Visible = false;
+                WolnBilaButton.Visible = false;
             }
             else if (aktualnaGra.AktualnyGracz == 1 && aktualnaGra.Faul1 == true)
             {

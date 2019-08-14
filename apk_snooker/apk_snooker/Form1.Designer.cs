@@ -48,6 +48,21 @@
             this.PoddMecz = new System.Windows.Forms.Button();
             this.PoddFrame = new System.Windows.Forms.Button();
             this.Reszta2 = new System.Windows.Forms.Button();
+            this.WieleCzerwButton = new System.Windows.Forms.Button();
+            this.WolnBilaButton = new System.Windows.Forms.Button();
+            this.FaulButton = new System.Windows.Forms.Button();
+            this.FaulBile = new System.Windows.Forms.GroupBox();
+            this.FaulZa7 = new System.Windows.Forms.GroupBox();
+            this.button7 = new System.Windows.Forms.Button();
+            this.FaulZa6 = new System.Windows.Forms.GroupBox();
+            this.button6 = new System.Windows.Forms.Button();
+            this.FaulZa5 = new System.Windows.Forms.GroupBox();
+            this.button5 = new System.Windows.Forms.Button();
+            this.FaulZa4 = new System.Windows.Forms.GroupBox();
+            this.button4 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.WieleCzerwonychGB = new System.Windows.Forms.GroupBox();
             this.WCAkceptuj = new System.Windows.Forms.Button();
             this.WCAnuluj = new System.Windows.Forms.Button();
@@ -63,21 +78,6 @@
             this.ZoltaWB = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.CzerwonaWB = new System.Windows.Forms.Button();
-            this.FaulBile = new System.Windows.Forms.GroupBox();
-            this.FaulZa7 = new System.Windows.Forms.GroupBox();
-            this.button7 = new System.Windows.Forms.Button();
-            this.FaulZa6 = new System.Windows.Forms.GroupBox();
-            this.button6 = new System.Windows.Forms.Button();
-            this.FaulZa5 = new System.Windows.Forms.GroupBox();
-            this.button5 = new System.Windows.Forms.Button();
-            this.FaulZa4 = new System.Windows.Forms.GroupBox();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.WieleCzerwButton = new System.Windows.Forms.Button();
-            this.WolnBilaButton = new System.Windows.Forms.Button();
-            this.FaulButton = new System.Windows.Forms.Button();
             this.Reszta = new System.Windows.Forms.Button();
             this.czerwona = new System.Windows.Forms.Button();
             this.pudlo = new System.Windows.Forms.Button();
@@ -98,15 +98,15 @@
             ((System.ComponentModel.ISupportInitialize)(this.wskaznik1)).BeginInit();
             this.bileView.SuspendLayout();
             this.PozostaleGB.SuspendLayout();
-            this.WieleCzerwonychGB.SuspendLayout();
-            this.WolnaBilaGB.SuspendLayout();
-            this.groupBox3.SuspendLayout();
-            this.groupBox2.SuspendLayout();
             this.FaulBile.SuspendLayout();
             this.FaulZa7.SuspendLayout();
             this.FaulZa6.SuspendLayout();
             this.FaulZa5.SuspendLayout();
             this.FaulZa4.SuspendLayout();
+            this.WieleCzerwonychGB.SuspendLayout();
+            this.WolnaBilaGB.SuspendLayout();
+            this.groupBox3.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             this.newGame.SuspendLayout();
             this.PanelKonc.SuspendLayout();
             this.SuspendLayout();
@@ -283,12 +283,12 @@
             this.PozostaleGB.Controls.Add(this.PoddMecz);
             this.PozostaleGB.Controls.Add(this.PoddFrame);
             this.PozostaleGB.Controls.Add(this.Reszta2);
-            this.PozostaleGB.Controls.Add(this.WieleCzerwonychGB);
-            this.PozostaleGB.Controls.Add(this.WolnaBilaGB);
-            this.PozostaleGB.Controls.Add(this.FaulBile);
             this.PozostaleGB.Controls.Add(this.WieleCzerwButton);
             this.PozostaleGB.Controls.Add(this.WolnBilaButton);
             this.PozostaleGB.Controls.Add(this.FaulButton);
+            this.PozostaleGB.Controls.Add(this.FaulBile);
+            this.PozostaleGB.Controls.Add(this.WieleCzerwonychGB);
+            this.PozostaleGB.Controls.Add(this.WolnaBilaGB);
             this.PozostaleGB.Location = new System.Drawing.Point(0, 73);
             this.PozostaleGB.Name = "PozostaleGB";
             this.PozostaleGB.Size = new System.Drawing.Size(586, 407);
@@ -334,6 +334,186 @@
             this.Reszta2.Text = "WIĘCEJ";
             this.Reszta2.UseVisualStyleBackColor = false;
             this.Reszta2.Click += new System.EventHandler(this.Reszta2_Click);
+            // 
+            // WieleCzerwButton
+            // 
+            this.WieleCzerwButton.BackColor = System.Drawing.Color.YellowGreen;
+            this.WieleCzerwButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.WieleCzerwButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.WieleCzerwButton.Location = new System.Drawing.Point(209, 199);
+            this.WieleCzerwButton.Name = "WieleCzerwButton";
+            this.WieleCzerwButton.Size = new System.Drawing.Size(159, 120);
+            this.WieleCzerwButton.TabIndex = 17;
+            this.WieleCzerwButton.Text = "Wiele czerwonych";
+            this.WieleCzerwButton.UseVisualStyleBackColor = false;
+            this.WieleCzerwButton.Click += new System.EventHandler(this.WieleCzerwButton_Click);
+            // 
+            // WolnBilaButton
+            // 
+            this.WolnBilaButton.BackColor = System.Drawing.Color.YellowGreen;
+            this.WolnBilaButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.WolnBilaButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.WolnBilaButton.Location = new System.Drawing.Point(355, 53);
+            this.WolnBilaButton.Name = "WolnBilaButton";
+            this.WolnBilaButton.Size = new System.Drawing.Size(159, 120);
+            this.WolnBilaButton.TabIndex = 16;
+            this.WolnBilaButton.Text = "Wbicie wolnej bili";
+            this.WolnBilaButton.UseVisualStyleBackColor = false;
+            this.WolnBilaButton.Click += new System.EventHandler(this.WolnBilaButton_Click);
+            // 
+            // FaulButton
+            // 
+            this.FaulButton.BackColor = System.Drawing.Color.YellowGreen;
+            this.FaulButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.FaulButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.FaulButton.Location = new System.Drawing.Point(64, 51);
+            this.FaulButton.Name = "FaulButton";
+            this.FaulButton.Size = new System.Drawing.Size(159, 120);
+            this.FaulButton.TabIndex = 15;
+            this.FaulButton.Text = "Faul";
+            this.FaulButton.UseVisualStyleBackColor = false;
+            this.FaulButton.Click += new System.EventHandler(this.FaulButton_Click);
+            // 
+            // FaulBile
+            // 
+            this.FaulBile.Controls.Add(this.FaulZa7);
+            this.FaulBile.Controls.Add(this.FaulZa6);
+            this.FaulBile.Controls.Add(this.FaulZa5);
+            this.FaulBile.Controls.Add(this.FaulZa4);
+            this.FaulBile.Location = new System.Drawing.Point(0, 19);
+            this.FaulBile.Name = "FaulBile";
+            this.FaulBile.Size = new System.Drawing.Size(586, 352);
+            this.FaulBile.TabIndex = 18;
+            this.FaulBile.TabStop = false;
+            this.FaulBile.Visible = false;
+            // 
+            // FaulZa7
+            // 
+            this.FaulZa7.Controls.Add(this.button7);
+            this.FaulZa7.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.FaulZa7.Location = new System.Drawing.Point(398, 180);
+            this.FaulZa7.Name = "FaulZa7";
+            this.FaulZa7.Size = new System.Drawing.Size(182, 158);
+            this.FaulZa7.TabIndex = 3;
+            this.FaulZa7.TabStop = false;
+            this.FaulZa7.Text = "Faul za 7 punktów";
+            this.FaulZa7.MouseCaptureChanged += new System.EventHandler(this.FaulZa7_MouseCaptureChanged);
+            // 
+            // button7
+            // 
+            this.button7.BackgroundImage = global::apk_snooker.Properties.Resources.bila_czarna;
+            this.button7.Enabled = false;
+            this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button7.Location = new System.Drawing.Point(31, 23);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(120, 120);
+            this.button7.TabIndex = 6;
+            this.button7.UseVisualStyleBackColor = true;
+            // 
+            // FaulZa6
+            // 
+            this.FaulZa6.Controls.Add(this.button6);
+            this.FaulZa6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.FaulZa6.Location = new System.Drawing.Point(205, 180);
+            this.FaulZa6.Name = "FaulZa6";
+            this.FaulZa6.Size = new System.Drawing.Size(182, 159);
+            this.FaulZa6.TabIndex = 2;
+            this.FaulZa6.TabStop = false;
+            this.FaulZa6.Text = "Faul za 6 punktów";
+            this.FaulZa6.MouseCaptureChanged += new System.EventHandler(this.FaulZa6_MouseCaptureChanged);
+            // 
+            // button6
+            // 
+            this.button6.BackgroundImage = global::apk_snooker.Properties.Resources.bila_różowa;
+            this.button6.Enabled = false;
+            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button6.Location = new System.Drawing.Point(34, 23);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(120, 120);
+            this.button6.TabIndex = 5;
+            this.button6.UseVisualStyleBackColor = true;
+            // 
+            // FaulZa5
+            // 
+            this.FaulZa5.Controls.Add(this.button5);
+            this.FaulZa5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.FaulZa5.Location = new System.Drawing.Point(6, 180);
+            this.FaulZa5.Name = "FaulZa5";
+            this.FaulZa5.Size = new System.Drawing.Size(182, 158);
+            this.FaulZa5.TabIndex = 1;
+            this.FaulZa5.TabStop = false;
+            this.FaulZa5.Text = "Faul za 5 punktów";
+            this.FaulZa5.MouseCaptureChanged += new System.EventHandler(this.FaulZa5_MouseCaptureChanged);
+            // 
+            // button5
+            // 
+            this.button5.BackgroundImage = global::apk_snooker.Properties.Resources.bila_niebieska;
+            this.button5.Enabled = false;
+            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button5.Location = new System.Drawing.Point(33, 23);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(120, 120);
+            this.button5.TabIndex = 4;
+            this.button5.UseVisualStyleBackColor = true;
+            // 
+            // FaulZa4
+            // 
+            this.FaulZa4.Controls.Add(this.button4);
+            this.FaulZa4.Controls.Add(this.button3);
+            this.FaulZa4.Controls.Add(this.button2);
+            this.FaulZa4.Controls.Add(this.button1);
+            this.FaulZa4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.FaulZa4.Location = new System.Drawing.Point(39, 19);
+            this.FaulZa4.Name = "FaulZa4";
+            this.FaulZa4.Size = new System.Drawing.Size(510, 155);
+            this.FaulZa4.TabIndex = 0;
+            this.FaulZa4.TabStop = false;
+            this.FaulZa4.Text = "Faul za 4 punkty";
+            this.FaulZa4.MouseCaptureChanged += new System.EventHandler(this.FaulZa4_MouseCaptureChanged);
+            // 
+            // button4
+            // 
+            this.button4.BackgroundImage = global::apk_snooker.Properties.Resources.bila_brązowa;
+            this.button4.Enabled = false;
+            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button4.Location = new System.Drawing.Point(384, 23);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(120, 120);
+            this.button4.TabIndex = 3;
+            this.button4.UseVisualStyleBackColor = true;
+            // 
+            // button3
+            // 
+            this.button3.BackgroundImage = global::apk_snooker.Properties.Resources.bila_zielona;
+            this.button3.Enabled = false;
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button3.Location = new System.Drawing.Point(258, 23);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(120, 120);
+            this.button3.TabIndex = 2;
+            this.button3.UseVisualStyleBackColor = true;
+            // 
+            // button2
+            // 
+            this.button2.BackgroundImage = global::apk_snooker.Properties.Resources.bila_żółta;
+            this.button2.Enabled = false;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button2.Location = new System.Drawing.Point(132, 23);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(120, 120);
+            this.button2.TabIndex = 1;
+            this.button2.UseVisualStyleBackColor = true;
+            // 
+            // button1
+            // 
+            this.button1.BackgroundImage = global::apk_snooker.Properties.Resources.bila_czerwona;
+            this.button1.Enabled = false;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button1.Location = new System.Drawing.Point(6, 23);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(120, 120);
+            this.button1.TabIndex = 0;
+            this.button1.UseVisualStyleBackColor = true;
             // 
             // WieleCzerwonychGB
             // 
@@ -505,186 +685,6 @@
             this.CzerwonaWB.Size = new System.Drawing.Size(90, 90);
             this.CzerwonaWB.TabIndex = 1;
             this.CzerwonaWB.UseVisualStyleBackColor = true;
-            // 
-            // FaulBile
-            // 
-            this.FaulBile.Controls.Add(this.FaulZa7);
-            this.FaulBile.Controls.Add(this.FaulZa6);
-            this.FaulBile.Controls.Add(this.FaulZa5);
-            this.FaulBile.Controls.Add(this.FaulZa4);
-            this.FaulBile.Location = new System.Drawing.Point(0, 19);
-            this.FaulBile.Name = "FaulBile";
-            this.FaulBile.Size = new System.Drawing.Size(586, 352);
-            this.FaulBile.TabIndex = 18;
-            this.FaulBile.TabStop = false;
-            this.FaulBile.Visible = false;
-            // 
-            // FaulZa7
-            // 
-            this.FaulZa7.Controls.Add(this.button7);
-            this.FaulZa7.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.FaulZa7.Location = new System.Drawing.Point(398, 180);
-            this.FaulZa7.Name = "FaulZa7";
-            this.FaulZa7.Size = new System.Drawing.Size(182, 158);
-            this.FaulZa7.TabIndex = 3;
-            this.FaulZa7.TabStop = false;
-            this.FaulZa7.Text = "Faul za 7 punktów";
-            this.FaulZa7.MouseCaptureChanged += new System.EventHandler(this.FaulZa7_MouseCaptureChanged);
-            // 
-            // button7
-            // 
-            this.button7.BackgroundImage = global::apk_snooker.Properties.Resources.bila_czarna;
-            this.button7.Enabled = false;
-            this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button7.Location = new System.Drawing.Point(31, 23);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(120, 120);
-            this.button7.TabIndex = 6;
-            this.button7.UseVisualStyleBackColor = true;
-            // 
-            // FaulZa6
-            // 
-            this.FaulZa6.Controls.Add(this.button6);
-            this.FaulZa6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.FaulZa6.Location = new System.Drawing.Point(205, 180);
-            this.FaulZa6.Name = "FaulZa6";
-            this.FaulZa6.Size = new System.Drawing.Size(182, 159);
-            this.FaulZa6.TabIndex = 2;
-            this.FaulZa6.TabStop = false;
-            this.FaulZa6.Text = "Faul za 6 punktów";
-            this.FaulZa6.MouseCaptureChanged += new System.EventHandler(this.FaulZa6_MouseCaptureChanged);
-            // 
-            // button6
-            // 
-            this.button6.BackgroundImage = global::apk_snooker.Properties.Resources.bila_różowa;
-            this.button6.Enabled = false;
-            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button6.Location = new System.Drawing.Point(34, 23);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(120, 120);
-            this.button6.TabIndex = 5;
-            this.button6.UseVisualStyleBackColor = true;
-            // 
-            // FaulZa5
-            // 
-            this.FaulZa5.Controls.Add(this.button5);
-            this.FaulZa5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.FaulZa5.Location = new System.Drawing.Point(6, 180);
-            this.FaulZa5.Name = "FaulZa5";
-            this.FaulZa5.Size = new System.Drawing.Size(182, 158);
-            this.FaulZa5.TabIndex = 1;
-            this.FaulZa5.TabStop = false;
-            this.FaulZa5.Text = "Faul za 5 punktów";
-            this.FaulZa5.MouseCaptureChanged += new System.EventHandler(this.FaulZa5_MouseCaptureChanged);
-            // 
-            // button5
-            // 
-            this.button5.BackgroundImage = global::apk_snooker.Properties.Resources.bila_niebieska;
-            this.button5.Enabled = false;
-            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button5.Location = new System.Drawing.Point(33, 23);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(120, 120);
-            this.button5.TabIndex = 4;
-            this.button5.UseVisualStyleBackColor = true;
-            // 
-            // FaulZa4
-            // 
-            this.FaulZa4.Controls.Add(this.button4);
-            this.FaulZa4.Controls.Add(this.button3);
-            this.FaulZa4.Controls.Add(this.button2);
-            this.FaulZa4.Controls.Add(this.button1);
-            this.FaulZa4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.FaulZa4.Location = new System.Drawing.Point(39, 19);
-            this.FaulZa4.Name = "FaulZa4";
-            this.FaulZa4.Size = new System.Drawing.Size(510, 155);
-            this.FaulZa4.TabIndex = 0;
-            this.FaulZa4.TabStop = false;
-            this.FaulZa4.Text = "Faul za 4 punkty";
-            this.FaulZa4.MouseCaptureChanged += new System.EventHandler(this.FaulZa4_MouseCaptureChanged);
-            // 
-            // button4
-            // 
-            this.button4.BackgroundImage = global::apk_snooker.Properties.Resources.bila_brązowa;
-            this.button4.Enabled = false;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button4.Location = new System.Drawing.Point(384, 23);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(120, 120);
-            this.button4.TabIndex = 3;
-            this.button4.UseVisualStyleBackColor = true;
-            // 
-            // button3
-            // 
-            this.button3.BackgroundImage = global::apk_snooker.Properties.Resources.bila_zielona;
-            this.button3.Enabled = false;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button3.Location = new System.Drawing.Point(258, 23);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(120, 120);
-            this.button3.TabIndex = 2;
-            this.button3.UseVisualStyleBackColor = true;
-            // 
-            // button2
-            // 
-            this.button2.BackgroundImage = global::apk_snooker.Properties.Resources.bila_żółta;
-            this.button2.Enabled = false;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button2.Location = new System.Drawing.Point(132, 23);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(120, 120);
-            this.button2.TabIndex = 1;
-            this.button2.UseVisualStyleBackColor = true;
-            // 
-            // button1
-            // 
-            this.button1.BackgroundImage = global::apk_snooker.Properties.Resources.bila_czerwona;
-            this.button1.Enabled = false;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button1.Location = new System.Drawing.Point(6, 23);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(120, 120);
-            this.button1.TabIndex = 0;
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // WieleCzerwButton
-            // 
-            this.WieleCzerwButton.BackColor = System.Drawing.Color.YellowGreen;
-            this.WieleCzerwButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.WieleCzerwButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.WieleCzerwButton.Location = new System.Drawing.Point(209, 199);
-            this.WieleCzerwButton.Name = "WieleCzerwButton";
-            this.WieleCzerwButton.Size = new System.Drawing.Size(159, 120);
-            this.WieleCzerwButton.TabIndex = 17;
-            this.WieleCzerwButton.Text = "Wiele czerwonych";
-            this.WieleCzerwButton.UseVisualStyleBackColor = false;
-            this.WieleCzerwButton.Click += new System.EventHandler(this.WieleCzerwButton_Click);
-            // 
-            // WolnBilaButton
-            // 
-            this.WolnBilaButton.BackColor = System.Drawing.Color.YellowGreen;
-            this.WolnBilaButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.WolnBilaButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.WolnBilaButton.Location = new System.Drawing.Point(355, 53);
-            this.WolnBilaButton.Name = "WolnBilaButton";
-            this.WolnBilaButton.Size = new System.Drawing.Size(159, 120);
-            this.WolnBilaButton.TabIndex = 16;
-            this.WolnBilaButton.Text = "Wbicie wolnej bili";
-            this.WolnBilaButton.UseVisualStyleBackColor = false;
-            this.WolnBilaButton.Click += new System.EventHandler(this.WolnBilaButton_Click);
-            // 
-            // FaulButton
-            // 
-            this.FaulButton.BackColor = System.Drawing.Color.YellowGreen;
-            this.FaulButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.FaulButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.FaulButton.Location = new System.Drawing.Point(64, 51);
-            this.FaulButton.Name = "FaulButton";
-            this.FaulButton.Size = new System.Drawing.Size(159, 120);
-            this.FaulButton.TabIndex = 15;
-            this.FaulButton.Text = "Faul";
-            this.FaulButton.UseVisualStyleBackColor = false;
-            this.FaulButton.Click += new System.EventHandler(this.FaulButton_Click);
             // 
             // Reszta
             // 
@@ -859,8 +859,8 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(586, 568);
-            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.bileView);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.PanelKonc);
             this.Controls.Add(this.newGame);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -874,16 +874,16 @@
             ((System.ComponentModel.ISupportInitialize)(this.wskaznik1)).EndInit();
             this.bileView.ResumeLayout(false);
             this.PozostaleGB.ResumeLayout(false);
-            this.WieleCzerwonychGB.ResumeLayout(false);
-            this.WieleCzerwonychGB.PerformLayout();
-            this.WolnaBilaGB.ResumeLayout(false);
-            this.groupBox3.ResumeLayout(false);
-            this.groupBox2.ResumeLayout(false);
             this.FaulBile.ResumeLayout(false);
             this.FaulZa7.ResumeLayout(false);
             this.FaulZa6.ResumeLayout(false);
             this.FaulZa5.ResumeLayout(false);
             this.FaulZa4.ResumeLayout(false);
+            this.WieleCzerwonychGB.ResumeLayout(false);
+            this.WieleCzerwonychGB.PerformLayout();
+            this.WolnaBilaGB.ResumeLayout(false);
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox2.ResumeLayout(false);
             this.newGame.ResumeLayout(false);
             this.PanelKonc.ResumeLayout(false);
             this.ResumeLayout(false);

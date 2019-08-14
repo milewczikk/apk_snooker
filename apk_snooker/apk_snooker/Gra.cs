@@ -26,8 +26,6 @@ namespace apk_snooker
         private int bcz = 7; //bila czarna
         private int break1 = 0;
         private int break2 = 0;
-        private int frame1 = 0;
-        private int frame2 = 0;
         Boolean faul1;
         Boolean faul2;
         Boolean koniecframe;
@@ -50,7 +48,6 @@ namespace apk_snooker
         public int WynikGracza2 { get => wynikGracza2; set => wynikGracza2 = value; }
         public int AktualnyGracz { get => aktualnyGracz; set => aktualnyGracz = value; }
         public int RozpoczynaGracz { get => rozpoczynaGracz; set => rozpoczynaGracz = value; }
-        public bool Koniecframe { get => koniecframe; set => koniecframe = value; }
         public bool Koniecmecz { get => koniecmecz; set => koniecmecz = value; }
         public int AktualnyGracz1 { get => aktualnyGracz; set => aktualnyGracz = value; }
         public int PunktyGracza1 { get => punktyGracza1; set => punktyGracza1 = value; }
@@ -65,8 +62,6 @@ namespace apk_snooker
         public int Bcz { get => bcz; set => bcz = value; }
         public int Break1 { get => break1; set => break1 = value; }
         public int Break2 { get => break2; set => break2 = value; }
-        public int Frame1 { get => frame1; set => frame1 = value; }
-        public int Frame2 { get => frame2; set => frame2 = value; }
         public bool Faul1 { get => faul1; set => faul1 = value; }
         public bool Faul2 { get => faul2; set => faul2 = value; }
 
@@ -76,7 +71,6 @@ namespace apk_snooker
             gracz2 = new Gracz(pseudonim2);
             AktualnyGracz1 = this.rozpoczynaGracz;
             this.rozpoczynaGracz = rozpoczynaGracz;
-            Koniecframe = false;
             Koniecmecz = false;
             faul1 = false;
             faul2 = false;
