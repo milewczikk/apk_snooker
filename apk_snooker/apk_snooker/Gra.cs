@@ -361,7 +361,7 @@ namespace apk_snooker
                 punktyGracza2 += 4;
                 Faul1 = CzyKtosSfaulowal();
             }
-            else
+            else if (aktualnyGracz == 2)
             {
                 punktyGracza1 += 4;
                 Faul2 = CzyKtosSfaulowal();
@@ -374,7 +374,7 @@ namespace apk_snooker
                 punktyGracza2 += 5;
                 Faul1 = CzyKtosSfaulowal();
             }
-            else
+            else if (aktualnyGracz == 2)
             {
                 punktyGracza1 += 5;
                 Faul2 = CzyKtosSfaulowal();
@@ -387,7 +387,7 @@ namespace apk_snooker
                 punktyGracza2 += 6;
                 Faul1 = CzyKtosSfaulowal();
             }
-            else
+            else if (aktualnyGracz == 2)
             {
                 punktyGracza1 += 6;
                 Faul2 = CzyKtosSfaulowal();
@@ -400,7 +400,7 @@ namespace apk_snooker
                 punktyGracza2 += 7;
                 faul1 = CzyKtosSfaulowal();
             }
-            else
+            else if (aktualnyGracz == 2)
             {
                 punktyGracza1 += 7;
                 faul2 = CzyKtosSfaulowal();

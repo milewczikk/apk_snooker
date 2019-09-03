@@ -286,9 +286,9 @@
             this.PozostaleGB.Controls.Add(this.WieleCzerwButton);
             this.PozostaleGB.Controls.Add(this.WolnBilaButton);
             this.PozostaleGB.Controls.Add(this.FaulButton);
+            this.PozostaleGB.Controls.Add(this.WolnaBilaGB);
             this.PozostaleGB.Controls.Add(this.FaulBile);
             this.PozostaleGB.Controls.Add(this.WieleCzerwonychGB);
-            this.PozostaleGB.Controls.Add(this.WolnaBilaGB);
             this.PozostaleGB.Location = new System.Drawing.Point(0, 73);
             this.PozostaleGB.Name = "PozostaleGB";
             this.PozostaleGB.Size = new System.Drawing.Size(586, 407);

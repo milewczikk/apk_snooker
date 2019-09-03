@@ -248,7 +248,7 @@ namespace apk_snooker
                 wbijkolor();
                 aktualnaGra.Faul2 = false;
             }
-            if (aktualnaGra.AktualnyGracz == 2 && aktualnaGra.Faul1 == true)
+            else if (aktualnaGra.AktualnyGracz == 2 && aktualnaGra.Faul1 == true)
             {
                 aktualnaGra.PunktyGracza2 += 1;
                 wbijkolor();
@@ -939,6 +939,10 @@ namespace apk_snooker
                 WieleCzerwButton.Visible = false;
                 WolnBilaButton.Visible = false;
             }
+            else if (aktualnaGra.AktualnyGracz == 1 && aktualnaGra.Faul1 == true)
+            {
+                MessageBox.Show("Musi to być tura przeciwnika");
+            }
             else if (aktualnaGra.AktualnyGracz == 2 && aktualnaGra.Faul1 == true)
             {
                 WolnaBilaGB.Visible = true;
@@ -946,15 +950,11 @@ namespace apk_snooker
                 WieleCzerwButton.Visible = false;
                 WolnBilaButton.Visible = false;
             }
-            else if (aktualnaGra.AktualnyGracz == 1 && aktualnaGra.Faul1 == true)
-            {
-                MessageBox.Show("Musi to być tura przeciwnika");
-            }
             else if (aktualnaGra.AktualnyGracz == 2 && aktualnaGra.Faul2 == true)
             {
                 MessageBox.Show("Musi to być tura przeciwnika");
             }
-            else
+            else /*(aktualnaGra.Faul1 == false && aktualnaGra.Faul2 == false)*/
             {
                 MessageBox.Show("Wpierw musi nastąpić faul");
             }
