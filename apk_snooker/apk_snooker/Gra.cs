@@ -16,7 +16,7 @@ namespace apk_snooker
         private int punktyGracza2;
         private int aktualnyGracz;
         private int rozpoczynaGracz;
-        private int poddajframe;
+        //private int poddajframe;
         private int bce = 15; //bile czerwone
         private int bzo = 7; //bila żółta
         private int bzi = 7; //bila zielona
@@ -26,6 +26,8 @@ namespace apk_snooker
         private int bcz = 7; //bila czarna
         private int break1 = 0;
         private int break2 = 0;
+        private int hbreak1 = 0; //najwyższy break gracza 1
+        private int hbreak2 = 0; //najwyższy break gracza 2
         Boolean faul1;
         Boolean faul2;
         Boolean koniecframe;
@@ -52,7 +54,7 @@ namespace apk_snooker
         public int AktualnyGracz1 { get => aktualnyGracz; set => aktualnyGracz = value; }
         public int PunktyGracza1 { get => punktyGracza1; set => punktyGracza1 = value; }
         public int PunktyGracza2 { get => punktyGracza2; set => punktyGracza2 = value; }
-        public int Poddajframe { get => poddajframe; set => poddajframe = value; }
+        //public int Poddajframe { get => poddajframe; set => poddajframe = value; }
         public int Bce { get => bce; set => bce = value; }
         public int Bzo { get => bzo; set => bzo = value; }
         public int Bzi { get => bzi; set => bzi = value; }
@@ -79,10 +81,28 @@ namespace apk_snooker
         {
             if (AktualnyGracz == 1)
             {
+                if (hbreak1 < break1)
+                {
+                    hbreak1 = break1;
+                    break1 = 0;
+                }
+                else
+                {
+                    break1 = 0;
+                }
                 AktualnyGracz = 2;
             }
             else if (AktualnyGracz == 2)
             {
+                if (hbreak2 < break2)
+                {
+                    hbreak2 = break2;
+                    break2 = 0;
+                }
+                else
+                {
+                    break2 = 0;
+                }
                 AktualnyGracz = 1;
             }
         }
@@ -122,11 +142,13 @@ namespace apk_snooker
             {
                 bce -= 1;
                 punktyGracza1 += 1;
+                break1 += 1;
             }
             else if (AktualnyGracz == 2 && bce > 0)
             {
                 bce -= 1;
                 punktyGracza2 += 1;
+                break2 += 1;
             }
             koniecframe = CzyKtosWygrywaFrame();
         }
@@ -137,10 +159,12 @@ namespace apk_snooker
                 if (bce > 0)
                 {
                     punktyGracza1 += 2;
+                    break1 += 2;
                 }
                 else if (bce == 0)
                 {
                     punktyGracza1 += 2;
+                    break1 += 2;
                     bzo -= 1;
                     bzi -= 1;
                     bbr -= 1;
@@ -154,10 +178,12 @@ namespace apk_snooker
                 if (bce > 0)
                 {
                     punktyGracza2 += 2;
+                    break2 += 2;
                 }
                 else if (bce == 0)
                 {
                     punktyGracza2 += 2;
+                    break2 += 2;
                     bzo -= 1;
                     bzi -= 1;
                     bbr -= 1;
@@ -174,10 +200,12 @@ namespace apk_snooker
                 if (bce > 0)
                 {
                     punktyGracza1 += 3;
+                    break1 += 3;
                 }
                 else if (bce == 0)
                 {
                     punktyGracza1 += 3;
+                    break1 += 3;
                     bzo -= 1;
                     bzi -= 1;
                     bbr -= 1;
@@ -191,10 +219,12 @@ namespace apk_snooker
                 if (bce > 0)
                 {
                     punktyGracza2 += 3;
+                    break2 += 3;
                 }
                 else if (bce == 0)
                 {
                     punktyGracza2 += 3;
+                    break2 += 3;
                     bzo -= 1;
                     bzi -= 1;
                     bbr -= 1;
@@ -211,10 +241,12 @@ namespace apk_snooker
                 if (bce > 0)
                 {
                     punktyGracza1 += 4;
+                    break1 += 4;
                 }
                 else if (bce == 0)
                 {
                     punktyGracza1 += 4;
+                    break1 += 4;
                     bzo -= 1;
                     bzi -= 1;
                     bbr -= 1;
@@ -228,10 +260,12 @@ namespace apk_snooker
                 if (bce > 0)
                 {
                     punktyGracza2 += 4;
+                    break2 += 4;
                 }
                 else if (bce == 0)
                 {
                     punktyGracza2 += 4;
+                    break2 += 4;
                     bzo -= 1;
                     bzi -= 1;
                     bbr -= 1;
@@ -248,10 +282,12 @@ namespace apk_snooker
                 if (bce > 0)
                 {
                     punktyGracza1 += 5;
+                    break1 += 5;
                 }
                 else if (bce == 0)
                 {
                     punktyGracza1 += 5;
+                    break1 += 5;
                     bzo -= 1;
                     bzi -= 1;
                     bbr -= 1;
@@ -265,10 +301,12 @@ namespace apk_snooker
                 if (bce > 0)
                 {
                     punktyGracza2 += 5;
+                    break2 += 5;
                 }
                 else if (bce == 0)
                 {
                     punktyGracza2 += 5;
+                    break2 += 5;
                     bzo -= 1;
                     bzi -= 1;
                     bbr -= 1;
@@ -285,10 +323,12 @@ namespace apk_snooker
                 if (bce > 0)
                 {
                     punktyGracza1 += 6;
+                    break1 += 6;
                 }
                 else if (bce == 0)
                 {
                     punktyGracza1 += 6;
+                    break1 += 6;
                     bzo -= 1;
                     bzi -= 1;
                     bbr -= 1;
@@ -302,10 +342,12 @@ namespace apk_snooker
                 if (bce > 0)
                 {
                     punktyGracza2 += 6;
+                    break2 += 6;
                 }
                 else if (bce == 0)
                 {
                     punktyGracza2 += 6;
+                    break2 += 6;
                     bzo -= 1;
                     bzi -= 1;
                     bbr -= 1;
@@ -322,10 +364,12 @@ namespace apk_snooker
                 if (bce > 0)
                 {
                     punktyGracza1 += 7;
+                    break1 += 7;
                 }
                 else if (bce == 0)
                 {
                     punktyGracza1 += 7;
+                    break1 += 7;
                     bzo -= 1;
                     bzi -= 1;
                     bbr -= 1;
@@ -339,10 +383,12 @@ namespace apk_snooker
                 if (bce > 0)
                 {
                     punktyGracza2 += 7;
+                    break2 += 7;
                 }
                 else if (bce == 0)
                 {
                     punktyGracza2 += 7;
+                    break2 += 7;
                     bzo -= 1;
                     bzi -= 1;
                     bbr -= 1;

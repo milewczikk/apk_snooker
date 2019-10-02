@@ -26,7 +26,10 @@ namespace apk_snooker
             PanelKonc.BackColor = Color.FromArgb(62, 148, 0);
             PozostaleGB.BackColor = Color.FromArgb(62, 148, 0); //zminia kolor tła na kolor RGB
             nowaGra();
+            breakv1.Height = 0;
+            breakv2.Height = 0;
         }
+
         private void nowaGra()
         {
             bileView.Visible = false;
@@ -39,6 +42,7 @@ namespace apk_snooker
             rozowa.BackgroundImage = Properties.Resources.bila_różowa_cb;
             czarna.BackgroundImage = Properties.Resources.bila_czarna_cb;
         }
+
         public void Kontynuuj()
         {
             bileView.Visible = true;
@@ -72,6 +76,7 @@ namespace apk_snooker
                 wskaznik2.Visible = false;
             }
         }
+
         private void ResztaHide()
         {
             PozostaleGB.Visible = false;
@@ -100,6 +105,7 @@ namespace apk_snooker
             poprzedniazolta = false;
             poprzedniazielona = false;
         }
+
         private void wbijczerwona()
         {
             czerwona.BackgroundImage = Properties.Resources.bila_czerwona;
@@ -116,7 +122,16 @@ namespace apk_snooker
             rozowa.Enabled = false;
             czarna.BackgroundImage = Properties.Resources.bila_czarna_cb;
             czarna.Enabled = false;
+            if (aktualnaGra.Break1 >= 40)
+            {
+                this.timerbreak1.Enabled = true;
+            }
+            else if (aktualnaGra.Break2 >= 40)
+            {
+                this.timerbreak2.Enabled = true;
+            }
         }
+
         private void wbijkolor()
         {
             czerwona.BackgroundImage = Properties.Resources.bila_czerwona_cb;
@@ -133,7 +148,16 @@ namespace apk_snooker
             rozowa.Enabled = true;
             czarna.BackgroundImage = Properties.Resources.bila_czarna;
             czarna.Enabled = true;
+            if (aktualnaGra.Break1 >= 40)
+            {
+                this.timerbreak1.Enabled = true;
+            }
+            else if (aktualnaGra.Break2 >= 40)
+            {
+                this.timerbreak2.Enabled = true;
+            }
         }
+
         private void Ostatnia_Zolta()
         {
             czerwona.Enabled = false;
@@ -151,6 +175,7 @@ namespace apk_snooker
             czarna.Enabled = false;
             czarna.BackgroundImage = Properties.Resources.bila_czarna_cb;
         }
+
         private void Ostatnia_Zielona()
         {
             czerwona.Enabled = false;
@@ -164,6 +189,7 @@ namespace apk_snooker
             rozowa.Enabled = false;
             czarna.Enabled = false;
         }
+
         private void Ostatnia_Brazowa()
         {
             czerwona.Enabled = false;
@@ -177,6 +203,7 @@ namespace apk_snooker
             rozowa.Enabled = false;
             czarna.Enabled = false;
         }
+
         private void Ostatnia_Niebieska()
         {
             czerwona.Enabled = false;
@@ -190,6 +217,7 @@ namespace apk_snooker
             rozowa.Enabled = false;
             czarna.Enabled = false;
         }
+
         private void Ostatnia_Rozowa()
         {
             czerwona.Enabled = false;
@@ -203,6 +231,7 @@ namespace apk_snooker
             rozowa.BackgroundImage = Properties.Resources.bila_różowa;
             czarna.Enabled = false;
         }
+
         private void Ostatnia_Czarna()
         {
             czerwona.Enabled = false;
@@ -216,11 +245,13 @@ namespace apk_snooker
             czarna.Enabled = true;
             czarna.BackgroundImage = Properties.Resources.bila_czarna;
         }
+
         private void PanelKoncowy()
         {
             PanelKonc.Visible = true;
             bileView.Visible = false;
         }
+
         private void CzyKoniecFrame()
         {
             if (aktualnaGra.CzyKtosWygrywaFrame())
@@ -240,17 +271,20 @@ namespace apk_snooker
                 wyncal2.Text = aktualnaGra.WynikGracza2.ToString();
             }
         }
+
         private void WolnaBila()
         {
             if (aktualnaGra.AktualnyGracz == 1 && aktualnaGra.Faul2 == true)
             {
                 aktualnaGra.PunktyGracza1 += 1;
+                aktualnaGra.Break1 += 1;
                 wbijkolor();
                 aktualnaGra.Faul2 = false;
             }
             else if (aktualnaGra.AktualnyGracz == 2 && aktualnaGra.Faul1 == true)
             {
                 aktualnaGra.PunktyGracza2 += 1;
+                aktualnaGra.Break2 += 1;
                 wbijkolor();
                 aktualnaGra.Faul1 = false;
             }
@@ -259,6 +293,7 @@ namespace apk_snooker
                 MessageBox.Show("Musi to być tura przeciwnika");
             }
         }
+
         private void listaczerwonych()
         {
             WieleCzerwonychGB.Visible = true;
@@ -274,6 +309,7 @@ namespace apk_snooker
             }
             listBox1.EndUpdate();
         }
+
         private void WCAkceptujLista()
         {
             string wybrane = listBox1.SelectedItem.ToString(); //przypisuje do stringa wartość wybraną w listbox1
@@ -563,6 +599,7 @@ namespace apk_snooker
                 }
             }
         }
+
         private void NowaGra_Click(object sender, EventArgs e)
         {
             if (gracz1.Text != "" && gracz2.Text != "")
@@ -587,6 +624,7 @@ namespace apk_snooker
                 MessageBox.Show("Pola z nazwami graczy muszą być uzupełnione!");
             }
         }
+
         private void pudlo_Click(object sender, EventArgs e)
         {
             aktualnaGra.pudlo();
@@ -635,31 +673,39 @@ namespace apk_snooker
                     Ostatnia_Czarna();
                 }
             }
+            lbreak1.Text = "0";
+            lbreak2.Text = "0";
             CzyKoniecFrame();
         }
+
         private void czerwona_Click(object sender, EventArgs e)
         {
             aktualnaGra.wbitaCzerwona();
             if (aktualnaGra.AktualnyGracz == 1)
             {
                 wynpart1.Text = aktualnaGra.PunktyGracza1.ToString();
+                lbreak1.Text = aktualnaGra.Break1.ToString();
             }
             else
             {
                 wynpart2.Text = aktualnaGra.PunktyGracza2.ToString();
+                lbreak2.Text = aktualnaGra.Break2.ToString();
             }
             wbijkolor();
         }
+
         private void zolta_Click(object sender, EventArgs e)
         {
             aktualnaGra.wbitaZolta();
             if (aktualnaGra.AktualnyGracz == 1)
             {
                 wynpart1.Text = aktualnaGra.PunktyGracza1.ToString();
+                lbreak1.Text = aktualnaGra.Break1.ToString();
             }
             if (aktualnaGra.AktualnyGracz == 2)
             {
                 wynpart2.Text = aktualnaGra.PunktyGracza2.ToString();
+                lbreak2.Text = aktualnaGra.Break2.ToString();
             }
             if (aktualnaGra.Bzo >= 7)
             {
@@ -680,16 +726,19 @@ namespace apk_snooker
                 Ostatnia_Zielona();
             }
         }
+
         private void zielona_Click(object sender, EventArgs e)
         {
             aktualnaGra.wbitaZielona();
             if (aktualnaGra.AktualnyGracz == 1)
             {
                 wynpart1.Text = aktualnaGra.PunktyGracza1.ToString();
+                lbreak1.Text = aktualnaGra.Break1.ToString();
             }
             else
             {
                 wynpart2.Text = aktualnaGra.PunktyGracza2.ToString();
+                lbreak2.Text = aktualnaGra.Break2.ToString();
             }
             if (aktualnaGra.Bzi > 5)
             {
@@ -710,16 +759,19 @@ namespace apk_snooker
                 Ostatnia_Brazowa();
             }
         }
+
         private void brazowa_Click(object sender, EventArgs e)
         {
             aktualnaGra.wbitaBrazowa();
             if (aktualnaGra.AktualnyGracz == 1)
             {
                 wynpart1.Text = aktualnaGra.PunktyGracza1.ToString();
+                lbreak1.Text = aktualnaGra.Break1.ToString();
             }
             else
             {
                 wynpart2.Text = aktualnaGra.PunktyGracza2.ToString();
+                lbreak2.Text = aktualnaGra.Break2.ToString();
             }
             if (aktualnaGra.Bbr > 4)
             {
@@ -740,16 +792,19 @@ namespace apk_snooker
                 Ostatnia_Niebieska();
             }
         }
+
         private void niebieska_Click(object sender, EventArgs e)
         {
             aktualnaGra.wbitaNiebieska();
             if (aktualnaGra.AktualnyGracz == 1)
             {
                 wynpart1.Text = aktualnaGra.PunktyGracza1.ToString();
+                lbreak1.Text = aktualnaGra.Break1.ToString();
             }
             else
             {
                 wynpart2.Text = aktualnaGra.PunktyGracza2.ToString();
+                lbreak2.Text = aktualnaGra.Break2.ToString();
             }
             if (aktualnaGra.Bni > 3)
             {
@@ -770,16 +825,19 @@ namespace apk_snooker
                 Ostatnia_Rozowa();
             }
         }
+
         private void rozowa_Click(object sender, EventArgs e)
         {
             aktualnaGra.wbitaRozowa();
             if (aktualnaGra.AktualnyGracz == 1)
             {
                 wynpart1.Text = aktualnaGra.PunktyGracza1.ToString();
+                lbreak1.Text = aktualnaGra.Break1.ToString();
             }
             else
             {
                 wynpart2.Text = aktualnaGra.PunktyGracza2.ToString();
+                lbreak2.Text = aktualnaGra.Break2.ToString();
             }
             if (aktualnaGra.Bro > 2)
             {
@@ -800,16 +858,19 @@ namespace apk_snooker
                 Ostatnia_Czarna();
             }
         }
+
         private void czarna_Click(object sender, EventArgs e)
         {
             aktualnaGra.wbitaCzarna();
             if (aktualnaGra.AktualnyGracz == 1)
             {
                 wynpart1.Text = aktualnaGra.PunktyGracza1.ToString();
+                lbreak1.Text = aktualnaGra.Break1.ToString();
             }
             else
             {
                 wynpart2.Text = aktualnaGra.PunktyGracza2.ToString();
+                lbreak2.Text = aktualnaGra.Break2.ToString();
             }
             if (aktualnaGra.Bcz > 1)
             {
@@ -827,10 +888,12 @@ namespace apk_snooker
             }
             CzyKoniecFrame();
         }
+
         private void cd_Click_1(object sender, EventArgs e)
         {
             Kontynuuj();
         }
+
         private void koniecgry_Click(object sender, EventArgs e)
         {
             if (aktualnaGra.WynikGracza1 > aktualnaGra.WynikGracza2)
@@ -848,6 +911,7 @@ namespace apk_snooker
                 MessageBox.Show("Regulamin snookera nie zezwala na remis");
             }
         }
+
         private void Reszta_Click(object sender, EventArgs e)
         {
             PozostaleGB.Visible = true;
@@ -873,10 +937,12 @@ namespace apk_snooker
             zielona.Enabled = false;
             zielona.BackgroundImage = Properties.Resources.bila_zielona_cb;
         }
+
         private void Reszta2_Click(object sender, EventArgs e)
         {
             ResztaHide();
         }
+
         private void PoddMecz_Click(object sender, EventArgs e)
         {
             if (aktualnaGra.AktualnyGracz == 1)
@@ -890,11 +956,13 @@ namespace apk_snooker
                 Application.Exit();
             }
         }
+
         private void PoddFrame_Click(object sender, EventArgs e)
         {
             aktualnaGra.PoddajFrame();
             CzyKoniecFrame();
         }
+
         private void FaulButton_Click(object sender, EventArgs e)
         {
             FaulBile.Visible = true;
@@ -902,6 +970,7 @@ namespace apk_snooker
             WieleCzerwButton.Visible = false;
             WolnBilaButton.Visible = false;
         }
+
         private void FaulZa4_MouseCaptureChanged(object sender, EventArgs e)
         {
             aktualnaGra.Faulza4();
@@ -909,6 +978,7 @@ namespace apk_snooker
             wynpart1.Text = aktualnaGra.PunktyGracza1.ToString();
             wynpart2.Text = aktualnaGra.PunktyGracza2.ToString();
         }
+
         private void FaulZa5_MouseCaptureChanged(object sender, EventArgs e)
         {
             aktualnaGra.Faulza5();
@@ -916,6 +986,7 @@ namespace apk_snooker
             wynpart1.Text = aktualnaGra.PunktyGracza1.ToString();
             wynpart2.Text = aktualnaGra.PunktyGracza2.ToString();
         }
+
         private void FaulZa6_MouseCaptureChanged(object sender, EventArgs e)
         {
             aktualnaGra.Faulza6();
@@ -923,6 +994,7 @@ namespace apk_snooker
             wynpart1.Text = aktualnaGra.PunktyGracza1.ToString();
             wynpart2.Text = aktualnaGra.PunktyGracza2.ToString();
         }
+
         private void FaulZa7_MouseCaptureChanged(object sender, EventArgs e)
         {
             aktualnaGra.Faulza7();
@@ -930,6 +1002,7 @@ namespace apk_snooker
             wynpart1.Text = aktualnaGra.PunktyGracza1.ToString();
             wynpart2.Text = aktualnaGra.PunktyGracza2.ToString();
         }
+
         private void WolnBilaButton_Click(object sender, EventArgs e)
         {
             if (aktualnaGra.AktualnyGracz == 1 && aktualnaGra.Faul2 == true)
@@ -954,69 +1027,89 @@ namespace apk_snooker
             {
                 MessageBox.Show("Musi to być tura przeciwnika");
             }
-            else /*(aktualnaGra.Faul1 == false && aktualnaGra.Faul2 == false)*/
+            else
             {
                 MessageBox.Show("Wpierw musi nastąpić faul");
             }
         }
+
         private void ZoltaWB_Click(object sender, EventArgs e)
         {
             ResztaHide();
             WolnaBila();
             wynpart1.Text = aktualnaGra.PunktyGracza1.ToString();
+            lbreak1.Text = aktualnaGra.Break1.ToString();
             wynpart2.Text = aktualnaGra.PunktyGracza2.ToString();
+            lbreak2.Text = aktualnaGra.Break2.ToString();
             aktualnaGra.Faul1 = false;
             aktualnaGra.Faul2 = false;
         }
+
         private void ZielonaWB_Click(object sender, EventArgs e)
         {
             ResztaHide();
             WolnaBila();
             wynpart1.Text = aktualnaGra.PunktyGracza1.ToString();
+            lbreak1.Text = aktualnaGra.Break1.ToString();
             wynpart2.Text = aktualnaGra.PunktyGracza2.ToString();
+            lbreak2.Text = aktualnaGra.Break2.ToString();
             aktualnaGra.Faul1 = false;
             aktualnaGra.Faul2 = false;
         }
+
         private void BrazowaWB_Click(object sender, EventArgs e)
         {
             ResztaHide();
             WolnaBila();
             wynpart1.Text = aktualnaGra.PunktyGracza1.ToString();
+            lbreak1.Text = aktualnaGra.Break1.ToString();
             wynpart2.Text = aktualnaGra.PunktyGracza2.ToString();
+            lbreak2.Text = aktualnaGra.Break2.ToString();
             aktualnaGra.Faul1 = false;
             aktualnaGra.Faul2 = false;
         }
+
         private void NiebieskaWB_Click(object sender, EventArgs e)
         {
             ResztaHide();
             WolnaBila();
             wynpart1.Text = aktualnaGra.PunktyGracza1.ToString();
+            lbreak1.Text = aktualnaGra.Break1.ToString();
             wynpart2.Text = aktualnaGra.PunktyGracza2.ToString();
+            lbreak2.Text = aktualnaGra.Break2.ToString();
             aktualnaGra.Faul1 = false;
             aktualnaGra.Faul2 = false;
         }
+
         private void RozowaWB_Click(object sender, EventArgs e)
         {
             ResztaHide();
             WolnaBila();
             wynpart1.Text = aktualnaGra.PunktyGracza1.ToString();
+            lbreak1.Text = aktualnaGra.Break1.ToString();
             wynpart2.Text = aktualnaGra.PunktyGracza2.ToString();
+            lbreak2.Text = aktualnaGra.Break2.ToString();
             aktualnaGra.Faul1 = false;
             aktualnaGra.Faul2 = false;
         }
+
         private void CzarnaWB_Click(object sender, EventArgs e)
         {
             ResztaHide();
             WolnaBila();
             wynpart1.Text = aktualnaGra.PunktyGracza1.ToString();
+            lbreak1.Text = aktualnaGra.Break1.ToString();
             wynpart2.Text = aktualnaGra.PunktyGracza2.ToString();
+            lbreak2.Text = aktualnaGra.Break2.ToString();
             aktualnaGra.Faul1 = false;
             aktualnaGra.Faul2 = false;
         }
+
         private void WieleCzerwButton_Click(object sender, EventArgs e)
         {
             listaczerwonych();
         }
+
         private void WCAkceptuj_Click(object sender, EventArgs e)
         {
             WCAkceptujLista();
@@ -1025,9 +1118,26 @@ namespace apk_snooker
             ResztaHide();
             wbijkolor();
         }
+
         private void WCAnuluj_Click(object sender, EventArgs e)
         {
             ResztaHide();
+        }
+
+        private void timerbreak1_Tick(object sender, EventArgs e)
+        {
+            if(aktualnaGra.Break1 >= 40)
+            {
+                breakv1.Height += 27;
+            }
+        }
+
+        private void timerbreak2_Tick(object sender, EventArgs e)
+        {
+            if (aktualnaGra.Break2 >= 40)
+            {
+                breakv2.Height += 27;
+            }
         }
     }
 }
