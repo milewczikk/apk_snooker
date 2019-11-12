@@ -38,6 +38,9 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.breakv1 = new System.Windows.Forms.GroupBox();
+            this.lbreak1 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.wynpart2 = new System.Windows.Forms.Label();
             this.wynpart1 = new System.Windows.Forms.Label();
@@ -96,13 +99,13 @@
             this.PanelKonc = new System.Windows.Forms.GroupBox();
             this.koniecgry = new System.Windows.Forms.Button();
             this.cd = new System.Windows.Forms.Button();
-            this.breakv1 = new System.Windows.Forms.GroupBox();
-            this.lbreak1 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.timerbreak1 = new System.Windows.Forms.Timer(this.components);
-            this.timerbreak2 = new System.Windows.Forms.Timer(this.components);
+            this.timerbreak1down = new System.Windows.Forms.Timer(this.components);
+            this.timerbreak2down = new System.Windows.Forms.Timer(this.components);
+            this.timerbreak1up = new System.Windows.Forms.Timer(this.components);
+            this.timerbreak2up = new System.Windows.Forms.Timer(this.components);
             this.breakv2.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            this.breakv1.SuspendLayout();
             this.wyncal.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.wskaznik2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.wskaznik1)).BeginInit();
@@ -119,7 +122,6 @@
             this.WieleCzerwonychGB.SuspendLayout();
             this.newGame.SuspendLayout();
             this.PanelKonc.SuspendLayout();
-            this.breakv1.SuspendLayout();
             this.SuspendLayout();
             // 
             // breakv2
@@ -128,9 +130,9 @@
             this.breakv2.Controls.Add(this.lbreak2);
             this.breakv2.Controls.Add(this.label7);
             this.breakv2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.breakv2.Location = new System.Drawing.Point(415, 61);
+            this.breakv2.Location = new System.Drawing.Point(454, 58);
             this.breakv2.Name = "breakv2";
-            this.breakv2.Size = new System.Drawing.Size(165, 27);
+            this.breakv2.Size = new System.Drawing.Size(126, 30);
             this.breakv2.TabIndex = 11;
             this.breakv2.TabStop = false;
             // 
@@ -210,6 +212,38 @@
             this.groupBox1.Size = new System.Drawing.Size(586, 96);
             this.groupBox1.TabIndex = 4;
             this.groupBox1.TabStop = false;
+            // 
+            // breakv1
+            // 
+            this.breakv1.BackColor = System.Drawing.Color.Gold;
+            this.breakv1.Controls.Add(this.lbreak1);
+            this.breakv1.Controls.Add(this.label5);
+            this.breakv1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.breakv1.Location = new System.Drawing.Point(45, 58);
+            this.breakv1.Name = "breakv1";
+            this.breakv1.Size = new System.Drawing.Size(126, 30);
+            this.breakv1.TabIndex = 15;
+            this.breakv1.TabStop = false;
+            // 
+            // lbreak1
+            // 
+            this.lbreak1.AutoSize = true;
+            this.lbreak1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.lbreak1.Location = new System.Drawing.Point(88, 5);
+            this.lbreak1.Name = "lbreak1";
+            this.lbreak1.Size = new System.Drawing.Size(15, 16);
+            this.lbreak1.TabIndex = 1;
+            this.lbreak1.Text = "0";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label5.Location = new System.Drawing.Point(6, 5);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(47, 16);
+            this.label5.TabIndex = 0;
+            this.label5.Text = "Break:";
             // 
             // label4
             // 
@@ -899,45 +933,25 @@
             this.cd.UseVisualStyleBackColor = false;
             this.cd.Click += new System.EventHandler(this.cd_Click_1);
             // 
-            // breakv1
+            // timerbreak1down
             // 
-            this.breakv1.BackColor = System.Drawing.Color.Gold;
-            this.breakv1.Controls.Add(this.lbreak1);
-            this.breakv1.Controls.Add(this.label5);
-            this.breakv1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.breakv1.Location = new System.Drawing.Point(6, 58);
-            this.breakv1.Name = "breakv1";
-            this.breakv1.Size = new System.Drawing.Size(165, 27);
-            this.breakv1.TabIndex = 15;
-            this.breakv1.TabStop = false;
+            this.timerbreak1down.Interval = 50;
+            this.timerbreak1down.Tick += new System.EventHandler(this.timerbreak1down_Tick);
             // 
-            // lbreak1
+            // timerbreak2down
             // 
-            this.lbreak1.AutoSize = true;
-            this.lbreak1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.lbreak1.Location = new System.Drawing.Point(88, 5);
-            this.lbreak1.Name = "lbreak1";
-            this.lbreak1.Size = new System.Drawing.Size(15, 16);
-            this.lbreak1.TabIndex = 1;
-            this.lbreak1.Text = "0";
+            this.timerbreak2down.Interval = 50;
+            this.timerbreak2down.Tick += new System.EventHandler(this.timerbreak2down_Tick);
             // 
-            // label5
+            // timerbreak1up
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label5.Location = new System.Drawing.Point(6, 5);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(47, 16);
-            this.label5.TabIndex = 0;
-            this.label5.Text = "Break:";
+            this.timerbreak1up.Interval = 50;
+            this.timerbreak1up.Tick += new System.EventHandler(this.timerbreak1up_Tick);
             // 
-            // timerbreak1
+            // timerbreak2up
             // 
-            this.timerbreak1.Tick += new System.EventHandler(this.timerbreak1_Tick);
-            // 
-            // timerbreak2
-            // 
-            this.timerbreak2.Tick += new System.EventHandler(this.timerbreak2_Tick);
+            this.timerbreak2up.Interval = 50;
+            this.timerbreak2up.Tick += new System.EventHandler(this.timerbreak2up_Tick);
             // 
             // Form1
             // 
@@ -955,6 +969,8 @@
             this.breakv2.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.breakv1.ResumeLayout(false);
+            this.breakv1.PerformLayout();
             this.wyncal.ResumeLayout(false);
             this.wyncal.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.wskaznik2)).EndInit();
@@ -973,8 +989,6 @@
             this.WieleCzerwonychGB.PerformLayout();
             this.newGame.ResumeLayout(false);
             this.PanelKonc.ResumeLayout(false);
-            this.breakv1.ResumeLayout(false);
-            this.breakv1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -1050,8 +1064,10 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.GroupBox breakv1;
         private System.Windows.Forms.GroupBox breakv2;
-        private System.Windows.Forms.Timer timerbreak1;
-        private System.Windows.Forms.Timer timerbreak2;
+        private System.Windows.Forms.Timer timerbreak1down;
+        private System.Windows.Forms.Timer timerbreak2down;
+        private System.Windows.Forms.Timer timerbreak1up;
+        private System.Windows.Forms.Timer timerbreak2up;
     }
 }
 

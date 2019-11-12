@@ -2,6 +2,7 @@
 
 5. Trzeba dorobiæ break (pokazywanie jest zale¿ne od organizatora), powy¿ej 50 pkt(->moja opinia<-). 
 	Wysuwaj¹cy siê groupbox pomys³: https://www.youtube.com/watch?v=cuaKo3p5YXU
+	----------- | | --------------- https://www.youtube.com/watch?v=p77DYfNisVQ&t=1s
 
 
 
@@ -12,11 +13,6 @@ Nagrywanie pulpitu: OBS //zrobione
 Edycja nagrania: Blender //zrobione
 
 Nagraæ i mo¿e wyedytowaæ w Czwartek / Pi¹tek ??
-
-
-
-		W WOLNEJ CHWILI
-12. Zgoda RODO na przetrzymwanie i wykorzystanie danych
 
 
 

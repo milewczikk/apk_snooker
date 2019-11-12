@@ -124,11 +124,11 @@ namespace apk_snooker
             czarna.Enabled = false;
             if (aktualnaGra.Break1 >= 40)
             {
-                this.timerbreak1.Enabled = true;
+                timerbreak1down.Start();
             }
             else if (aktualnaGra.Break2 >= 40)
             {
-                this.timerbreak2.Enabled = true;
+                timerbreak2down.Start();
             }
         }
 
@@ -150,11 +150,11 @@ namespace apk_snooker
             czarna.Enabled = true;
             if (aktualnaGra.Break1 >= 40)
             {
-                this.timerbreak1.Enabled = true;
+                timerbreak1down.Start();
             }
             else if (aktualnaGra.Break2 >= 40)
             {
-                this.timerbreak2.Enabled = true;
+                timerbreak2down.Start();
             }
         }
 
@@ -174,6 +174,14 @@ namespace apk_snooker
             rozowa.BackgroundImage = Properties.Resources.bila_różowa_cb;
             czarna.Enabled = false;
             czarna.BackgroundImage = Properties.Resources.bila_czarna_cb;
+            if (aktualnaGra.Break1 >= 40)
+            {
+                timerbreak1down.Start();
+            }
+            else if (aktualnaGra.Break2 >= 40)
+            {
+                timerbreak2down.Start();
+            }
         }
 
         private void Ostatnia_Zielona()
@@ -188,6 +196,14 @@ namespace apk_snooker
             niebieska.Enabled = false;
             rozowa.Enabled = false;
             czarna.Enabled = false;
+            if (aktualnaGra.Break1 >= 40)
+            {
+                timerbreak1down.Start();
+            }
+            else if (aktualnaGra.Break2 >= 40)
+            {
+                timerbreak2down.Start();
+            }
         }
 
         private void Ostatnia_Brazowa()
@@ -202,6 +218,14 @@ namespace apk_snooker
             niebieska.Enabled = false;
             rozowa.Enabled = false;
             czarna.Enabled = false;
+            if (aktualnaGra.Break1 >= 40)
+            {
+                timerbreak1down.Start();
+            }
+            else if (aktualnaGra.Break2 >= 40)
+            {
+                timerbreak2down.Start();
+            }
         }
 
         private void Ostatnia_Niebieska()
@@ -216,6 +240,14 @@ namespace apk_snooker
             niebieska.BackgroundImage = Properties.Resources.bila_niebieska;
             rozowa.Enabled = false;
             czarna.Enabled = false;
+            if (aktualnaGra.Break1 >= 40)
+            {
+                timerbreak1down.Start();
+            }
+            else if (aktualnaGra.Break2 >= 40)
+            {
+                timerbreak2down.Start();
+            }
         }
 
         private void Ostatnia_Rozowa()
@@ -230,6 +262,14 @@ namespace apk_snooker
             rozowa.Enabled = true;
             rozowa.BackgroundImage = Properties.Resources.bila_różowa;
             czarna.Enabled = false;
+            if (aktualnaGra.Break1 >= 40)
+            {
+                timerbreak1down.Start();
+            }
+            else if (aktualnaGra.Break2 >= 40)
+            {
+                timerbreak2down.Start();
+            }
         }
 
         private void Ostatnia_Czarna()
@@ -244,6 +284,14 @@ namespace apk_snooker
             rozowa.BackgroundImage = Properties.Resources.bila_różowa_cb;
             czarna.Enabled = true;
             czarna.BackgroundImage = Properties.Resources.bila_czarna;
+            if (aktualnaGra.Break1 >= 40)
+            {
+                timerbreak1down.Start();
+            }
+            else if (aktualnaGra.Break2 >= 40)
+            {
+                timerbreak2down.Start();
+            }
         }
 
         private void PanelKoncowy()
@@ -673,9 +721,18 @@ namespace apk_snooker
                     Ostatnia_Czarna();
                 }
             }
+            if (breakv1.Height == 30)
+            {
+                timerbreak1up.Start();
+            }
+            if (breakv2.Height == 30)
+            {
+                timerbreak2up.Start();
+            }
             lbreak1.Text = "0";
             lbreak2.Text = "0";
             CzyKoniecFrame();
+            
         }
 
         private void czerwona_Click(object sender, EventArgs e)
@@ -1124,19 +1181,57 @@ namespace apk_snooker
             ResztaHide();
         }
 
-        private void timerbreak1_Tick(object sender, EventArgs e)
+        private void timerbreak1down_Tick(object sender, EventArgs e)
         {
             if(aktualnaGra.Break1 >= 40)
             {
-                breakv1.Height += 27;
+                if (breakv1.Height >= 30)
+                {
+                    timerbreak1down.Stop();
+                }
+                else
+                {
+                    breakv1.Height += 5;
+                }
             }
         }
 
-        private void timerbreak2_Tick(object sender, EventArgs e)
+        private void timerbreak2down_Tick(object sender, EventArgs e)
         {
             if (aktualnaGra.Break2 >= 40)
             {
-                breakv2.Height += 27;
+                if (breakv2.Height >= 30)
+                {
+                    timerbreak2down.Stop();
+                }
+                else
+                {
+                    breakv2.Height += 5;
+                }
+            }
+        }
+
+        private void timerbreak1up_Tick(object sender, EventArgs e)
+        {
+            if (breakv1.Height <= 0)
+            {
+                timerbreak1down.Stop();
+            }
+            else
+            {
+                breakv1.Height -= 5;
+            }
+
+        }
+        private void timerbreak2up_Tick(object sender, EventArgs e)
+        {
+            if (breakv2.Height <= 0)
+            {
+                timerbreak2down.Stop();
+            }
+            else
+            {
+                breakv2.Height -= 5;
             }
         }
     }
