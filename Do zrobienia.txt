@@ -1,29 +1,6 @@
-		ŒRODA/CZWARTEK/PI¥TEK:
-
-5. Trzeba dorobiæ break (pokazywanie jest zale¿ne od organizatora), powy¿ej 50 pkt(->moja opinia<-). 
-	Wysuwaj¹cy siê groupbox pomys³: https://www.youtube.com/watch?v=cuaKo3p5YXU
-	----------- | | --------------- https://www.youtube.com/watch?v=p77DYfNisVQ&t=1s
 
 
 
-		CZWARTEK/PI¥TEK:
-
-Nagrywanie pulpitu: OBS //zrobione
-
-Edycja nagrania: Blender //zrobione
-
-Nagraæ i mo¿e wyedytowaæ w Czwartek / Pi¹tek ??
-
-
-
-		W najbi¿szym czasie:
-
-8. Historia wyników gry w nowej karcie (wyniki w xml?).
-	- Je¿li tak, to czy xml nie powinien byæ szyfrowany w jakikolwiek sposób?
-	- Ale czy siê w ogole da szyfrowaæ xml?
-	- Jak nie, to po prostu wszystko bêdzie siê pcha³o do bazki danych zsynchronizowan¹ póŸniej z azure
-
-7. Wyniki graczy w xml do azure?
 ---------------------------------------------------------------------------------------------------------------
 
 1. Mo¿na zmieniæ rozmiar okna, a nie powinno. //zrobione;
@@ -51,8 +28,40 @@ Nagraæ i mo¿e wyedytowaæ w Czwartek / Pi¹tek ??
 	wolna bila - przy pope³aniu faulu ustawisz snooker, wtedy bila (np. czarna) jest traktowana jako inna (np. czerwona)
 lub odwrotnie.
 
+		ŒRODA/CZWARTEK/PI¥TEK:
+
+5. Trzeba dorobiæ break (pokazywanie jest zale¿ne od organizatora), powy¿ej 40 pkt(->moja opinia<-). 
+	Wysuwaj¹cy siê groupbox pomys³: https://www.youtube.com/watch?v=cuaKo3p5YXU			//zrobione
+	----------- | | --------------- https://www.youtube.com/watch?v=p77DYfNisVQ&t=1s
+
+Ewentualnie generowaæ tabele w bazie danych i tak by siê zapisywa³o w postaci tabeli z teefonu.
+	I tego pomyslu z tabel¹ bedê siê trzymaæ
+
+Nazwusera: karol
+haslo: zaq1@WSX
+
+dodawanie sql: insert into [dbo].[Wyniki] values ('1','', '70', '1-0', '17', '');
+
+Czyszczenie tabeli: delete from [dbo].[Wyniki];
+
+//zrobione z b³êdami
+
+		CZWARTEK/PI¥TEK:
+
+Nagrywanie pulpitu: OBS //zrobione
+
+Edycja nagrania: Blender //zrobione
+
+//
+//8. Historia wyników gry w nowej karcie (wyniki w xml?).
+//	- Je¿li tak, to czy xml nie powinien byæ szyfrowany w jakikolwiek sposób?
+//	- Ale czy siê w ogole da szyfrowaæ xml?
+//	- Jak nie, to po prostu wszystko bêdzie siê pcha³o do bazki danych zsynchronizowan¹ póŸniej z azure
+//
+//7. Wyniki graczy w xml do azure?
+//
 ---------------------------------------------------------------------------------------------------------------
-		B£ÊDY ZNALEZIONE DNIA 24-05-2019:
+		B£ÊDY
 
 Podczas jednej z gier, gdy wynikby³ 0:2 dla gracza2, pojawi³ siê komunikat "nooker nie pzewiduje remisów"???
 
@@ -61,4 +70,7 @@ Podczas jednej z gier, na ostatnich 27 punktach, po ró¿owej zablokowa³a siê czar
 gdy jest 1:0, gra krzyczy "remis", zamiast wygranej gracza 1;
 
 Podczas wbijania wolnej bili, po wygraniu bili wyskakuje komunikat "Musi to byæ tura przeciwnika";
+
+Podczas gry przy wniku ogólnym 1:0 oraz wyniku frama 48:26 (Break 48) nie pokaza³o siê okienko z breakiem??
+//zrobione. Okaza³o siê, ze gdy doda³em zmienne break i hbreak po kliknieciu kontynuuj nie zerowa³y siê
 

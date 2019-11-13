@@ -66,6 +66,8 @@ namespace apk_snooker
         public int Break2 { get => break2; set => break2 = value; }
         public bool Faul1 { get => faul1; set => faul1 = value; }
         public bool Faul2 { get => faul2; set => faul2 = value; }
+        public int Hbreak1 { get => hbreak1; set => hbreak1 = value; }
+        public int Hbreak2 { get => hbreak2; set => hbreak2 = value; }
 
         public void nowaGra(String pseudonim1, String pseudonim2, int rozpoczynaGracz)
         {

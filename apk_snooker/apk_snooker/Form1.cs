@@ -7,15 +7,19 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient; //dodane aby funkcje sql dziłały
 
 namespace apk_snooker
 {
     public partial class Form1 : Form
     {
+        string connectionString = @"Data Source=pracainz.database.windows.net;Initial Catalog=Wyniki;User ID=karol;Password=zaq1@WSX";
+        //kod powyżej służy do połączenia się z bazą danych
         bool poprzedniaczerwona; //przyjmuje true albo false, dla zapamiętania ostatnich ustawień podczas klinkięcia opcji więcej 
         bool poprzedniazolta;
         bool poprzedniazielona;
         Gra aktualnaGra;
+        int rozgrywka = 1;
         public Form1()
         {
             InitializeComponent();
@@ -25,6 +29,9 @@ namespace apk_snooker
             this.FormBorderStyle = FormBorderStyle.FixedSingle; //Blokuje możliwość zmiany rozmiaru okienka
             PanelKonc.BackColor = Color.FromArgb(62, 148, 0);
             PozostaleGB.BackColor = Color.FromArgb(62, 148, 0); //zminia kolor tła na kolor RGB
+            Podsum.BackColor = Color.FromArgb(62, 148, 0);
+            PodsumTab.BackgroundColor = Color.FromArgb(62, 148, 0);
+            PodsumTab.Height = 476;
             nowaGra();
             breakv1.Height = 0;
             breakv2.Height = 0;
@@ -41,6 +48,81 @@ namespace apk_snooker
             niebieska.BackgroundImage = Properties.Resources.bila_niebieska_cb;
             rozowa.BackgroundImage = Properties.Resources.bila_różowa_cb;
             czarna.BackgroundImage = Properties.Resources.bila_czarna_cb;
+            using (SqlConnection sqlCon = new SqlConnection(connectionString))
+            {
+                sqlCon.Open();
+                SqlDataAdapter adapter = new SqlDataAdapter();
+                string sql = "DELETE FROM Wyniki ;";
+
+                SqlCommand sqlcom = new SqlCommand(sql, sqlCon);
+
+                adapter.InsertCommand = new SqlCommand(sql, sqlCon);
+                adapter.InsertCommand.ExecuteNonQuery();
+
+                sqlcom.Dispose();
+                sqlCon.Close();
+            }
+        }
+
+        private void SendToDatabase()
+        {
+            if (aktualnaGra.Hbreak1 > aktualnaGra.Hbreak2 && aktualnaGra.Hbreak1 > 40)
+            {
+                using (SqlConnection sqlCon = new SqlConnection(connectionString))
+                {
+                    sqlCon.Open();
+                    SqlDataAdapter adapter = new SqlDataAdapter();
+                    string sql = "Insert into Wyniki values('" + rozgrywka + "','" + aktualnaGra.Hbreak1 +
+                        "','" + wynpart1.Text + "','" + wyncal1.Text + '-' + wyncal2.Text + "','"
+                        + wynpart2.Text + "','0') ;";
+
+                    SqlCommand sqlcom = new SqlCommand(sql, sqlCon);
+
+                    adapter.InsertCommand = new SqlCommand(sql, sqlCon);
+                    adapter.InsertCommand.ExecuteNonQuery();
+
+                    sqlcom.Dispose();
+                    sqlCon.Close();
+                }
+            }
+            else if (aktualnaGra.Hbreak1 < aktualnaGra.Hbreak2 && aktualnaGra.Hbreak2 > 40)
+            {
+                using (SqlConnection sqlCon = new SqlConnection(connectionString))
+                {
+                    sqlCon.Open();
+                    SqlDataAdapter adapter = new SqlDataAdapter();
+                    string sql = "Insert into Wyniki values('" + rozgrywka + "','0','"
+                        + wynpart1.Text + "','" + wyncal1.Text + '-' + wyncal2.Text + "','"
+                        + wynpart2.Text + "','" + aktualnaGra.Hbreak2 + "') ;";
+
+                    SqlCommand sqlcom = new SqlCommand(sql, sqlCon);
+
+                    adapter.InsertCommand = new SqlCommand(sql, sqlCon);
+                    adapter.InsertCommand.ExecuteNonQuery();
+
+                    sqlcom.Dispose();
+                    sqlCon.Close();
+                }
+            }
+            else
+            {
+                using (SqlConnection sqlCon = new SqlConnection(connectionString))
+                {
+                    sqlCon.Open();
+                    SqlDataAdapter adapter = new SqlDataAdapter();
+                    string sql = "Insert into Wyniki values('" + rozgrywka + "','0','"
+                        + wynpart1.Text + "','" + wyncal1.Text + '-' + wyncal2.Text + "','"
+                        + wynpart2.Text + "','0') ;";
+
+                    SqlCommand sqlcom = new SqlCommand(sql, sqlCon);
+
+                    adapter.InsertCommand = new SqlCommand(sql, sqlCon);
+                    adapter.InsertCommand.ExecuteNonQuery();
+
+                    sqlcom.Dispose();
+                    sqlCon.Close();
+                }
+            }
         }
 
         public void Kontynuuj()
@@ -55,12 +137,18 @@ namespace apk_snooker
             aktualnaGra.Bni = 7;
             aktualnaGra.Bro = 7;
             aktualnaGra.Bcz = 7;
-            //tu kod do eksportu do xml :)
+            //tu kod do eksportu do xml
+            SendToDatabase();
 
+            rozgrywka += 1;
             aktualnaGra.PunktyGracza1 = 0;
             wynpart1.Text = "0";
             wynpart2.Text = "0";
             aktualnaGra.PunktyGracza2 = 0;
+            aktualnaGra.Hbreak1 = 0;
+            aktualnaGra.Hbreak2 = 0;
+            aktualnaGra.Break1 = 0;
+            aktualnaGra.Break2 = 0;
             wbijczerwona();
             aktualnaGra.Rozpoczyna();
             if (aktualnaGra.RozpoczynaGracz == 2)
@@ -956,17 +1044,38 @@ namespace apk_snooker
             if (aktualnaGra.WynikGracza1 > aktualnaGra.WynikGracza2)
             {
                 MessageBox.Show("Grę wygrywa " + aktualnaGra.Gracz1.Pseudonim);
-                Application.Exit();
+
             }
-            if (aktualnaGra.WynikGracza1 < aktualnaGra.WynikGracza2)
+            else if (aktualnaGra.WynikGracza1 < aktualnaGra.WynikGracza2)
             {
                 MessageBox.Show("Grę wygrywa " + aktualnaGra.Gracz2.Pseudonim);
-                Application.Exit();
+                
             }
             else
             {
-                MessageBox.Show("Regulamin snookera nie zezwala na remis");
+                MessageBox.Show("Remis");
             }
+            SendToDatabase();
+
+            using (SqlConnection sqlCon = new SqlConnection(connectionString))
+            {
+                sqlCon.Open();
+                SqlDataAdapter sqlData = new SqlDataAdapter("SELECT * from Wyniki ORDER BY ID", sqlCon);
+                DataTable dtbl = new DataTable();
+                sqlData.Fill(dtbl);
+
+                PodsumTab.AutoGenerateColumns = false;
+                PodsumTab.DataSource = dtbl;
+                sqlCon.Close();
+            }
+            aktualnaGra.PunktyGracza1 = 0;
+            aktualnaGra.PunktyGracza2 = 0;
+            wynpart1.Text = "0";
+            wynpart2.Text = "0";
+            bileView.Visible = false;
+            PanelKonc.Visible = false;
+            PozostaleGB.Visible = false;
+            Podsum.Visible = true;
         }
 
         private void Reszta_Click(object sender, EventArgs e)
@@ -1002,16 +1111,30 @@ namespace apk_snooker
 
         private void PoddMecz_Click(object sender, EventArgs e)
         {
+            SendToDatabase();
             if (aktualnaGra.AktualnyGracz == 1)
             {
                 MessageBox.Show("Grę wygrywa " + aktualnaGra.Gracz2.Pseudonim);
-                Application.Exit();
             }
             else
             {
                 MessageBox.Show("Grę wygrywa " + aktualnaGra.Gracz1.Pseudonim);
-                Application.Exit();
             }
+            using (SqlConnection sqlCon = new SqlConnection(connectionString))
+            {
+                sqlCon.Open();
+                SqlDataAdapter sqlData = new SqlDataAdapter("SELECT * from Wyniki ORDER BY ID", sqlCon);
+                DataTable dtbl = new DataTable();
+                sqlData.Fill(dtbl);
+
+                PodsumTab.AutoGenerateColumns = false;
+                PodsumTab.DataSource = dtbl;
+                sqlCon.Close();
+            }
+            bileView.Visible = false;
+            PanelKonc.Visible = false;
+            PozostaleGB.Visible = false;
+            Podsum.Visible = true;
         }
 
         private void PoddFrame_Click(object sender, EventArgs e)
@@ -1223,6 +1346,7 @@ namespace apk_snooker
             }
 
         }
+
         private void timerbreak2up_Tick(object sender, EventArgs e)
         {
             if (breakv2.Height <= 0)

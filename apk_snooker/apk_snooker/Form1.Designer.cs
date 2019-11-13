@@ -58,16 +58,6 @@
             this.WieleCzerwButton = new System.Windows.Forms.Button();
             this.WolnBilaButton = new System.Windows.Forms.Button();
             this.FaulButton = new System.Windows.Forms.Button();
-            this.WolnaBilaGB = new System.Windows.Forms.GroupBox();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.CzarnaWB = new System.Windows.Forms.Button();
-            this.RozowaWB = new System.Windows.Forms.Button();
-            this.NiebieskaWB = new System.Windows.Forms.Button();
-            this.BrazowaWB = new System.Windows.Forms.Button();
-            this.ZielonaWB = new System.Windows.Forms.Button();
-            this.ZoltaWB = new System.Windows.Forms.Button();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.CzerwonaWB = new System.Windows.Forms.Button();
             this.FaulBile = new System.Windows.Forms.GroupBox();
             this.FaulZa7 = new System.Windows.Forms.GroupBox();
             this.button7 = new System.Windows.Forms.Button();
@@ -85,6 +75,16 @@
             this.WCAnuluj = new System.Windows.Forms.Button();
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.label6 = new System.Windows.Forms.Label();
+            this.WolnaBilaGB = new System.Windows.Forms.GroupBox();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.CzarnaWB = new System.Windows.Forms.Button();
+            this.RozowaWB = new System.Windows.Forms.Button();
+            this.NiebieskaWB = new System.Windows.Forms.Button();
+            this.BrazowaWB = new System.Windows.Forms.Button();
+            this.ZielonaWB = new System.Windows.Forms.Button();
+            this.ZoltaWB = new System.Windows.Forms.Button();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.CzerwonaWB = new System.Windows.Forms.Button();
             this.Reszta = new System.Windows.Forms.Button();
             this.czerwona = new System.Windows.Forms.Button();
             this.pudlo = new System.Windows.Forms.Button();
@@ -103,6 +103,13 @@
             this.timerbreak2down = new System.Windows.Forms.Timer(this.components);
             this.timerbreak1up = new System.Windows.Forms.Timer(this.components);
             this.timerbreak2up = new System.Windows.Forms.Timer(this.components);
+            this.Podsum = new System.Windows.Forms.GroupBox();
+            this.PodsumTab = new System.Windows.Forms.DataGridView();
+            this.break1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.punkty1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.wynik = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Punkty2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Break2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.breakv2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.breakv1.SuspendLayout();
@@ -111,17 +118,19 @@
             ((System.ComponentModel.ISupportInitialize)(this.wskaznik1)).BeginInit();
             this.bileView.SuspendLayout();
             this.PozostaleGB.SuspendLayout();
-            this.WolnaBilaGB.SuspendLayout();
-            this.groupBox3.SuspendLayout();
-            this.groupBox2.SuspendLayout();
             this.FaulBile.SuspendLayout();
             this.FaulZa7.SuspendLayout();
             this.FaulZa6.SuspendLayout();
             this.FaulZa5.SuspendLayout();
             this.FaulZa4.SuspendLayout();
             this.WieleCzerwonychGB.SuspendLayout();
+            this.WolnaBilaGB.SuspendLayout();
+            this.groupBox3.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             this.newGame.SuspendLayout();
             this.PanelKonc.SuspendLayout();
+            this.Podsum.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.PodsumTab)).BeginInit();
             this.SuspendLayout();
             // 
             // breakv2
@@ -248,7 +257,7 @@
             // label4
             // 
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label4.Location = new System.Drawing.Point(253, 0);
+            this.label4.Location = new System.Drawing.Point(260, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(69, 27);
             this.label4.TabIndex = 9;
@@ -259,7 +268,7 @@
             // 
             this.wynpart2.AutoSize = true;
             this.wynpart2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.wynpart2.Location = new System.Drawing.Point(328, 35);
+            this.wynpart2.Location = new System.Drawing.Point(335, 35);
             this.wynpart2.Name = "wynpart2";
             this.wynpart2.Size = new System.Drawing.Size(18, 20);
             this.wynpart2.TabIndex = 8;
@@ -268,7 +277,7 @@
             // wynpart1
             // 
             this.wynpart1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.wynpart1.Location = new System.Drawing.Point(205, 35);
+            this.wynpart1.Location = new System.Drawing.Point(212, 35);
             this.wynpart1.Name = "wynpart1";
             this.wynpart1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.wynpart1.Size = new System.Drawing.Size(42, 20);
@@ -281,7 +290,7 @@
             this.wyncal.Controls.Add(this.wyncal2);
             this.wyncal.Controls.Add(this.label3);
             this.wyncal.Controls.Add(this.wyncal1);
-            this.wyncal.Location = new System.Drawing.Point(253, 32);
+            this.wyncal.Location = new System.Drawing.Point(260, 32);
             this.wyncal.Name = "wyncal";
             this.wyncal.Size = new System.Drawing.Size(69, 29);
             this.wyncal.TabIndex = 6;
@@ -353,7 +362,7 @@
             this.bileView.Location = new System.Drawing.Point(0, 89);
             this.bileView.Margin = new System.Windows.Forms.Padding(0);
             this.bileView.Name = "bileView";
-            this.bileView.Size = new System.Drawing.Size(586, 480);
+            this.bileView.Size = new System.Drawing.Size(586, 481);
             this.bileView.TabIndex = 12;
             this.bileView.TabStop = false;
             // 
@@ -365,9 +374,9 @@
             this.PozostaleGB.Controls.Add(this.WieleCzerwButton);
             this.PozostaleGB.Controls.Add(this.WolnBilaButton);
             this.PozostaleGB.Controls.Add(this.FaulButton);
-            this.PozostaleGB.Controls.Add(this.WolnaBilaGB);
             this.PozostaleGB.Controls.Add(this.FaulBile);
             this.PozostaleGB.Controls.Add(this.WieleCzerwonychGB);
+            this.PozostaleGB.Controls.Add(this.WolnaBilaGB);
             this.PozostaleGB.Location = new System.Drawing.Point(0, 73);
             this.PozostaleGB.Name = "PozostaleGB";
             this.PozostaleGB.Size = new System.Drawing.Size(586, 407);
@@ -452,121 +461,6 @@
             this.FaulButton.Text = "Faul";
             this.FaulButton.UseVisualStyleBackColor = false;
             this.FaulButton.Click += new System.EventHandler(this.FaulButton_Click);
-            // 
-            // WolnaBilaGB
-            // 
-            this.WolnaBilaGB.Controls.Add(this.groupBox3);
-            this.WolnaBilaGB.Controls.Add(this.groupBox2);
-            this.WolnaBilaGB.Location = new System.Drawing.Point(0, 19);
-            this.WolnaBilaGB.Name = "WolnaBilaGB";
-            this.WolnaBilaGB.Size = new System.Drawing.Size(586, 352);
-            this.WolnaBilaGB.TabIndex = 21;
-            this.WolnaBilaGB.TabStop = false;
-            this.WolnaBilaGB.Visible = false;
-            // 
-            // groupBox3
-            // 
-            this.groupBox3.Controls.Add(this.CzarnaWB);
-            this.groupBox3.Controls.Add(this.RozowaWB);
-            this.groupBox3.Controls.Add(this.NiebieskaWB);
-            this.groupBox3.Controls.Add(this.BrazowaWB);
-            this.groupBox3.Controls.Add(this.ZielonaWB);
-            this.groupBox3.Controls.Add(this.ZoltaWB);
-            this.groupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.groupBox3.Location = new System.Drawing.Point(6, 180);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(574, 138);
-            this.groupBox3.TabIndex = 1;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Bila, która będzie zagrana zamiast niej:";
-            // 
-            // CzarnaWB
-            // 
-            this.CzarnaWB.BackgroundImage = global::apk_snooker.Properties.Resources.bila_czarna_90x901;
-            this.CzarnaWB.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.CzarnaWB.Location = new System.Drawing.Point(478, 30);
-            this.CzarnaWB.Name = "CzarnaWB";
-            this.CzarnaWB.Size = new System.Drawing.Size(90, 90);
-            this.CzarnaWB.TabIndex = 5;
-            this.CzarnaWB.UseVisualStyleBackColor = true;
-            this.CzarnaWB.Click += new System.EventHandler(this.CzarnaWB_Click);
-            // 
-            // RozowaWB
-            // 
-            this.RozowaWB.BackgroundImage = global::apk_snooker.Properties.Resources.bila_różowa_90x901;
-            this.RozowaWB.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.RozowaWB.Location = new System.Drawing.Point(385, 30);
-            this.RozowaWB.Name = "RozowaWB";
-            this.RozowaWB.Size = new System.Drawing.Size(90, 90);
-            this.RozowaWB.TabIndex = 4;
-            this.RozowaWB.UseVisualStyleBackColor = true;
-            this.RozowaWB.Click += new System.EventHandler(this.RozowaWB_Click);
-            // 
-            // NiebieskaWB
-            // 
-            this.NiebieskaWB.BackgroundImage = global::apk_snooker.Properties.Resources.bila_niebieska_90x901;
-            this.NiebieskaWB.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.NiebieskaWB.Location = new System.Drawing.Point(291, 30);
-            this.NiebieskaWB.Name = "NiebieskaWB";
-            this.NiebieskaWB.Size = new System.Drawing.Size(90, 90);
-            this.NiebieskaWB.TabIndex = 3;
-            this.NiebieskaWB.UseVisualStyleBackColor = true;
-            this.NiebieskaWB.Click += new System.EventHandler(this.NiebieskaWB_Click);
-            // 
-            // BrazowaWB
-            // 
-            this.BrazowaWB.BackgroundImage = global::apk_snooker.Properties.Resources.bila_brązowa_90x901;
-            this.BrazowaWB.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.BrazowaWB.Location = new System.Drawing.Point(199, 30);
-            this.BrazowaWB.Name = "BrazowaWB";
-            this.BrazowaWB.Size = new System.Drawing.Size(90, 90);
-            this.BrazowaWB.TabIndex = 2;
-            this.BrazowaWB.UseVisualStyleBackColor = true;
-            this.BrazowaWB.Click += new System.EventHandler(this.BrazowaWB_Click);
-            // 
-            // ZielonaWB
-            // 
-            this.ZielonaWB.BackgroundImage = global::apk_snooker.Properties.Resources.bila_zielona_90x901;
-            this.ZielonaWB.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.ZielonaWB.Location = new System.Drawing.Point(103, 30);
-            this.ZielonaWB.Name = "ZielonaWB";
-            this.ZielonaWB.Size = new System.Drawing.Size(90, 90);
-            this.ZielonaWB.TabIndex = 1;
-            this.ZielonaWB.UseVisualStyleBackColor = true;
-            this.ZielonaWB.Click += new System.EventHandler(this.ZielonaWB_Click);
-            // 
-            // ZoltaWB
-            // 
-            this.ZoltaWB.BackgroundImage = global::apk_snooker.Properties.Resources.bila_żółta_90x901;
-            this.ZoltaWB.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.ZoltaWB.Location = new System.Drawing.Point(7, 30);
-            this.ZoltaWB.Name = "ZoltaWB";
-            this.ZoltaWB.Size = new System.Drawing.Size(90, 90);
-            this.ZoltaWB.TabIndex = 0;
-            this.ZoltaWB.UseVisualStyleBackColor = true;
-            this.ZoltaWB.Click += new System.EventHandler(this.ZoltaWB_Click);
-            // 
-            // groupBox2
-            // 
-            this.groupBox2.Controls.Add(this.CzerwonaWB);
-            this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.groupBox2.Location = new System.Drawing.Point(6, 24);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(574, 138);
-            this.groupBox2.TabIndex = 0;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Bila, która powinna być zagrana:";
-            // 
-            // CzerwonaWB
-            // 
-            this.CzerwonaWB.BackgroundImage = global::apk_snooker.Properties.Resources.bila_czerwona_90x901;
-            this.CzerwonaWB.Enabled = false;
-            this.CzerwonaWB.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.CzerwonaWB.Location = new System.Drawing.Point(233, 33);
-            this.CzerwonaWB.Name = "CzerwonaWB";
-            this.CzerwonaWB.Size = new System.Drawing.Size(90, 90);
-            this.CzerwonaWB.TabIndex = 1;
-            this.CzerwonaWB.UseVisualStyleBackColor = true;
             // 
             // FaulBile
             // 
@@ -765,6 +659,121 @@
             this.label6.TabIndex = 0;
             this.label6.Text = "Wybierz, ile czerwonych bil zostało wbitych w jednym uderzeniu:";
             // 
+            // WolnaBilaGB
+            // 
+            this.WolnaBilaGB.Controls.Add(this.groupBox3);
+            this.WolnaBilaGB.Controls.Add(this.groupBox2);
+            this.WolnaBilaGB.Location = new System.Drawing.Point(0, 19);
+            this.WolnaBilaGB.Name = "WolnaBilaGB";
+            this.WolnaBilaGB.Size = new System.Drawing.Size(586, 388);
+            this.WolnaBilaGB.TabIndex = 21;
+            this.WolnaBilaGB.TabStop = false;
+            this.WolnaBilaGB.Visible = false;
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.CzarnaWB);
+            this.groupBox3.Controls.Add(this.RozowaWB);
+            this.groupBox3.Controls.Add(this.NiebieskaWB);
+            this.groupBox3.Controls.Add(this.BrazowaWB);
+            this.groupBox3.Controls.Add(this.ZielonaWB);
+            this.groupBox3.Controls.Add(this.ZoltaWB);
+            this.groupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.groupBox3.Location = new System.Drawing.Point(6, 180);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(574, 138);
+            this.groupBox3.TabIndex = 1;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Bila, która będzie zagrana zamiast niej:";
+            // 
+            // CzarnaWB
+            // 
+            this.CzarnaWB.BackgroundImage = global::apk_snooker.Properties.Resources.bila_czarna_90x901;
+            this.CzarnaWB.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.CzarnaWB.Location = new System.Drawing.Point(478, 30);
+            this.CzarnaWB.Name = "CzarnaWB";
+            this.CzarnaWB.Size = new System.Drawing.Size(90, 90);
+            this.CzarnaWB.TabIndex = 5;
+            this.CzarnaWB.UseVisualStyleBackColor = true;
+            this.CzarnaWB.Click += new System.EventHandler(this.CzarnaWB_Click);
+            // 
+            // RozowaWB
+            // 
+            this.RozowaWB.BackgroundImage = global::apk_snooker.Properties.Resources.bila_różowa_90x901;
+            this.RozowaWB.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.RozowaWB.Location = new System.Drawing.Point(385, 30);
+            this.RozowaWB.Name = "RozowaWB";
+            this.RozowaWB.Size = new System.Drawing.Size(90, 90);
+            this.RozowaWB.TabIndex = 4;
+            this.RozowaWB.UseVisualStyleBackColor = true;
+            this.RozowaWB.Click += new System.EventHandler(this.RozowaWB_Click);
+            // 
+            // NiebieskaWB
+            // 
+            this.NiebieskaWB.BackgroundImage = global::apk_snooker.Properties.Resources.bila_niebieska_90x901;
+            this.NiebieskaWB.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.NiebieskaWB.Location = new System.Drawing.Point(291, 30);
+            this.NiebieskaWB.Name = "NiebieskaWB";
+            this.NiebieskaWB.Size = new System.Drawing.Size(90, 90);
+            this.NiebieskaWB.TabIndex = 3;
+            this.NiebieskaWB.UseVisualStyleBackColor = true;
+            this.NiebieskaWB.Click += new System.EventHandler(this.NiebieskaWB_Click);
+            // 
+            // BrazowaWB
+            // 
+            this.BrazowaWB.BackgroundImage = global::apk_snooker.Properties.Resources.bila_brązowa_90x901;
+            this.BrazowaWB.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.BrazowaWB.Location = new System.Drawing.Point(199, 30);
+            this.BrazowaWB.Name = "BrazowaWB";
+            this.BrazowaWB.Size = new System.Drawing.Size(90, 90);
+            this.BrazowaWB.TabIndex = 2;
+            this.BrazowaWB.UseVisualStyleBackColor = true;
+            this.BrazowaWB.Click += new System.EventHandler(this.BrazowaWB_Click);
+            // 
+            // ZielonaWB
+            // 
+            this.ZielonaWB.BackgroundImage = global::apk_snooker.Properties.Resources.bila_zielona_90x901;
+            this.ZielonaWB.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.ZielonaWB.Location = new System.Drawing.Point(103, 30);
+            this.ZielonaWB.Name = "ZielonaWB";
+            this.ZielonaWB.Size = new System.Drawing.Size(90, 90);
+            this.ZielonaWB.TabIndex = 1;
+            this.ZielonaWB.UseVisualStyleBackColor = true;
+            this.ZielonaWB.Click += new System.EventHandler(this.ZielonaWB_Click);
+            // 
+            // ZoltaWB
+            // 
+            this.ZoltaWB.BackgroundImage = global::apk_snooker.Properties.Resources.bila_żółta_90x901;
+            this.ZoltaWB.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.ZoltaWB.Location = new System.Drawing.Point(7, 30);
+            this.ZoltaWB.Name = "ZoltaWB";
+            this.ZoltaWB.Size = new System.Drawing.Size(90, 90);
+            this.ZoltaWB.TabIndex = 0;
+            this.ZoltaWB.UseVisualStyleBackColor = true;
+            this.ZoltaWB.Click += new System.EventHandler(this.ZoltaWB_Click);
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.CzerwonaWB);
+            this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.groupBox2.Location = new System.Drawing.Point(6, 24);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(574, 138);
+            this.groupBox2.TabIndex = 0;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Bila, która powinna być zagrana:";
+            // 
+            // CzerwonaWB
+            // 
+            this.CzerwonaWB.BackgroundImage = global::apk_snooker.Properties.Resources.bila_czerwona_90x901;
+            this.CzerwonaWB.Enabled = false;
+            this.CzerwonaWB.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.CzerwonaWB.Location = new System.Drawing.Point(233, 33);
+            this.CzerwonaWB.Name = "CzerwonaWB";
+            this.CzerwonaWB.Size = new System.Drawing.Size(90, 90);
+            this.CzerwonaWB.TabIndex = 1;
+            this.CzerwonaWB.UseVisualStyleBackColor = true;
+            // 
             // Reszta
             // 
             this.Reszta.BackColor = System.Drawing.Color.LimeGreen;
@@ -879,7 +888,7 @@
             this.newGame.Controls.Add(this.NowaGra);
             this.newGame.Location = new System.Drawing.Point(0, 89);
             this.newGame.Name = "newGame";
-            this.newGame.Size = new System.Drawing.Size(586, 480);
+            this.newGame.Size = new System.Drawing.Size(586, 481);
             this.newGame.TabIndex = 13;
             this.newGame.TabStop = false;
             // 
@@ -901,7 +910,7 @@
             this.PanelKonc.Controls.Add(this.cd);
             this.PanelKonc.Location = new System.Drawing.Point(0, 89);
             this.PanelKonc.Name = "PanelKonc";
-            this.PanelKonc.Size = new System.Drawing.Size(586, 480);
+            this.PanelKonc.Size = new System.Drawing.Size(586, 481);
             this.PanelKonc.TabIndex = 14;
             this.PanelKonc.TabStop = false;
             // 
@@ -953,15 +962,95 @@
             this.timerbreak2up.Interval = 50;
             this.timerbreak2up.Tick += new System.EventHandler(this.timerbreak2up_Tick);
             // 
+            // Podsum
+            // 
+            this.Podsum.Controls.Add(this.PodsumTab);
+            this.Podsum.Location = new System.Drawing.Point(0, 89);
+            this.Podsum.Name = "Podsum";
+            this.Podsum.Size = new System.Drawing.Size(586, 480);
+            this.Podsum.TabIndex = 15;
+            this.Podsum.TabStop = false;
+            this.Podsum.Visible = false;
+            // 
+            // PodsumTab
+            // 
+            this.PodsumTab.AllowUserToAddRows = false;
+            this.PodsumTab.AllowUserToDeleteRows = false;
+            this.PodsumTab.AllowUserToResizeColumns = false;
+            this.PodsumTab.AllowUserToResizeRows = false;
+            this.PodsumTab.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.PodsumTab.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.PodsumTab.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.break1,
+            this.punkty1,
+            this.wynik,
+            this.Punkty2,
+            this.Break2});
+            this.PodsumTab.Location = new System.Drawing.Point(0, 3);
+            this.PodsumTab.Name = "PodsumTab";
+            this.PodsumTab.ReadOnly = true;
+            this.PodsumTab.RowHeadersVisible = false;
+            this.PodsumTab.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            this.PodsumTab.Size = new System.Drawing.Size(586, 360);
+            this.PodsumTab.TabIndex = 0;
+            // 
+            // break1
+            // 
+            this.break1.DataPropertyName = "1.Break40+";
+            this.break1.HeaderText = "Break (40+)";
+            this.break1.Name = "break1";
+            this.break1.ReadOnly = true;
+            this.break1.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.break1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // punkty1
+            // 
+            this.punkty1.DataPropertyName = "1.Punkty";
+            this.punkty1.HeaderText = "Punkty";
+            this.punkty1.Name = "punkty1";
+            this.punkty1.ReadOnly = true;
+            this.punkty1.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.punkty1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // wynik
+            // 
+            this.wynik.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.wynik.DataPropertyName = "#";
+            this.wynik.HeaderText = "#";
+            this.wynik.Name = "wynik";
+            this.wynik.ReadOnly = true;
+            this.wynik.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.wynik.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.wynik.Width = 20;
+            // 
+            // Punkty2
+            // 
+            this.Punkty2.DataPropertyName = "2.Punkty";
+            this.Punkty2.HeaderText = "Punkty";
+            this.Punkty2.Name = "Punkty2";
+            this.Punkty2.ReadOnly = true;
+            this.Punkty2.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.Punkty2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // Break2
+            // 
+            this.Break2.DataPropertyName = "2.Break40+";
+            this.Break2.HeaderText = "Break (40+)";
+            this.Break2.Name = "Break2";
+            this.Break2.ReadOnly = true;
+            this.Break2.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.Break2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(586, 568);
-            this.Controls.Add(this.bileView);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.PanelKonc);
             this.Controls.Add(this.newGame);
+            this.Controls.Add(this.bileView);
+            this.Controls.Add(this.Podsum);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
             this.Text = "Snookcount";
@@ -977,9 +1066,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.wskaznik1)).EndInit();
             this.bileView.ResumeLayout(false);
             this.PozostaleGB.ResumeLayout(false);
-            this.WolnaBilaGB.ResumeLayout(false);
-            this.groupBox3.ResumeLayout(false);
-            this.groupBox2.ResumeLayout(false);
             this.FaulBile.ResumeLayout(false);
             this.FaulZa7.ResumeLayout(false);
             this.FaulZa6.ResumeLayout(false);
@@ -987,8 +1073,13 @@
             this.FaulZa4.ResumeLayout(false);
             this.WieleCzerwonychGB.ResumeLayout(false);
             this.WieleCzerwonychGB.PerformLayout();
+            this.WolnaBilaGB.ResumeLayout(false);
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox2.ResumeLayout(false);
             this.newGame.ResumeLayout(false);
             this.PanelKonc.ResumeLayout(false);
+            this.Podsum.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.PodsumTab)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1068,6 +1159,13 @@
         private System.Windows.Forms.Timer timerbreak2down;
         private System.Windows.Forms.Timer timerbreak1up;
         private System.Windows.Forms.Timer timerbreak2up;
+        private System.Windows.Forms.GroupBox Podsum;
+        private System.Windows.Forms.DataGridView PodsumTab;
+        private System.Windows.Forms.DataGridViewTextBoxColumn break1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn punkty1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn wynik;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Punkty2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Break2;
     }
 }
 
