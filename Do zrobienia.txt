@@ -44,6 +44,8 @@ dodawanie sql: insert into [dbo].[Wyniki] values ('1','', '70', '1-0', '17', '')
 
 Czyszczenie tabeli: delete from [dbo].[Wyniki];
 
+Usuwanie tabeli: DROP TABLE nazwa_tabeli;
+
 //zrobione z b³êdami
 
 		CZWARTEK/PI¥TEK:

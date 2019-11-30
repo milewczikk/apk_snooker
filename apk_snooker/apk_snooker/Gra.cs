@@ -152,6 +152,8 @@ namespace apk_snooker
                 punktyGracza2 += 1;
                 break2 += 1;
             }
+            hbreak1 = break1;
+            hbreak2 = break2;
             koniecframe = CzyKtosWygrywaFrame();
         }
         public void wbitaZolta()
@@ -194,6 +196,10 @@ namespace apk_snooker
                     bcz -= 1;
                 }
             }
+            hbreak1 = break1;
+            hbreak2 = break2;
+            koniecframe = CzyKtosWygrywaFrame();
+            Koniecmecz = CzyKtosWygrywaMecz();
         }
         public void wbitaZielona()
         {
@@ -235,6 +241,10 @@ namespace apk_snooker
                     bcz -= 1;
                 }
             }
+            hbreak1 = break1;
+            hbreak2 = break2;
+            koniecframe = CzyKtosWygrywaFrame();
+            Koniecmecz = CzyKtosWygrywaMecz();
         }
         public void wbitaBrazowa()
         {
@@ -276,6 +286,10 @@ namespace apk_snooker
                     bcz -= 1;
                 }
             }
+            hbreak1 = break1;
+            hbreak2 = break2;
+            koniecframe = CzyKtosWygrywaFrame();
+            Koniecmecz = CzyKtosWygrywaMecz();
         }
         public void wbitaNiebieska()
         {
@@ -317,6 +331,10 @@ namespace apk_snooker
                     bcz -= 1;
                 }
             }
+            hbreak1 = break1;
+            hbreak2 = break2;
+            koniecframe = CzyKtosWygrywaFrame();
+            Koniecmecz = CzyKtosWygrywaMecz();
         }
         public void wbitaRozowa()
         {
@@ -358,6 +376,10 @@ namespace apk_snooker
                     bcz -= 1;
                 }
             }
+            hbreak1 = break1;
+            hbreak2 = break2;
+            koniecframe = CzyKtosWygrywaFrame();
+            Koniecmecz = CzyKtosWygrywaMecz();
         }
         public void wbitaCzarna()
         {
@@ -399,6 +421,8 @@ namespace apk_snooker
                     bcz -= 1;
                 }
             }
+            hbreak1 = break1;
+            hbreak2 = break2;
             koniecframe = CzyKtosWygrywaFrame();
             Koniecmecz = CzyKtosWygrywaMecz();
         }

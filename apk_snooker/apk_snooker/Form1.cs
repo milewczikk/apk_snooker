@@ -15,7 +15,8 @@ namespace apk_snooker
     {
         string connectionString = @"Data Source=pracainz.database.windows.net;Initial Catalog=Wyniki;User ID=karol;Password=zaq1@WSX";
         //kod powyżej służy do połączenia się z bazą danych
-        bool poprzedniaczerwona; //przyjmuje true albo false, dla zapamiętania ostatnich ustawień podczas klinkięcia opcji więcej 
+        bool poprzedniaczerwona;
+        //przyjmuje true albo false, dla zapamiętania ostatnich ustawień podczas klinkięcia opcji więcej 
         bool poprzedniazolta;
         bool poprzedniazielona;
         Gra aktualnaGra;
@@ -48,31 +49,17 @@ namespace apk_snooker
             niebieska.BackgroundImage = Properties.Resources.bila_niebieska_cb;
             rozowa.BackgroundImage = Properties.Resources.bila_różowa_cb;
             czarna.BackgroundImage = Properties.Resources.bila_czarna_cb;
-            using (SqlConnection sqlCon = new SqlConnection(connectionString))
-            {
-                sqlCon.Open();
-                SqlDataAdapter adapter = new SqlDataAdapter();
-                string sql = "DELETE FROM Wyniki ;";
-
-                SqlCommand sqlcom = new SqlCommand(sql, sqlCon);
-
-                adapter.InsertCommand = new SqlCommand(sql, sqlCon);
-                adapter.InsertCommand.ExecuteNonQuery();
-
-                sqlcom.Dispose();
-                sqlCon.Close();
-            }
         }
 
         private void SendToDatabase()
         {
-            if (aktualnaGra.Hbreak1 > aktualnaGra.Hbreak2 && aktualnaGra.Hbreak1 > 40)
+            if (aktualnaGra.Hbreak1 > aktualnaGra.Hbreak2 && aktualnaGra.Hbreak1 >= 40)
             {
                 using (SqlConnection sqlCon = new SqlConnection(connectionString))
                 {
                     sqlCon.Open();
                     SqlDataAdapter adapter = new SqlDataAdapter();
-                    string sql = "Insert into Wyniki values('" + rozgrywka + "','" + aktualnaGra.Hbreak1 +
+                    string sql = "Insert into " + gracz1.Text + "VS" + gracz2.Text + " values('" + rozgrywka + "','" + aktualnaGra.Hbreak1 +
                         "','" + wynpart1.Text + "','" + wyncal1.Text + '-' + wyncal2.Text + "','"
                         + wynpart2.Text + "','0') ;";
 
@@ -85,13 +72,13 @@ namespace apk_snooker
                     sqlCon.Close();
                 }
             }
-            else if (aktualnaGra.Hbreak1 < aktualnaGra.Hbreak2 && aktualnaGra.Hbreak2 > 40)
+            else if (aktualnaGra.Hbreak1 < aktualnaGra.Hbreak2 && aktualnaGra.Hbreak2 >= 40)
             {
                 using (SqlConnection sqlCon = new SqlConnection(connectionString))
                 {
                     sqlCon.Open();
                     SqlDataAdapter adapter = new SqlDataAdapter();
-                    string sql = "Insert into Wyniki values('" + rozgrywka + "','0','"
+                    string sql = "Insert into " + gracz1.Text + "VS" + gracz2.Text + " values('" + rozgrywka + "','0','"
                         + wynpart1.Text + "','" + wyncal1.Text + '-' + wyncal2.Text + "','"
                         + wynpart2.Text + "','" + aktualnaGra.Hbreak2 + "') ;";
 
@@ -110,7 +97,7 @@ namespace apk_snooker
                 {
                     sqlCon.Open();
                     SqlDataAdapter adapter = new SqlDataAdapter();
-                    string sql = "Insert into Wyniki values('" + rozgrywka + "','0','"
+                    string sql = "Insert into " + gracz1.Text + "VS" + gracz2.Text + " values('" + rozgrywka + "','0','"
                         + wynpart1.Text + "','" + wyncal1.Text + '-' + wyncal2.Text + "','"
                         + wynpart2.Text + "','0') ;";
 
@@ -754,6 +741,21 @@ namespace apk_snooker
                 {
                     aktualnaGra.nowaGra(gracz1.Text, gracz2.Text, 2);
                 }
+                using (SqlConnection sqlCon = new SqlConnection(connectionString))
+                {
+                    sqlCon.Open();
+                    SqlDataAdapter adapter = new SqlDataAdapter();
+                    string sql = "CREATE TABLE " + gracz1.Text + "VS" + gracz2.Text + "" +
+                    "(ID int, break1 tinyint, punkty1 tinyint, # varchar(10), punkty2 tinyint, break2 tinyint);";
+
+                    SqlCommand sqlcom = new SqlCommand(sql, sqlCon);
+
+                    adapter.InsertCommand = new SqlCommand(sql, sqlCon);
+                    adapter.InsertCommand.ExecuteNonQuery();
+
+                    sqlcom.Dispose();
+                    sqlCon.Close();
+                }
             }
             else
             {
@@ -1036,6 +1038,14 @@ namespace apk_snooker
 
         private void cd_Click_1(object sender, EventArgs e)
         {
+            if (breakv1.Height == 30)
+            {
+                timerbreak1up.Start();
+            }
+            else if (breakv2.Height == 30)
+            {
+                timerbreak2up.Start();
+            }
             Kontynuuj();
         }
 
@@ -1060,7 +1070,7 @@ namespace apk_snooker
             using (SqlConnection sqlCon = new SqlConnection(connectionString))
             {
                 sqlCon.Open();
-                SqlDataAdapter sqlData = new SqlDataAdapter("SELECT * from Wyniki ORDER BY ID", sqlCon);
+                SqlDataAdapter sqlData = new SqlDataAdapter("SELECT * from " + gracz1.Text + "VS" + gracz2.Text + " ORDER BY ID", sqlCon);
                 DataTable dtbl = new DataTable();
                 sqlData.Fill(dtbl);
 
@@ -1123,7 +1133,7 @@ namespace apk_snooker
             using (SqlConnection sqlCon = new SqlConnection(connectionString))
             {
                 sqlCon.Open();
-                SqlDataAdapter sqlData = new SqlDataAdapter("SELECT * from Wyniki ORDER BY ID", sqlCon);
+                SqlDataAdapter sqlData = new SqlDataAdapter("SELECT * from " + gracz1.Text + "VS" + gracz2.Text + " ORDER BY ID", sqlCon);
                 DataTable dtbl = new DataTable();
                 sqlData.Fill(dtbl);
 
@@ -1306,57 +1316,96 @@ namespace apk_snooker
 
         private void timerbreak1down_Tick(object sender, EventArgs e)
         {
-            if(aktualnaGra.Break1 >= 40)
-            {
-                if (breakv1.Height >= 30)
-                {
-                    timerbreak1down.Stop();
-                }
-                else
-                {
-                    breakv1.Height += 5;
-                }
-            }
-        }
 
-        private void timerbreak2down_Tick(object sender, EventArgs e)
-        {
-            if (aktualnaGra.Break2 >= 40)
-            {
-                if (breakv2.Height >= 30)
-                {
-                    timerbreak2down.Stop();
-                }
-                else
-                {
-                    breakv2.Height += 5;
-                }
-            }
-        }
-
-        private void timerbreak1up_Tick(object sender, EventArgs e)
-        {
-            if (breakv1.Height <= 0)
+            if (breakv1.Height == 30)
             {
                 timerbreak1down.Stop();
             }
             else
             {
-                breakv1.Height -= 5;
+                breakv1.Height += 5;
             }
 
         }
-
-        private void timerbreak2up_Tick(object sender, EventArgs e)
+        private void timerbreak2down_Tick(object sender, EventArgs e)
         {
-            if (breakv2.Height <= 0)
+            if (breakv2.Height == 30)
             {
                 timerbreak2down.Stop();
             }
             else
             {
+                breakv2.Height += 5;
+            }
+        }
+        private void timerbreak1up_Tick(object sender, EventArgs e)
+        {
+            if (breakv1.Height <= 0)
+            {
+                timerbreak1up.Stop();
+            }
+            else
+            {
+                breakv1.Height -= 5;
+            }
+        }
+        private void timerbreak2up_Tick(object sender, EventArgs e)
+        {
+            if (breakv2.Height<= 0)
+            {
+                timerbreak2up.Stop();
+            }
+            else
+            {
                 breakv2.Height -= 5;
             }
+        }
+        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if(gracz1.Text != "" && gracz2.Text != "")
+            {
+                using (SqlConnection sqlCon = new SqlConnection(connectionString))
+                {
+                    sqlCon.Open();
+                    SqlDataAdapter adapter = new SqlDataAdapter();
+                    string sql = "DROP TABLE " + gracz1.Text + "VS" + gracz2.Text + ";";
+
+                    SqlCommand sqlcom = new SqlCommand(sql, sqlCon);
+
+                    adapter.InsertCommand = new SqlCommand(sql, sqlCon);
+                    adapter.InsertCommand.ExecuteNonQuery();
+
+                    sqlcom.Dispose();
+                    sqlCon.Close();
+                }
+            }
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            //label8.Text = aktualnaGra.Break1.ToString();
+            //label9.Text = aktualnaGra.Break2.ToString();
+            if (aktualnaGra.AktualnyGracz == 1)
+            {
+                if(breakv1.Height ==0) { timerbreak1down.Start(); }
+                else { timerbreak1up.Start(); }
+                
+            }
+            else
+            {
+                if (breakv2.Height == 0) { timerbreak2down.Start(); }
+                else { timerbreak2up.Start(); }
+            }
+        }
+
+        private void label9_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label8_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

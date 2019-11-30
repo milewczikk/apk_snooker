@@ -30,6 +30,8 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.breakv2 = new System.Windows.Forms.GroupBox();
             this.lbreak2 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
@@ -979,6 +981,14 @@
             this.PodsumTab.AllowUserToResizeColumns = false;
             this.PodsumTab.AllowUserToResizeRows = false;
             this.PodsumTab.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.PodsumTab.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.PodsumTab.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.PodsumTab.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.break1,
@@ -986,6 +996,14 @@
             this.wynik,
             this.Punkty2,
             this.Break2});
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.PodsumTab.DefaultCellStyle = dataGridViewCellStyle2;
             this.PodsumTab.Location = new System.Drawing.Point(0, 3);
             this.PodsumTab.Name = "PodsumTab";
             this.PodsumTab.ReadOnly = true;
@@ -996,7 +1014,7 @@
             // 
             // break1
             // 
-            this.break1.DataPropertyName = "1.Break40+";
+            this.break1.DataPropertyName = "break1";
             this.break1.HeaderText = "Break (40+)";
             this.break1.Name = "break1";
             this.break1.ReadOnly = true;
@@ -1005,7 +1023,7 @@
             // 
             // punkty1
             // 
-            this.punkty1.DataPropertyName = "1.Punkty";
+            this.punkty1.DataPropertyName = "punkty1";
             this.punkty1.HeaderText = "Punkty";
             this.punkty1.Name = "punkty1";
             this.punkty1.ReadOnly = true;
@@ -1021,11 +1039,11 @@
             this.wynik.ReadOnly = true;
             this.wynik.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.wynik.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.wynik.Width = 20;
+            this.wynik.Width = 21;
             // 
             // Punkty2
             // 
-            this.Punkty2.DataPropertyName = "2.Punkty";
+            this.Punkty2.DataPropertyName = "punkty2";
             this.Punkty2.HeaderText = "Punkty";
             this.Punkty2.Name = "Punkty2";
             this.Punkty2.ReadOnly = true;
@@ -1034,7 +1052,7 @@
             // 
             // Break2
             // 
-            this.Break2.DataPropertyName = "2.Break40+";
+            this.Break2.DataPropertyName = "break2";
             this.Break2.HeaderText = "Break (40+)";
             this.Break2.Name = "Break2";
             this.Break2.ReadOnly = true;
@@ -1047,13 +1065,14 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(586, 568);
             this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.Podsum);
             this.Controls.Add(this.PanelKonc);
             this.Controls.Add(this.newGame);
             this.Controls.Add(this.bileView);
-            this.Controls.Add(this.Podsum);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
             this.Text = "Snookcount";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
             this.breakv2.ResumeLayout(false);
             this.breakv2.PerformLayout();
             this.groupBox1.ResumeLayout(false);
